@@ -1,15 +1,53 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import ServiceCard from "./ServiceCard";
 
 export default function Services() {
-  const services = [
-    { title: "Chatbot\nDevelopment" },
-    { title: "Software\nDevelopment" },
-    { title: "Workflow\nAutomations" },
-    { title: "AI\nAutomation" },
-    { title: "LLM\nDevelopment" },
-    { title: "AI\nConsulting" },
-    { title: "Data\nAnalysis" },
-    { title: "Talent\nAcquisition" },
+  const [row1Hovered, setRow1Hovered] = useState(false);
+  const [row2Hovered, setRow2Hovered] = useState(false);
+
+  const servicesData = [
+    {
+      title: "Chatbot\nDevelopment",
+      description:
+        "Build intelligent conversational AI that engages users, automates support, and delivers personalized experiences across multiple platforms.",
+    },
+    {
+      title: "Software\nDevelopment",
+      description:
+        "Custom software solutions tailored to your business needs. From web applications to enterprise systems, we deliver scalable and robust solutions.",
+    },
+    {
+      title: "Workflow\nAutomations",
+      description:
+        "Streamline your operations with smart automation. Reduce manual tasks, increase efficiency, and let your team focus on what matters most.",
+    },
+    {
+      title: "AI\nAutomation",
+      description:
+        "Harness the power of AI to automate complex processes. Transform your business with intelligent automation that learns and adapts.",
+    },
+    {
+      title: "LLM\nDevelopment",
+      description:
+        "Leverage Large Language Models to create innovative AI solutions. Build custom models tailored to your domain and requirements.",
+    },
+    {
+      title: "AI\nConsulting",
+      description:
+        "Strategic AI guidance to transform your business. We help you identify opportunities, plan implementation, and achieve measurable results.",
+    },
+    {
+      title: "Data\nAnalysis",
+      description:
+        "Turn data into actionable insights. Our analytics solutions help you make informed decisions and uncover hidden opportunities.",
+    },
+    {
+      title: "Talent\nAcquisition",
+      description:
+        "Find the right AI and tech talent for your team. We connect you with skilled professionals who drive innovation and growth.",
+    },
   ];
 
   return (
@@ -20,38 +58,41 @@ export default function Services() {
           Our Services
         </h2>
 
-        {/* Services Grid - 4 columns, 2 rows */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-8 hover:shadow-xl transition-shadow group relative min-h-[200px] flex flex-col"
-            >
-              {/* Service Title */}
-              <h3 className="text-xl font-bold text-gray-900 mb-auto whitespace-pre-line">
-                {service.title}
-              </h3>
+        {/* Services Flex Layout - Two separate rows with dynamic heights */}
+        <div className="space-y-2">
+          {/* Row 1 - First 4 services */}
+          <div
+            className="flex gap-2 transition-all duration-500"
+            style={{
+              height: row1Hovered ? "308px" : row2Hovered ? "252px" : "280px",
+            }}
+          >
+            {servicesData.slice(0, 4).map((service, index) => (
+              <ServiceCard
+                key={index}
+                title={service.title}
+                description={service.description}
+                onHover={(isHovered) => setRow1Hovered(isHovered)}
+              />
+            ))}
+          </div>
 
-              {/* Plus Icon Button */}
-              <div className="flex justify-end mt-4">
-                <button className="bg-primary text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
-                  <svg
-                    className="w-5 h-5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                  >
-                    <path
-                      d="M12 5v14M5 12h14"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          ))}
+          {/* Row 2 - Last 4 services */}
+          <div
+            className="flex gap-2 transition-all duration-500"
+            style={{
+              height: row2Hovered ? "308px" : row1Hovered ? "252px" : "280px",
+            }}
+          >
+            {servicesData.slice(4, 8).map((service, index) => (
+              <ServiceCard
+                key={index + 4}
+                title={service.title}
+                description={service.description}
+                onHover={(isHovered) => setRow2Hovered(isHovered)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

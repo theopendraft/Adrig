@@ -2,16 +2,19 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import InnovationCard from "./InnovationCard";
 
 export default function Innovation() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isInView, setIsInView] = useState(false);
+  const [row1Hovered, setRow1Hovered] = useState(false);
+  const [row2Hovered, setRow2Hovered] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const videoContainerRef = useRef<HTMLDivElement>(null);
 
   // Scroll distance for scaling animation (within Innovation section)
   // Increased for smoother, more gradual animation
-  const SCROLL_DISTANCE = 800;
+  const SCROLL_DISTANCE = 600;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,110 +104,44 @@ export default function Innovation() {
             </button>
           </div>
 
-          {/* Right Side - 2x2 Grid of Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Who We Are */}
-            <div className="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
-              <div className="mb-4">
-                <svg
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    d="M7 17L17 7M17 7H7M17 7V17"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Who We Are
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                A team of passionate in-house experts, blending AI, design, and
-                strategy.
-              </p>
+          {/* Right Side - 2x2 Grid of Cards with Interactive Effects */}
+          <div className="space-y-2">
+            {/* Row 1 - Top 2 cards */}
+            <div
+              className="flex gap-2 transition-all duration-500"
+              style={{
+                height: row1Hovered ? "220px" : row2Hovered ? "180px" : "200px",
+              }}
+            >
+              <InnovationCard
+                title="Who We Are"
+                description="A team of passionate in-house experts, blending AI, design, and strategy to deliver exceptional solutions."
+                onHover={(isHovered) => setRow1Hovered(isHovered)}
+              />
+              <InnovationCard
+                title="What We Do"
+                description="We craft intelligent, scalable solutions that drive business growth and efficiency through innovative technology."
+                onHover={(isHovered) => setRow1Hovered(isHovered)}
+              />
             </div>
 
-            {/* What We Do */}
-            <div className="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
-              <div className="mb-4">
-                <svg
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    d="M7 17L17 7M17 7H7M17 7V17"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                What We Do
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                We craft intelligent, scalable solutions that drive business
-                growth and efficiency.
-              </p>
-            </div>
-
-            {/* How We Work */}
-            <div className="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
-              <div className="mb-4">
-                <svg
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    d="M7 17L17 7M17 7H7M17 7V17"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                How We Work
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                With a collaborative, transparent, and client-focused approach
-                to every project.
-              </p>
-            </div>
-
-            {/* Why Choose Us */}
-            <div className="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
-              <div className="mb-4">
-                <svg
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    d="M7 17L17 7M17 7H7M17 7V17"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Why Choose Us
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Trusted by global organizations for our innovation, reliability,
-                and measurable impact.
-              </p>
+            {/* Row 2 - Bottom 2 cards */}
+            <div
+              className="flex gap-2 transition-all duration-500"
+              style={{
+                height: row2Hovered ? "220px" : row1Hovered ? "180px" : "200px",
+              }}
+            >
+              <InnovationCard
+                title="How We Work"
+                description="With a collaborative, transparent, and client-focused approach to every project, ensuring success at every step."
+                onHover={(isHovered) => setRow2Hovered(isHovered)}
+              />
+              <InnovationCard
+                title="Why Choose Us"
+                description="Trusted by global organizations for our innovation, reliability, and measurable impact in transforming businesses."
+                onHover={(isHovered) => setRow2Hovered(isHovered)}
+              />
             </div>
           </div>
         </div>
@@ -224,35 +161,7 @@ export default function Innovation() {
               scale: { duration: 0.05, ease: "linear" },
             }}
           >
-            <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl w-full aspect-video flex items-center justify-center shadow-2xl overflow-hidden">
-              {/* Video placeholder - Replace with actual video */}
-              {/* <motion.div
-                className="text-white text-center p-8"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: isInView ? 1 : 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                <motion.div
-                  animate={{
-                    rotate: isInView ? 360 : 0,
-                  }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="w-20 h-20 mx-auto mb-4 border-4 border-white/30 border-t-white rounded-full"
-                />
-                <p className="text-lg font-semibold">Innovation in Motion</p>
-                <p className="text-sm text-white/80 mt-2">
-                  Scroll to experience
-                </p>
-                <p className="text-xs text-white/60 mt-1">
-                  Progress: {Math.round(scrollProgress * 100)}%
-                </p> 
-              </motion.div>*/}
-
-              {/* Uncomment to use video instead of placeholder */}
+            <div className="bg-gray-400 rounded-3xl w-full aspect-video flex items-center justify-center shadow-2xl overflow-hidden">
               {/* <video
                 className="w-full h-full object-cover"
                 autoPlay
