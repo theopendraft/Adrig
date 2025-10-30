@@ -1,8 +1,88 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function Innovation() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+
+  // Scroll distance for scaling animation (within Innovation section)
+  // Increased for smoother, more gradual animation
+  const SCROLL_DISTANCE = 800;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current || !videoContainerRef.current) return;
+
+      const section = sectionRef.current;
+      const videoContainer = videoContainerRef.current;
+      const windowScrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      // Get position of video container relative to viewport
+      const rect = videoContainer.getBoundingClientRect();
+
+      // Calculate the center position of the video container in viewport
+      const videoContainerCenterInViewport = rect.top + rect.height / 2;
+
+      // Calculate the center of viewport
+      const viewportCenter = windowHeight / 2;
+
+      // Distance from viewport center (negative means above center, positive means below)
+      const distanceFromCenter =
+        videoContainerCenterInViewport - viewportCenter;
+
+      // Animation range: starts SCROLL_DISTANCE pixels before center, ends at center
+      // When card is SCROLL_DISTANCE pixels above center → progress = 0
+      // When card is at center → progress = 1
+      const progress = 1 - distanceFromCenter / SCROLL_DISTANCE;
+
+      // Clamp between 0 and 1, and apply easing for smoother animation
+      const clampedProgress = Math.min(Math.max(progress, 0), 1);
+
+      // Apply ease-out curve for more natural scaling
+      const easedProgress = 1 - Math.pow(1 - clampedProgress, 3);
+
+      setScrollProgress(easedProgress);
+
+      // Check if section is in view
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionInView =
+        windowScrollY + windowHeight > sectionTop &&
+        windowScrollY < sectionTop + sectionHeight;
+      setIsInView(sectionInView);
+    };
+
+    handleScroll(); // Initial check
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
+
+    // Small delay to ensure DOM is ready
+    setTimeout(handleScroll, 100);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
+  // Calculate scale: starts at 0.6 (60%) and scales to 1.0 (100%)
+  // More conservative range to prevent unexpected scaling
+  const baseScale = 0.4 + scrollProgress * 0.8; // 0.6 to 1.0
+
+  // Card is always visible (opacity 1)
+  const opacity = 1;
+
   return (
-    <section id="innovation" className="section-padding bg-gray-50">
+    <section
+      id="innovation"
+      ref={sectionRef}
+      className="section-padding bg-gray-50"
+    >
       <div className="container-custom">
         {/* Top Section - Heading and Grid */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
@@ -129,11 +209,61 @@ export default function Innovation() {
           </div>
         </div>
 
-        {/* Center Card */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-gray-400 rounded-3xl w-full max-w-md aspect-video flex items-center justify-center">
-            <span className="text-white text-lg font-medium"></span>
-          </div>
+        {/* Scroll Animation Video/Card Container */}
+        <div
+          ref={videoContainerRef}
+          className="flex justify-center  py-32 mt-10"
+        >
+          <motion.div
+            className="w-full max-w-4xl"
+            style={{
+              scale: baseScale,
+              opacity: opacity,
+            }}
+            transition={{
+              scale: { duration: 0.05, ease: "linear" },
+            }}
+          >
+            <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl w-full aspect-video flex items-center justify-center shadow-2xl overflow-hidden">
+              {/* Video placeholder - Replace with actual video */}
+              {/* <motion.div
+                className="text-white text-center p-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isInView ? 1 : 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <motion.div
+                  animate={{
+                    rotate: isInView ? 360 : 0,
+                  }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className="w-20 h-20 mx-auto mb-4 border-4 border-white/30 border-t-white rounded-full"
+                />
+                <p className="text-lg font-semibold">Innovation in Motion</p>
+                <p className="text-sm text-white/80 mt-2">
+                  Scroll to experience
+                </p>
+                <p className="text-xs text-white/60 mt-1">
+                  Progress: {Math.round(scrollProgress * 100)}%
+                </p> 
+              </motion.div>*/}
+
+              {/* Uncomment to use video instead of placeholder */}
+              {/* <video
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/videos/hero-video.mp4" type="video/mp4" />
+              </video> */}
+            </div>
+          </motion.div>
         </div>
 
         {/* Bottom Text */}
