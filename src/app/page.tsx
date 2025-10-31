@@ -1,4 +1,5 @@
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
+import AdrigNavbarTabs from "@/components/AdrigNavbarTabs";
 import Hero from "@/components/Hero";
 import Partnership from "@/components/Partnership";
 import Clients from "@/components/Clients";
@@ -14,7 +15,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Header />
+      <AdrigNavbarTabs />
       <main>
         <Hero />
         <Partnership />
