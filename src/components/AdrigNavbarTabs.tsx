@@ -290,25 +290,23 @@ function ServicesContent() {
     { name: "AI Automation", href: "#services" },
     { name: "LLM Development", href: "#services" },
     { name: "AI Consulting", href: "#services" },
-    { name: "Data Analysis", href: "#services" },
-    { name: "Talent Acquisition", href: "#services" },
+    // { name: "Data Analysis", href: "#services" },
+    // { name: "Talent Acquisition", href: "#services" },
   ];
 
   return (
-    <div className="p-2">
-      <h3 className="text-2xl font-bold text-gray-900 mb-6">
-        Our AI Solutions
-      </h3>
-      <div className="grid grid-cols-2 gap-2">
+    <div className="p-3">
+      <h3 className="text-lg font-bold text-gray-900 mb-4">Our AI Solutions</h3>
+      <div className="grid grid-cols-2">
         {services.map((service, index) => (
           <a
             key={index}
             href={service.href}
             className="group flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 transition-colors"
           >
-            <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+            <div className="w-7 h-7 rounded-lg bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
               <svg
-                className="w-5 h-5 text-blue-600"
+                className="w-4 h-4 text-blue-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -321,7 +319,7 @@ function ServicesContent() {
                 />
               </svg>
             </div>
-            <span className="font-medium text-gray-700 group-hover:text-blue-600">
+            <span className="font-normal text-gray-700 group-hover:text-blue-600">
               {service.name}
             </span>
           </a>
@@ -343,18 +341,18 @@ function ProductContent() {
   ];
 
   return (
-    <div className="p-2">
-      <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Products</h3>
-      <div className="grid grid-cols-1 gap-2">
+    <div className="p-3">
+      <h3 className="text-lg font-bold text-gray-900 mb-4">Our Products</h3>
+      <div className="grid grid-cols-2">
         {products.map((product, index) => (
           <a
             key={index}
             href={product.href}
             className="group flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 transition-colors"
           >
-            <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+            <div className="w-7 h-7 rounded-lg bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-colors">
               <svg
-                className="w-5 h-5 text-purple-600"
+                className="w-4 h-4 text-purple-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -367,7 +365,7 @@ function ProductContent() {
                 />
               </svg>
             </div>
-            <span className="font-medium text-gray-700 group-hover:text-purple-600">
+            <span className="font-normal text-gray-700 group-hover:text-purple-600">
               {product.name}
             </span>
           </a>

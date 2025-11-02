@@ -90,8 +90,169 @@ export default function Clients() {
           Our Clients
         </h2>
 
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-[30%_70%] gap-12 lg:gap-16 items-center mb-20">
+        {/* Mobile View - Vertical Card Stack */}
+        <div className="block lg:hidden mb-12">
+          <div className="space-y-6">
+            {/* Client Card with Slide Animation */}
+            <div className="relative overflow-hidden rounded-3xl min-h-[500px] bg-gray-300">
+              {/* Background Image Placeholder */}
+              <div className="absolute inset-0 bg-black/10"></div>
+
+              {/* Animated Content */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  variants={panelVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.5 }}
+                  className="relative z-10 p-6 h-full flex flex-col justify-end text-white"
+                >
+                  {/* Logo Badge */}
+                  <div className="inline-block bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 mb-4 self-start">
+                    <span className="text-white font-bold">
+                      {activeClient.logoSrc}
+                    </span>
+                  </div>
+
+                  {/* Headline */}
+                  <h3 className="text-xl font-bold mb-36 leading-tight">
+                    {activeClient.headline}
+                  </h3>
+
+                  {/* Stats in Row */}
+                  <div className="grid grid-cols-2 gap-3 mb-4">
+                    {activeClient.stats.map((stat, index) => (
+                      <div
+                        key={index}
+                        className="bg-white/10 backdrop-blur-sm rounded-lg p-3"
+                      >
+                        <div className="text-2xl font-bold mb-1">
+                          {stat.label}
+                        </div>
+                        <div className="text-xs opacity-90">
+                          {stat.description}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Products */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                    <p className="text-sm font-semibold mb-2">Products used</p>
+                    <div className="flex flex-wrap gap-2">
+                      {activeClient.products.map((product, index) => (
+                        <span
+                          key={index}
+                          className="text-xs bg-white/20 rounded-full px-3 py-1"
+                        >
+                          {product}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Single Brand Name with Progress Bar */}
+            <div className="space-y-2">
+              {/* Progress Bar */}
+              <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                <motion.div
+                  className="h-full bg-blue-600"
+                  initial={{ width: "0%" }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 5, ease: "linear" }}
+                  key={`mobile-progress-${activeIndex}`}
+                />
+              </div>
+
+              {/* Active Brand Name */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                  className="flex justify-center"
+                >
+                  <span className="text-2xl font-bold text-gray-900">
+                    {activeClient.logoSrc}
+                  </span>
+                  {/* <div className="flex gap-2">
+                    <button
+                      onClick={() =>
+                        setActiveIndex(
+                          (activeIndex - 1 + clientsData.length) %
+                            clientsData.length
+                        )
+                      }
+                      className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                      aria-label="Previous client"
+                    >
+                      <svg
+                        className="w-5 h-5 text-gray-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 19l-7-7 7-7"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      onClick={() =>
+                        setActiveIndex((activeIndex + 1) % clientsData.length)
+                      }
+                      className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                      aria-label="Next client"
+                    >
+                      <svg
+                        className="w-5 h-5 text-gray-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </button>
+                  </div> */}
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Navigation Dots */}
+              <div className="flex justify-center gap-2 pt-2">
+                {clientsData.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveIndex(index)}
+                    className={`h-2 rounded-full transition-all ${
+                      activeIndex === index
+                        ? "bg-blue-600 w-8"
+                        : "bg-gray-300 w-2"
+                    }`}
+                    aria-label={`Go to client ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop View - Original Grid Layout */}
+        <div className="hidden lg:grid lg:grid-cols-[30%_70%] gap-12 lg:gap-16 items-center mb-20">
           {/* Left Side - Stats and Products (30%) */}
           <div className="space-y-8 max-w-sm">
             <AnimatePresence mode="wait">
@@ -183,8 +344,8 @@ export default function Clients() {
           </div>
         </div>
 
-        {/* Client Logos - Clickable with Progress Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 items-center">
+        {/* Client Logos - Desktop Only */}
+        <div className="hidden lg:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 items-center">
           {clientsData.map((client, index) => (
             <div key={client.id} className="flex flex-col gap-2">
               {/* Progress Bar - Above the box */}

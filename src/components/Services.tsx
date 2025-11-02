@@ -58,8 +58,23 @@ export default function Services() {
           Our Services
         </h2>
 
-        {/* Services Flex Layout - Two separate rows with dynamic heights */}
-        <div className="space-y-2">
+        {/* Mobile View - Grid Layout */}
+        <div className="block lg:hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {servicesData.map((service, index) => (
+              <ServiceCard
+                key={index}
+                title={service.title}
+                description={service.description}
+                onHover={() => {}}
+                isMobile={true}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop View - Flex Layout with Row Hover Effect */}
+        <div className="hidden lg:block space-y-2">
           {/* Row 1 - First 4 services */}
           <div
             className="flex gap-2 transition-all duration-500"
@@ -73,6 +88,7 @@ export default function Services() {
                 title={service.title}
                 description={service.description}
                 onHover={(isHovered) => setRow1Hovered(isHovered)}
+                isMobile={false}
               />
             ))}
           </div>
@@ -90,6 +106,7 @@ export default function Services() {
                 title={service.title}
                 description={service.description}
                 onHover={(isHovered) => setRow2Hovered(isHovered)}
+                isMobile={false}
               />
             ))}
           </div>

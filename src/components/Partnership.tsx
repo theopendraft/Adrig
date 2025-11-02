@@ -1,25 +1,61 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+
 export default function Partnership() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
   const stats = [
     {
-      number: "30+",
+      number: 30,
+      suffix: "+",
       label: "Indian Clients",
     },
     {
-      number: "10+",
+      number: 10,
+      suffix: "+",
       label: "International Clients",
     },
     {
-      number: "15",
+      number: 15,
+      suffix: "",
       label: "In-house Experts",
     },
     {
-      number: "2+",
+      number: 2,
+      suffix: "+",
       label: "Years of Excellence",
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section id="partnership" className="section-padding bg-gray-50">
+    <section
+      id="partnership"
+      className="section-padding bg-gray-50"
+      ref={sectionRef}
+    >
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Large Image/Card Placeholder */}
@@ -65,7 +101,13 @@ export default function Partnership() {
                   className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
-                    {stat.number}
+                    <CountUp
+                      end={stat.number}
+                      suffix={stat.suffix}
+                      isVisible={isVisible}
+                      duration={2000}
+                      delay={index * 200}
+                    />
                   </div>
                   <div className="text-sm text-gray-600 font-medium">
                     {stat.label}
@@ -77,5 +119,61 @@ export default function Partnership() {
         </div>
       </div>
     </section>
+  );
+}
+
+// CountUp Component
+function CountUp({
+  end,
+  suffix,
+  isVisible,
+  duration,
+  delay,
+}: {
+  end: number;
+  suffix: string;
+  isVisible: boolean;
+  duration: number;
+  delay: number;
+}) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const timeout = setTimeout(() => {
+      let startTime: number | null = null;
+      const startValue = 0;
+
+      const animate = (currentTime: number) => {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+
+        // Ease out cubic function for smooth deceleration
+        const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+        const currentCount = Math.floor(
+          easeOutCubic * (end - startValue) + startValue
+        );
+
+        setCount(currentCount);
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          setCount(end);
+        }
+      };
+
+      requestAnimationFrame(animate);
+    }, delay);
+
+    return () => clearTimeout(timeout);
+  }, [isVisible, end, duration, delay]);
+
+  return (
+    <span>
+      {count}
+      {suffix}
+    </span>
   );
 }

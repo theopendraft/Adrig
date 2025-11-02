@@ -149,10 +149,10 @@ export default function Innovation() {
         {/* Scroll Animation Video/Card Container */}
         <div
           ref={videoContainerRef}
-          className="flex justify-center  py-32 mt-10"
+          className="flex justify-center py-12 md:py-32 mt-4 md:mt-10 px-4 md:px-0"
         >
           <motion.div
-            className="w-full max-w-4xl"
+            className="w-full max-w-2xl"
             style={{
               scale: baseScale,
               opacity: opacity,
@@ -161,16 +161,21 @@ export default function Innovation() {
               scale: { duration: 0.05, ease: "linear" },
             }}
           >
-            <div className="bg-gray-400 rounded-3xl w-full aspect-video flex items-center justify-center shadow-2xl overflow-hidden">
-              {/* <video
+            <div className="bg-gray-900 rounded-2xl md:rounded-3xl w-full aspect-video flex items-center justify-center shadow-2xl overflow-hidden">
+              <video
                 className="w-full h-full object-cover"
                 autoPlay
                 loop
                 muted
                 playsInline
+                controls
               >
-                <source src="/videos/hero-video.mp4" type="video/mp4" />
-              </video> */}
+                <source src="/Introduction.mp4" type="video/mp4" />
+                <source src="/Introduction.mp4" type="video/webm" />
+                <p className="text-white">
+                  Your browser does not support the video tag.
+                </p>
+              </video>
             </div>
           </motion.div>
         </div>
