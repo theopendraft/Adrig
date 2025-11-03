@@ -252,7 +252,7 @@ export default function Clients() {
         </div>
 
         {/* Desktop View - Original Grid Layout */}
-        <div className="hidden lg:grid lg:grid-cols-[30%_70%] gap-12 lg:gap-16 items-center mb-20">
+        <div className="hidden lg:grid lg:grid-cols-[30%_1fr] gap-12 lg:gap-16 items-center mb-20">
           {/* Left Side - Stats and Products (30%) */}
           <div className="space-y-8 max-w-sm">
             <AnimatePresence mode="wait">
@@ -294,7 +294,7 @@ export default function Clients() {
           </div>
 
           {/* Right Side - Case Study Panel with Animation */}
-          <div className="bg-gray-400 rounded-3xl aspect-video w-full flex items-center justify-center p-12 md:p-20 relative overflow-hidden">
+          <div className="bg-gray-400 rounded-3xl aspect-video w-full flex items-center justify-between p-12 md:p-20 relative overflow-hidden">
             {/* Background Image Placeholder - Fixed */}
             <div className="absolute inset-0 bg-black/10"></div>
 
@@ -324,7 +324,7 @@ export default function Clients() {
                 animate="animate"
                 exit="exit"
                 transition={{ duration: 0.5 }}
-                className="relative z-10 text-white"
+                className="relative z-10 text-white "
               >
                 {/* Logo */}
                 <div className="mb-8">

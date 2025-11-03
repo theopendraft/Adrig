@@ -57,10 +57,10 @@ export default function Partnership() {
       ref={sectionRef}
     >
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-[30%_1fr] gap-12 lg:gap-16 items-center">
           {/* Left: Large Image/Card Placeholder */}
           <div className="relative">
-            <div className="aspect-[4/5] bg-gray-400 rounded-3xl shadow-2xl overflow-hidden">
+            <div className=" aspect-[4/5] bg-gray-400 rounded-3xl shadow-2xl overflow-hidden">
               {/* Placeholder for image - can be replaced later */}
               <div className="w-full h-full flex items-center justify-center text-gray-600">
                 <svg
@@ -81,26 +81,26 @@ export default function Partnership() {
           </div>
 
           {/* Right: Content */}
-          <div>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+          <div className="space-y-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight lg:text-center">
               Proudly partnering with leading organizations{" "}
               <span className="text-primary">Internationally.</span>
             </h2>
 
-            <p className="text-lg text-gray-600 mb-12 leading-relaxed">
+            <p className="text-lg text-gray-600 leading-relaxed lg:text-center">
               Delivering cutting-edge AI solutions that fuel growth and
               transformation with leading organizations in India, the UK, and
               the US.
             </p>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-3">
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
+                  className="bg-gray-100 rounded-lg  p-6 lg:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
+                  <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2 ">
                     <CountUp
                       end={stat.number}
                       suffix={stat.suffix}

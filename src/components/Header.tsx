@@ -155,7 +155,7 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          
+
           <button
             className=" p-2.5 bg-white/20 backdrop-blur-sm border border-white/40 rounded-lg hover:bg-white/30 transition-all duration-200 z-1000"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -177,7 +177,6 @@ export default function Header() {
               )}
             </svg>
           </button>
-          
         </div>
 
         {/* Mobile Menu */}
