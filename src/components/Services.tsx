@@ -11,42 +11,42 @@ export default function Services() {
     {
       title: "Chatbot\nDevelopment",
       description:
-        "Build intelligent conversational AI that engages users, automates support, and delivers personalized experiences across multiple platforms.",
+        "Build intelligent conversational AI that engages users, automates support, and delivers experiences.",
     },
     {
       title: "Software\nDevelopment",
       description:
-        "Custom software solutions tailored to your business needs. From web applications to enterprise systems, we deliver scalable and robust solutions.",
+        "Custom software solutions tailored to your business needs. From web applications to enterprise systems.",
     },
     {
       title: "Workflow\nAutomations",
       description:
-        "Streamline your operations with smart automation. Reduce manual tasks, increase efficiency, and let your team focus on what matters most.",
+        "Streamline your operations with smart automation. Reduce manual tasks & increase efficiency.",
     },
     {
       title: "AI\nAutomation",
       description:
-        "Harness the power of AI to automate complex processes. Transform your business with intelligent automation that learns and adapts.",
+        "Harness the power of AI to automate complex processes. Transform your business with intelligent automation.",
     },
     {
       title: "LLM\nDevelopment",
       description:
-        "Leverage Large Language Models to create innovative AI solutions. Build custom models tailored to your domain and requirements.",
+        "Leverage Large Language Models to create innovative AI solutions & Build custom models.",
     },
     {
       title: "AI\nConsulting",
       description:
-        "Strategic AI guidance to transform your business. We help you identify opportunities, plan implementation, and achieve measurable results.",
+        "Strategic AI guidance to transform your business. We help you identify opportunities & plan implementation.",
     },
     {
       title: "Data\nAnalysis",
       description:
-        "Turn data into actionable insights. Our analytics solutions help you make informed decisions and uncover hidden opportunities.",
+        "Turn data into actionable insights. Our analytics solutions help you make informed decisions.",
     },
     {
       title: "Talent\nAcquisition",
       description:
-        "Find the right AI and tech talent for your team. We connect you with skilled professionals who drive innovation and growth.",
+        "Find the right AI and tech talent for your team. We connect you with skilled professionals.",
     },
   ];
 
@@ -79,7 +79,7 @@ export default function Services() {
           <div
             className="flex gap-1 transition-all duration-500"
             style={{
-              height: row1Hovered ? "280px" : row2Hovered ? "223px" : "230px",
+              height: row1Hovered ? "260px" : row2Hovered ? "200px" : "230px",  
             }}
           >
             {servicesData.slice(0, 4).map((service, index) => (
@@ -97,7 +97,7 @@ export default function Services() {
           <div
             className="flex gap-1 transition-all duration-500"
             style={{
-              height: row2Hovered ? "280px" : row1Hovered ? "223px" : "230px",
+              height: row2Hovered ? "260px" : row1Hovered ? "200px" : "230px",
             }}
           >
             {servicesData.slice(4, 8).map((service, index) => (

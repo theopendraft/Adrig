@@ -61,10 +61,12 @@ export default function ServiceCard({
       <div
         className={`${isMobile ? "p-4" : "p-6"} ${
           isMobile ? "" : "h-full"
-        } flex flex-col`}
+        } flex flex-col relative`}
       >
         {/* Title and Description Container */}
-        <div className={isMobile ? "" : "flex-grow overflow-hidden"}>
+        <div
+          className={isMobile ? "" : "flex-grow overflow-hidden pb-20 md:pb-24"}
+        >
           <h3
             className={`${
               isMobile ? "text-lg" : "text-xl"
@@ -77,21 +79,14 @@ export default function ServiceCard({
 
           {/* Description with smooth reveal */}
           <motion.div
-            className="overflow-hidden text-gray-700"
+            className="overflow-hidden text-gray-700 absolute left-4 right-4 bottom-12 md:left-6 md:right-6 md:bottom-16 h-16"
             animate={{
-              maxHeight: isExpanded ? 160 : 0,
+              y: isExpanded ? 0 : 12,
               opacity: isExpanded ? 1 : 0,
             }}
             transition={{
-              maxHeight: {
-                type: "spring",
-                stiffness: 350,
-                damping: 30,
-              },
-              opacity: {
-                duration: 0.3,
-                delay: isExpanded ? 0.1 : 0,
-              },
+              y: { type: "spring", stiffness: 300, damping: 28 },
+              opacity: { duration: 0.25, delay: isExpanded ? 0 : 0 },
             }}
           >
             <p className="text-sm leading-relaxed">{description}</p>
