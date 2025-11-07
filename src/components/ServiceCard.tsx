@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { FiPlus, FiMinus } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 interface ServiceCardProps {
   title: string;
@@ -39,15 +40,21 @@ export default function ServiceCard({
   };
 
   return (
-    <div
-      className={`bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-500 ease-in-out cursor-pointer relative ${
-        isExpanded ? "shadow-xl z-20" : ""
+    <motion.div
+      className={`bg-white rounded-lg border border-gray-200 cursor-pointer relative ${
+        isExpanded ? "z-20" : ""
       } ${isMobile ? "" : "h-full"}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
-      style={{
-        flex: !isMobile && isExpanded ? "1.2" : !isMobile ? "1" : undefined,
+      animate={{
+        flex: !isMobile && isExpanded ? 1.2 : !isMobile ? 1 : undefined,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 400,
+        damping: 25,
+        mass: 1.8,
       }}
     >
       {/* Card Content */}
@@ -69,32 +76,65 @@ export default function ServiceCard({
           </h3>
 
           {/* Description with smooth reveal */}
-          <div
-            className={`overflow-hidden transition-all duration-500 ease-in-out text-gray-700 ${
-              isExpanded ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-            }`}
+          <motion.div
+            className="overflow-hidden text-gray-700"
+            animate={{
+              maxHeight: isExpanded ? 160 : 0,
+              opacity: isExpanded ? 1 : 0,
+            }}
+            transition={{
+              maxHeight: {
+                type: "spring",
+                stiffness: 350,
+                damping: 30,
+              },
+              opacity: {
+                duration: 0.3,
+                delay: isExpanded ? 0.1 : 0,
+              },
+            }}
           >
             <p className="text-sm leading-relaxed">{description}</p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Plus/Minus Icon Button */}
         <div className={`flex justify-end ${isMobile ? "mt-2" : "mt-4"}`}>
-          <div
-            className={`p-2 rounded-lg transition-colors duration-300 ${
+          <motion.div
+            className={`p-2 rounded-lg ${
               isExpanded
                 ? "bg-gray-200 text-gray-500"
                 : "bg-blue-500 text-white"
             }`}
+            animate={{
+              scale: isExpanded ? 1 : 1,
+              rotate: isExpanded ? 0 : 0,
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 20,
+            }}
           >
-            {isExpanded ? (
-              <FiMinus className="w-5 h-5" />
-            ) : (
-              <FiPlus className="w-5 h-5" />
-            )}
-          </div>
+            <motion.div
+              animate={{ rotate: isExpanded ? 180 : 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+              }}
+            >
+              {isExpanded ? (
+                <FiMinus className="w-5 h-5" />
+              ) : (
+                <FiPlus className="w-5 h-5" />
+              )}
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

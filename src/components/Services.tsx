@@ -74,12 +74,12 @@ export default function Services() {
         </div>
 
         {/* Desktop View - Flex Layout with Row Hover Effect */}
-        <div className="hidden lg:block space-y-2">
+        <div className="hidden lg:block space-y-1">
           {/* Row 1 - First 4 services */}
           <div
-            className="flex gap-2 transition-all duration-500"
+            className="flex gap-1 transition-all duration-500"
             style={{
-              height: row1Hovered ? "308px" : row2Hovered ? "252px" : "280px",
+              height: row1Hovered ? "280px" : row2Hovered ? "223px" : "230px",
             }}
           >
             {servicesData.slice(0, 4).map((service, index) => (
@@ -95,9 +95,9 @@ export default function Services() {
 
           {/* Row 2 - Last 4 services */}
           <div
-            className="flex gap-2 transition-all duration-500"
+            className="flex gap-1 transition-all duration-500"
             style={{
-              height: row2Hovered ? "308px" : row1Hovered ? "252px" : "280px",
+              height: row2Hovered ? "280px" : row1Hovered ? "223px" : "230px",
             }}
           >
             {servicesData.slice(4, 8).map((service, index) => (

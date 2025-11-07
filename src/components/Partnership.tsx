@@ -57,13 +57,13 @@ export default function Partnership() {
       ref={sectionRef}
     >
       <div className="container-custom">
-        <div className="grid lg:grid-cols-[30%_1fr] gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-[40%_1fr] gap-12 lg:gap-16 items-center">
           {/* Left: Large Image/Card Placeholder */}
           <div className="relative">
-            <div className=" aspect-[4/5] bg-gray-400 rounded-3xl shadow-2xl overflow-hidden">
+            <div className=" aspect-[4/5] bg-gray-500 rounded-3xl shadow-2xl overflow-hidden">
               {/* Placeholder for image - can be replaced later */}
               <div className="w-full h-full flex items-center justify-center text-gray-600">
-                <svg
+                {/* <svg
                   className="w-32 h-32 opacity-50"
                   fill="none"
                   stroke="currentColor"
@@ -75,32 +75,33 @@ export default function Partnership() {
                     strokeWidth={1}
                     d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                   />
-                </svg>
+                </svg> */}
               </div>
             </div>
           </div>
 
           {/* Right: Content */}
           <div className="space-y-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight lg:text-center">
+            <h2 className="text-4xl md:text-4xl lg:text-4xl font-bold text-gray-900 leading-tight lg:text-center">
               Proudly partnering with leading organizations{" "}
               <span className="text-primary">Internationally.</span>
             </h2>
 
-            <p className="text-lg text-gray-600 leading-relaxed lg:text-center">
+            <p className="text-md text-gray-600 leading-relaxed lg:text-center lg:px-20">
               Delivering cutting-edge AI solutions that fuel growth and
               transformation with leading organizations in India, the UK, and
               the US.
             </p>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-3">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-1">
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-gray-100 rounded-lg  p-6 lg:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="bg-gray-100 rounded-md p-4 lg:pt-16 transition-shadow duration-300"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2 ">
+                  
+                  <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
                     <CountUp
                       end={stat.number}
                       suffix={stat.suffix}
