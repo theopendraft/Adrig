@@ -64,14 +64,16 @@ const clientsData = [
 export default function Clients() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Auto-advance every 5 seconds
+  // Auto-advance every 5 seconds - FIXED: Timer resets on activeIndex change
   useEffect(() => {
+    // Set up new interval - this runs fresh every time activeIndex changes
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % clientsData.length);
     }, 5000);
 
+    // CRITICAL: Clean up the previous interval before creating a new one
     return () => clearInterval(interval);
-  }, []);
+  }, [activeIndex]); // Re-run when activeIndex changes
 
   const activeClient = clientsData[activeIndex];
 
