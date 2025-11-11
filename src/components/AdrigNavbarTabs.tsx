@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 
 // Dropdown tabs (Services and Product)
 const DROPDOWN_TABS = [
@@ -22,14 +23,14 @@ const NAV_LINKS = [
   { name: "Work", href: "#process" },
   { name: "Plan", href: "#innovation" },
   { name: "Team", href: "#partnership" },
-  { name: "Contact", href: "#footer" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function AdrigNavbarTabs() {
   return (
-    <header className="absolute top-0 left-0 right-0 z-50">
-      <nav className="container-custom my-10">
-        <div className="bg-gradient-to-b from-navy/90 to-navy/60 backdrop-blur-sm rounded-2xl">
+    <header className="bg-[#0a1f5e]  backdrop-blur-sm absolute top-0 left-0 right-0 z-50">
+      <nav className="container-custom my-2">
+        <div className=" rounded-2xl">
           <div className="flex items-center justify-between px-2 py-4">
             {/* Logo */}
             <div className="flex-shrink-0">
@@ -53,23 +54,33 @@ export default function AdrigNavbarTabs() {
             {/* Navigation - Dropdowns + Links */}
             <div className="hidden lg:flex items-center gap-1">
               <Tabs tabs={DROPDOWN_TABS} />
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="px-2 py-2.5 text-white hover:text-blue-200 font-medium transition-colors duration-200 rounded-full hover:bg-white/10"
-                >
-                  {link.name}
-                </a>
-              ))}
+              {NAV_LINKS.map((link) =>
+                link.href.startsWith("#") ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="px-2 py-1 text-white hover:text-blue-200 font-medium transition-colors duration-200 rounded-full hover:bg-white/10"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="px-2 py-1 text-white hover:text-blue-200 font-medium transition-colors duration-200 rounded-full hover:bg-white/10"
+                  >
+                    {link.name}
+                  </Link>
+                )
+              )}
             </div>
 
             {/* Auth Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <button className="px-6 py-2.5 text-white font-medium rounded-full border border-white/30 hover:bg-white/10 transition-colors duration-200">
+              <button className="px-6 py-1 text-white font-medium rounded-full border border-white/30 hover:bg-white/10 transition-colors duration-200">
                 LOGIN
               </button>
-              <button className="px-6 py-2.5 bg-white text-primary font-semibold rounded-full hover:bg-blue-50 transition-colors duration-200 flex items-center space-x-2">
+              <button className="px-6 py-1 bg-white text-primary font-semibold rounded-full hover:bg-blue-50 transition-colors duration-200 flex items-center space-x-2">
                 <span>SIGN UP</span>
                 <svg
                   className="w-4 h-4"
@@ -148,7 +159,7 @@ function Tab({
       id={`shift-tab-${tab.id}`}
       onMouseEnter={() => handleSetSelected(tab.id)}
       onClick={() => handleSetSelected(tab.id)}
-      className={`flex items-center gap-1 rounded-full px-2 py-2.5 text-sm font-medium transition-colors ${
+      className={`flex items-center gap-1 rounded-full px-2 py-1 text-sm font-medium transition-colors ${
         selected === tab.id
           ? "bg-white/20 text-white"
           : "text-white hover:bg-white/10 hover:text-blue-200"
@@ -240,8 +251,15 @@ function Nub({
   tabs: typeof DROPDOWN_TABS;
 }) {
   const [left, setLeft] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
     const moveNub = () => {
       if (selected) {
         const hoveredTab = document.getElementById(`shift-tab-${selected}`);
@@ -265,7 +283,7 @@ function Nub({
     return () => {
       window.removeEventListener("resize", moveNub);
     };
-  }, [selected]);
+  }, [selected, isMounted]);
 
   return (
     <motion.span
