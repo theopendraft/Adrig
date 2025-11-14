@@ -414,19 +414,11 @@ export default function Contact() {
                       ) : (
                         <>
                           <span>SEND MESSAGE</span>
-                          <svg
+                          <img
+                            src="/right-up-white.png"
+                            alt="Arrow Right"
                             className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M14 5l7 7m0 0l-7 7m7-7H3"
-                            />
-                          </svg>
+                          />
                         </>
                       )}
                     </button>
@@ -459,7 +451,7 @@ export default function Contact() {
               {processSteps.map((step) => (
                 <div
                   key={step.number}
-                  className="bg-gray-100 rounded-lg p-8 hover:shadow-md transition-all duration-300 group lg:h-[280px] justify-between flex flex-col"
+                  className="bg-gray-100 rounded-lg p-8 group lg:h-[280px] justify-between flex flex-col"
                 >
                   {/* Title with Number */}
                   <div className="flex items-baseline justify-between mb-6">

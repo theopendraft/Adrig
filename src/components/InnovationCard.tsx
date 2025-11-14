@@ -27,8 +27,8 @@ export default function InnovationCard({
 
   return (
     <div
-      className={`bg-white rounded-2xl transition-all duration-500 ease-in-out cursor-pointer h-full relative ${
-        isExpanded ? "shadow-xl z-20" : "shadow-sm hover:shadow-lg"
+      className={` rounded-2xl transition-all duration-500 ease-in-out cursor-pointer h-full relative ${
+        isExpanded ? "bg-gray-100 z-20" : "bg-white"
       }`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

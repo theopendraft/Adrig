@@ -58,18 +58,18 @@ export default function Footer() {
                 </h2>
                 <button className="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center hover:bg-primary-dark transition-all duration-200 shadow-lg">
                   <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
+                className="w-8 h-8"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  d="M7 17L17 7M17 7H7M17 7V17"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
                 </button>
               </div>
               {/* Links Section */}

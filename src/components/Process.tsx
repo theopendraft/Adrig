@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, MouseEvent } from "react";
 import { motion, useMotionValue, useTransform, PanInfo } from "framer-motion";
+import Link from "next/link";
 
 // Custom hook to detect mobile view
 function useIsMobile(breakpoint: number = 768): boolean {
@@ -88,7 +89,7 @@ export default function Process() {
           </div>
 
           {/* Right Side - Button */}
-          <button className="btn-primary px-8 py-4 text-base font-semibold flex items-center gap-2 whitespace-nowrap rounded-full">
+          <Link href="/contact" className="btn-primary px-8 py-4 text-base font-semibold flex items-center gap-2 whitespace-nowrap rounded-full">
             GET IN TOUCH
             <svg
               className="w-5 h-5"
@@ -103,7 +104,7 @@ export default function Process() {
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

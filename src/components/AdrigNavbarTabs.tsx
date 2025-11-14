@@ -34,7 +34,7 @@ export default function AdrigNavbarTabs() {
           <div className="flex items-center justify-between px-2 py-4">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <a href="#home" className="flex items-center space-x-3">
+              <Link href="/" className="flex items-center space-x-3">
                 <img
                   src="/images/Adrig.PNG"
                   alt="Adrig Logo"
@@ -48,7 +48,7 @@ export default function AdrigNavbarTabs() {
                     Technologies
                   </span>
                 </div>
-              </a>
+              </Link>
             </div>
 
             {/* Navigation - Dropdowns + Links */}
@@ -82,19 +82,11 @@ export default function AdrigNavbarTabs() {
               </button>
               <button className="px-6 py-1 bg-white text-primary font-semibold rounded-full hover:bg-blue-50 transition-colors duration-200 flex items-center space-x-2">
                 <span>SIGN UP</span>
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
+                <img
+                src="/right-up-blue.png"
+                alt="right-up"
+                className="w-6 h-6"
+              />
               </button>
             </div>
           </div>
@@ -305,7 +297,7 @@ function ServicesContent() {
     { name: "Chatbot Development", href: "#services" },
     { name: "Software Development", href: "#services" },
     { name: "Workflow Automations", href: "#services" },
-    { name: "AI Automation", href: "#services" },
+    { name: "Predictive Analytics", href: "/services/predictive-analytics" },
     { name: "LLM Development", href: "#services" },
     { name: "AI Consulting", href: "#services" },
     // { name: "Data Analysis", href: "#services" },
@@ -316,32 +308,59 @@ function ServicesContent() {
     <div className="p-3">
       <h3 className="text-lg font-bold text-gray-900 mb-4">Our AI Solutions</h3>
       <div className="grid grid-cols-2">
-        {services.map((service, index) => (
-          <a
-            key={index}
-            href={service.href}
-            className="group flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 transition-colors"
-          >
-            <div className="w-7 h-7 rounded-lg bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-              <svg
-                className="w-4 h-4 text-blue-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
-            </div>
-            <span className="font-normal text-gray-700 group-hover:text-blue-600">
-              {service.name}
-            </span>
-          </a>
-        ))}
+        {services.map((service, index) =>
+          service.href.startsWith("#") ? (
+            <a
+              key={index}
+              href={service.href}
+              className="group flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 transition-colors"
+            >
+              <div className="w-7 h-7 rounded-lg bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                <svg
+                  className="w-4 h-4 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <span className="font-normal text-gray-700 group-hover:text-blue-600">
+                {service.name}
+              </span>
+            </a>
+          ) : (
+            <Link
+              key={index}
+              href={service.href}
+              className="group flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 transition-colors"
+            >
+              <div className="w-7 h-7 rounded-lg bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                <svg
+                  className="w-4 h-4 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <span className="font-normal text-gray-700 group-hover:text-blue-600">
+                {service.name}
+              </span>
+            </Link>
+          )
+        )}
       </div>
     </div>
   );
