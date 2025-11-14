@@ -20,7 +20,7 @@ const DROPDOWN_TABS = [
 
 // Regular navigation links
 const NAV_LINKS = [
-  { name: "Work", href: "#process" },
+  { name: "Work", href: "/work" },
   { name: "Plan", href: "#innovation" },
   { name: "Team", href: "#partnership" },
   { name: "Contact", href: "/contact" },
@@ -77,16 +77,16 @@ export default function AdrigNavbarTabs() {
 
             {/* Auth Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <button className="px-6 py-1 text-white font-medium rounded-full border border-white/30 hover:bg-white/10 transition-colors duration-200">
+              <button className="px-4 py-2 text-white font-normal rounded-full border border-white/100 hover:bg-white/10 transition-colors duration-200">
                 LOGIN
               </button>
-              <button className="px-6 py-1 bg-white text-primary font-semibold rounded-full hover:bg-blue-50 transition-colors duration-200 flex items-center space-x-2">
+              <button className="px-4 py-2 bg-white text-primary font-normal rounded-full hover:bg-blue-50 transition-colors duration-200 flex items-center space-x-1">
                 <span>SIGN UP</span>
                 <img
-                src="/right-up-blue.png"
-                alt="right-up"
-                className="w-6 h-6"
-              />
+                  src="/right-up-blue.png"
+                  alt="right-up"
+                  className="w-6 h-6"
+                />
               </button>
             </div>
           </div>

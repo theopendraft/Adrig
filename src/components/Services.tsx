@@ -54,7 +54,7 @@ export default function Services() {
     <section id="services" className="section-padding bg-gray-100">
       <div className="container-custom">
         {/* Section Title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+        <h2 className="text-4xl md:text-4xl font-bold text-center mb-16">
           Our Services
         </h2>
 

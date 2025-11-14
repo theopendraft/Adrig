@@ -88,7 +88,7 @@ export default function Clients() {
     <section id="clients" className="section-padding bg-white">
       <div className="container-custom">
         {/* Section Title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+        <h2 className="text-4xl md:text-4xl font-bold text-center mb-16">
           Our Clients
         </h2>
 

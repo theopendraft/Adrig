@@ -91,7 +91,7 @@ export default function Innovation() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
           {/* Left Side - Text and Button */}
           <div className="space-y-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-4xl md:text-4xl lg:text-4xl font-bold text-gray-900 leading-tight">
               Crafting Tomorrow&apos;s Innovation Solution
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed">

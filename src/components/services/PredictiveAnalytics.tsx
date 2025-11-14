@@ -153,7 +153,7 @@ export default function PredictiveAnalytics() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Key Features
               </h2>
-              <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+              <p className="text-base font-semibold md:text-xl text-gray-700 max-w-2xl mx-auto px-14">
                 We craft workflow automations and bespoke AI solutions for
                 forward thinking companies.
               </p>
@@ -193,7 +193,7 @@ export default function PredictiveAnalytics() {
             <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
               How Your Business Benefits
             </h2>
-            <p className="text-base font-bold md:text-xl text-gray-700 max-w-2xl mx-auto px-14">
+            <p className="text-base font-semibold md:text-xl text-gray-700 max-w-2xl mx-auto px-14">
               We craft workflow automations and bespoke AI solutions for forward
               thinking companies.
             </p>
@@ -202,7 +202,10 @@ export default function PredictiveAnalytics() {
           {/* Benefits Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {benefits.map((benefit) => (
-              <div key={benefit.number} className="h-48 bg-gray-100 rounded-xl p-6 justify-between flex flex-col">
+              <div
+                key={benefit.number}
+                className="h-48 bg-gray-100 rounded-xl p-6 justify-between flex flex-col"
+              >
                 {/* Number Badge */}
                 <div className="inline-flex items-center justify-center w-10 h-10 bg-primary text-white font-bold rounded mb-4">
                   {benefit.number}
@@ -223,10 +226,10 @@ export default function PredictiveAnalytics() {
         <div className="container-custom">
           {/* Section Heading */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
               Our Predictive Analytics Methodology
             </h2>
-            <p className="text-xl md:text-lg text-gray-700 max-w-2xl mx-auto px-20">
+            <p className="text-base font-semibold md:text-xl text-gray-700 max-w-2xl mx-auto px-14">
               We craft workflow automations and bespoke AI solutions for forward
               thinking companies.
             </p>
@@ -235,10 +238,7 @@ export default function PredictiveAnalytics() {
           {/* Methodology Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
             {methodologies.map((methodology, index) => (
-              <div
-                key={index}
-                className=""
-              >
+              <div key={index} className="">
                 <div className="flex items-start gap-4">
                   {/* Blue Arrow Icon */}
                   <div className="flex-shrink-0 w-10 h-10 bg-primary rounded flex items-center justify-center">
@@ -272,7 +272,7 @@ export default function PredictiveAnalytics() {
         <div className="container-custom">
           {/* Section Heading */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
               Frequently Asked Questions
             </h2>
           </div>
@@ -302,17 +302,12 @@ export default function PredictiveAnalytics() {
                         <img
                           src="/remove.png"
                           alt="remove"
-                          className="w-4 h-4" 
+                          className="w-4 h-4"
                         />
                       </div>
                     ) : (
                       <div className="w-8 h-8 flex items-center justify-center bg-primary rounded-sm">
-                        
-                        <img
-                          src="/plus.png"
-                          alt="plus"
-                          className="w-4 h-4" 
-                        />
+                        <img src="/plus.png" alt="plus" className="w-4 h-4" />
                       </div>
                     )}
                   </div>
@@ -340,14 +335,17 @@ export default function PredictiveAnalytics() {
       <section className="py-20 md:py-32 bg-gray-100">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
               Ready to Get Started?
             </h2>
             <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
               Let&apos;s discuss how our predictive analytics solutions can help
               your business gain a competitive edge and drive growth.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-200 shadow-lg">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-200 shadow-lg"
+            >
               GET IN TOUCH
               <img
                 src="/right-up-white.png"
