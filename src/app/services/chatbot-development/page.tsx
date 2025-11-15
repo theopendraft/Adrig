@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Chatbot Development | Adrig",
-  description: "Build intelligent chatbots that enhance customer engagement and automate support.",
+  description:
+    "Build intelligent chatbots that enhance customer engagement and automate support.",
 };
 
 export default function ChatbotDevelopmentPage() {

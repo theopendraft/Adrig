@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "LLM Development Services | Adrig",
-  description: "Custom Large Language Model solutions to transform your business operations through AI.",
+  description:
+    "Custom Large Language Model solutions to transform your business operations through AI.",
 };
 
 export default function LLMDevelopmentPage() {

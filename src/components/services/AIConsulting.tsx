@@ -120,7 +120,9 @@ export default function AIConsulting() {
             </h1>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              We craft AI-driven strategies and intelligent automation systems that help modern businesses operate faster, smarter, and more efficiently.
+              We craft AI-driven strategies and intelligent automation systems
+              that help modern businesses operate faster, smarter, and more
+              efficiently.
             </p>
 
             <Link
@@ -160,7 +162,9 @@ export default function AIConsulting() {
               AI Consulting Services We Offer
             </h2>
             <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto">
-              We craft AI-driven strategies and intelligent automation systems that help modern businesses operate faster, smarter, and more efficiently.
+              We craft AI-driven strategies and intelligent automation systems
+              that help modern businesses operate faster, smarter, and more
+              efficiently.
             </p>
           </div>
 
@@ -208,7 +212,8 @@ export default function AIConsulting() {
                 Types of AI Solutions We Build
               </h2>
               <p className="text-lg text-gray-700 mb-12 leading-relaxed">
-                We design AI solutions that help businesses make data-driven decisions and operate with precision.
+                We design AI solutions that help businesses make data-driven
+                decisions and operate with precision.
               </p>
 
               {/* Solutions List */}
@@ -237,7 +242,8 @@ export default function AIConsulting() {
           {/* Section Heading */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Why Choose <span className="text-primary">Adrig</span> for Your Next
+              Why Choose <span className="text-primary">Adrig</span> for Your
+              Next
               <br />
               AI Consulting Project?
             </h2>
@@ -350,7 +356,9 @@ export default function AIConsulting() {
               Ready to Get Started?
             </h2>
             <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-              Let&apos;s discuss how our AI consulting and intelligent automation solutions can help your business operate smarter, reduce costs, and scale faster.
+              Let&apos;s discuss how our AI consulting and intelligent
+              automation solutions can help your business operate smarter,
+              reduce costs, and scale faster.
             </p>
             <Link
               href="/contact"

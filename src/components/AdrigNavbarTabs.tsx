@@ -372,7 +372,11 @@ function ProductContent() {
     { name: "RBMS", href: "/products/rbms", isExternal: false },
     { name: "BillsApp", href: "/products/billsapp", isExternal: false },
     { name: "Aladdyn.io", href: "https://aladdyn.io/", isExternal: true },
-    { name: "Track-On", href: "https://trackon-ruddy.vercel.app/", isExternal: true },
+    {
+      name: "Track-On",
+      href: "https://trackon-ruddy.vercel.app/",
+      isExternal: true,
+    },
   ];
 
   return (

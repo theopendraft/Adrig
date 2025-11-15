@@ -34,7 +34,8 @@ export default function WorkflowAutomation() {
     },
     {
       number: "05",
-      title: "Boost customer satisfaction through faster response and processing",
+      title:
+        "Boost customer satisfaction through faster response and processing",
     },
     {
       number: "06",
@@ -70,8 +71,7 @@ export default function WorkflowAutomation() {
     },
     {
       title: "Automated Reporting & Notifications",
-      description:
-        "Generating insights and alerts without manual involvement.",
+      description: "Generating insights and alerts without manual involvement.",
     },
   ];
 
@@ -114,7 +114,9 @@ export default function WorkflowAutomation() {
             </h1>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              Our workflow automation solutions streamline operations, eliminate repetitive tasks, and enable your business teams to operate faster and more efficiently with intelligent AI-backed systems.
+              Our workflow automation solutions streamline operations, eliminate
+              repetitive tasks, and enable your business teams to operate faster
+              and more efficiently with intelligent AI-backed systems.
             </p>
 
             <Link
@@ -128,8 +130,6 @@ export default function WorkflowAutomation() {
                 className="w-6 h-6 "
               />
             </Link>
-
-            
           </div>
 
           {/* Two Image Boxes */}
@@ -197,7 +197,8 @@ export default function WorkflowAutomation() {
               How Your Business Benefits
             </h2>
             <p className="text-base font-semibold md:text-xl text-gray-700 max-w-2xl mx-auto px-14">
-              We craft workflow automations and bespoke AI solutions for forward-thinking companies.
+              We craft workflow automations and bespoke AI solutions for
+              forward-thinking companies.
             </p>
           </div>
 
@@ -232,7 +233,8 @@ export default function WorkflowAutomation() {
               Automation Techniques We Use
             </h2>
             <p className="text-base font-semibold md:text-xl text-gray-700 max-w-2xl mx-auto px-14">
-              We craft workflow automations and bespoke AI solutions for forward-thinking companies.
+              We craft workflow automations and bespoke AI solutions for
+              forward-thinking companies.
             </p>
           </div>
 

@@ -121,7 +121,9 @@ export default function LLMDevelopment() {
             </h1>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              We build advanced Large Language Model (LLM)–powered solutions that elevate automation, enhance customer experiences, and streamline complex business workflows.
+              We build advanced Large Language Model (LLM)–powered solutions
+              that elevate automation, enhance customer experiences, and
+              streamline complex business workflows.
             </p>
 
             <Link
@@ -161,7 +163,9 @@ export default function LLMDevelopment() {
               LLM Development Services We Offer
             </h2>
             <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto">
-              We build advanced Large Language Model (LLM)–powered solutions that elevate automation, enhance customer experiences, and streamline complex business workflows.
+              We build advanced Large Language Model (LLM)–powered solutions
+              that elevate automation, enhance customer experiences, and
+              streamline complex business workflows.
             </p>
           </div>
 
@@ -209,7 +213,8 @@ export default function LLMDevelopment() {
                 Types of LLM Solutions We Build
               </h2>
               <p className="text-lg text-gray-700 mb-12 leading-relaxed">
-                We create intelligent, business-ready LLM solutions that transform how organizations work and communicate.
+                We create intelligent, business-ready LLM solutions that
+                transform how organizations work and communicate.
               </p>
 
               {/* Solutions List */}
@@ -238,7 +243,8 @@ export default function LLMDevelopment() {
           {/* Section Heading */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Why Choose <span className="text-primary">Adrig</span> for Your Next
+              Why Choose <span className="text-primary">Adrig</span> for Your
+              Next
               <br />
               LLM Development Project?
             </h2>
@@ -351,7 +357,9 @@ export default function LLMDevelopment() {
               Ready to Get Started?
             </h2>
             <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-              Let&apos;s discuss how a custom LLM solution can boost productivity, automate workflows, and transform your business into an AI-driven powerhouse.
+              Let&apos;s discuss how a custom LLM solution can boost
+              productivity, automate workflows, and transform your business into
+              an AI-driven powerhouse.
             </p>
             <Link
               href="/contact"

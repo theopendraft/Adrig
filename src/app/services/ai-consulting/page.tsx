@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "AI Consulting Services | Adrig",
-  description: "Strategic AI consulting to help businesses identify opportunities and implement intelligent solutions.",
+  description:
+    "Strategic AI consulting to help businesses identify opportunities and implement intelligent solutions.",
 };
 
 export default function AIConsultingPage() {

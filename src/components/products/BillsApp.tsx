@@ -18,27 +18,33 @@ export default function BillsApp() {
   const benefits = [
     {
       number: "01",
-      title: "Real time control over stock - Always know what's available, where, and in what quantity across warehouses, sub-stores, and outlets.",
+      title:
+        "Real time control over stock - Always know what's available, where, and in what quantity across warehouses, sub-stores, and outlets.",
     },
     {
       number: "02",
-      title: "Faster, error free billing - Automate bill creation, tax calculations, and discounts to significantly reduce manual errors and counter time.",
+      title:
+        "Faster, error free billing - Automate bill creation, tax calculations, and discounts to significantly reduce manual errors and counter time.",
     },
     {
       number: "03",
-      title: "Better multi location coordination - Standardize processes and pricing across locations while still allowing store level flexibility where needed.",
+      title:
+        "Better multi location coordination - Standardize processes and pricing across locations while still allowing store level flexibility where needed.",
     },
     {
       number: "04",
-      title: "Stronger cash flow and profitability - Reduce leakages, speed up billing and collections, and optimize stock so money isn't locked in slow moving inventory.",
+      title:
+        "Stronger cash flow and profitability - Reduce leakages, speed up billing and collections, and optimize stock so money isn't locked in slow moving inventory.",
     },
     {
       number: "05",
-      title: "Data driven decisions - Use live dashboards and reports to decide what to stock, where to stock, and when to run promotions.",
+      title:
+        "Data driven decisions - Use live dashboards and reports to decide what to stock, where to stock, and when to run promotions.",
     },
     {
       number: "06",
-      title: "Reduced operational overheads - Automate repetitive tasks for store staff and back office teams, freeing them to focus on growth and customer service.",
+      title:
+        "Reduced operational overheads - Automate repetitive tasks for store staff and back office teams, freeing them to focus on growth and customer service.",
     },
   ];
 
@@ -105,11 +111,19 @@ export default function BillsApp() {
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              BillsApp - <span className="text-primary">Smart Billing Solution</span>
+              BillsApp -{" "}
+              <span className="text-primary">Smart Billing Solution</span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              Billzapp is a comprehensive billing and inventory management system designed for FMCG suppliers, distributors, and multi-store retail chains. It centralizes stock management, billing, and store operations across all sub-stores and distribution centers, giving you real time visibility into inventory, sales, and performance. Billzapp connects your warehouses, outlets, sales teams, and finance systems so you can run leaner operations, reduce errors, and make better decisions from a single, unified platform.
+              Billzapp is a comprehensive billing and inventory management
+              system designed for FMCG suppliers, distributors, and multi-store
+              retail chains. It centralizes stock management, billing, and store
+              operations across all sub-stores and distribution centers, giving
+              you real time visibility into inventory, sales, and performance.
+              Billzapp connects your warehouses, outlets, sales teams, and
+              finance systems so you can run leaner operations, reduce errors,
+              and make better decisions from a single, unified platform.
             </p>
 
             <Link
@@ -123,8 +137,6 @@ export default function BillsApp() {
                 className="w-6 h-6 "
               />
             </Link>
-
-            
           </div>
 
           {/* Two Image Boxes */}
@@ -152,32 +164,34 @@ export default function BillsApp() {
                 Key Features
               </h2>
               <p className="text-base font-semibold md:text-xl text-gray-700 max-w-2xl mx-auto px-14">
-                We craft workflow automations and bespoke AI solutions for forward-thinking companies.
+                We craft workflow automations and bespoke AI solutions for
+                forward-thinking companies.
               </p>
             </div>
 
-            {/* Right Side - Features List */
-            <div className="space-y-4">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className=" flex items-start gap-4  p-4 rounded-xl "
-                >
-                  {/* Blue Arrow Icon */}
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary rounded flex items-center justify-center">
-                    <img
-                      src="/right-up-white.png"
-                      alt="right-up"
-                      className="w-8 h-8"
-                    />
+            {
+              /* Right Side - Features List */
+              <div className="space-y-4">
+                {features.map((feature, index) => (
+                  <div
+                    key={index}
+                    className=" flex items-start gap-4  p-4 rounded-xl "
+                  >
+                    {/* Blue Arrow Icon */}
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary rounded flex items-center justify-center">
+                      <img
+                        src="/right-up-white.png"
+                        alt="right-up"
+                        className="w-8 h-8"
+                      />
+                    </div>
+                    {/* Feature Text */}
+                    <p className="text-lg text-gray-900 leading-relaxed flex-1">
+                      {feature}
+                    </p>
                   </div>
-                  {/* Feature Text */}
-                  <p className="text-lg text-gray-900 leading-relaxed flex-1">
-                    {feature}
-                  </p>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
             }
           </div>
         </div>
@@ -192,30 +206,32 @@ export default function BillsApp() {
               How Your Business Benefits
             </h2>
             <p className="text-base font-semibold md:text-xl text-gray-700 max-w-2xl mx-auto px-14">
-              We craft workflow automations and bespoke AI solutions for forward-thinking companies.
+              We craft workflow automations and bespoke AI solutions for
+              forward-thinking companies.
             </p>
           </div>
 
-          {/* Benefits Grid */
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {benefits.map((benefit) => (
-              <div
-                key={benefit.number}
-                className="h-48 bg-gray-100 rounded-xl p-6 justify-between flex flex-col"
-              >
-                {/* Number Badge */}
-                <div className="inline-flex items-center justify-center w-10 h-10 bg-primary text-white font-bold rounded mb-4">
-                  {benefit.number}
-                </div>
+          {
+            /* Benefits Grid */
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {benefits.map((benefit) => (
+                <div
+                  key={benefit.number}
+                  className="h-48 bg-gray-100 rounded-xl p-6 justify-between flex flex-col"
+                >
+                  {/* Number Badge */}
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-primary text-white font-bold rounded mb-4">
+                    {benefit.number}
+                  </div>
 
-                {/* Title */}
-                <h3 className="text-lg text-gray-700 leading-relaxed">
-                  {benefit.title}
-                </h3>
-              </div>
-            ))}
-          </div>
-}
+                  {/* Title */}
+                  <h3 className="text-lg text-gray-700 leading-relaxed">
+                    {benefit.title}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          }
         </div>
       </section>
 
@@ -336,7 +352,9 @@ export default function BillsApp() {
               Ready to Get Started?
             </h2>
             <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-              Let&apos;s discuss how Billzapp FMCG Billing and Inventory Management can centralize your operations, improve inventory control, and grow your margins.
+              Let&apos;s discuss how Billzapp FMCG Billing and Inventory
+              Management can centralize your operations, improve inventory
+              control, and grow your margins.
             </p>
             <Link
               href="/contact"

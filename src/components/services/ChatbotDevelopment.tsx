@@ -30,7 +30,8 @@ export default function ChatbotDevelopment() {
     },
     {
       number: "04",
-      title: "Streamline workflows by integrating chatbots into existing systems",
+      title:
+        "Streamline workflows by integrating chatbots into existing systems",
     },
     {
       number: "05",
@@ -38,7 +39,8 @@ export default function ChatbotDevelopment() {
     },
     {
       number: "06",
-      title: "Enhance data collection and insights through automated interactions",
+      title:
+        "Enhance data collection and insights through automated interactions",
     },
   ];
 
@@ -83,8 +85,7 @@ export default function ChatbotDevelopment() {
     },
     {
       question: "Can the chatbot understand multiple languages?",
-      answer:
-        "Yes. We support multilingual NLP for global audiences.",
+      answer: "Yes. We support multilingual NLP for global audiences.",
     },
     {
       question: "Do you integrate chatbots with CRM or ERP tools?",
@@ -114,7 +115,10 @@ export default function ChatbotDevelopment() {
             </h1>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              Our AI-powered chatbot solutions deliver seamless automation, instant customer support, and intelligent assistance across your digital platforms, helping your business operate efficiently and offer superior user experiences.
+              Our AI-powered chatbot solutions deliver seamless automation,
+              instant customer support, and intelligent assistance across your
+              digital platforms, helping your business operate efficiently and
+              offer superior user experiences.
             </p>
 
             <Link
@@ -128,8 +132,6 @@ export default function ChatbotDevelopment() {
                 className="w-6 h-6 "
               />
             </Link>
-
-            
           </div>
 
           {/* Two Image Boxes */}
@@ -157,7 +159,8 @@ export default function ChatbotDevelopment() {
                 Key Features
               </h2>
               <p className="text-base font-semibold md:text-xl text-gray-700 max-w-2xl mx-auto px-14">
-                We craft workflow automations and bespoke AI solutions for forward-thinking companies.
+                We craft workflow automations and bespoke AI solutions for
+                forward-thinking companies.
               </p>
             </div>
 
@@ -196,7 +199,8 @@ export default function ChatbotDevelopment() {
               How Your Business Benefits
             </h2>
             <p className="text-base font-semibold md:text-xl text-gray-700 max-w-2xl mx-auto px-14">
-              We craft workflow automations and bespoke AI solutions for forward-thinking companies.
+              We craft workflow automations and bespoke AI solutions for
+              forward-thinking companies.
             </p>
           </div>
 
@@ -231,7 +235,8 @@ export default function ChatbotDevelopment() {
               Chatbot Technologies We Use
             </h2>
             <p className="text-base font-semibold md:text-xl text-gray-700 max-w-2xl mx-auto px-14">
-              We craft workflow automations and bespoke AI solutions for forward-thinking companies.
+              We craft workflow automations and bespoke AI solutions for
+              forward-thinking companies.
             </p>
           </div>
 
@@ -339,7 +344,9 @@ export default function ChatbotDevelopment() {
               Ready to Get Started?
             </h2>
             <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-              Let&apos;s discuss how our AI-driven chatbot solutions can enhance your customer experience, automate workflows, and transform the way your business communicates.
+              Let&apos;s discuss how our AI-driven chatbot solutions can enhance
+              your customer experience, automate workflows, and transform the
+              way your business communicates.
             </p>
             <Link
               href="/contact"

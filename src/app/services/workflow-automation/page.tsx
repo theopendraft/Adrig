@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Workflow Automation | Adrig",
-  description: "Transform your business operations with intelligent workflow automation solutions.",
+  description:
+    "Transform your business operations with intelligent workflow automation solutions.",
 };
 
 export default function WorkflowAutomationPage() {

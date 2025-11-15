@@ -5,7 +5,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "RBMS - Restaurant Billing Management System | Adrig",
-  description: "Complete restaurant billing and management solution for modern restaurants",
+  description:
+    "Complete restaurant billing and management solution for modern restaurants",
 };
 
 export default function RBMSPage() {

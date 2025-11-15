@@ -18,27 +18,33 @@ export default function RBMS() {
   const benefits = [
     {
       number: "01",
-      title: "Faster, smoother bookings - Reduce ticket booking and confirmation time significantly across counters and digital channels.",
+      title:
+        "Faster, smoother bookings - Reduce ticket booking and confirmation time significantly across counters and digital channels.",
     },
     {
       number: "02",
-      title: "Higher operational efficiency - Automate manual workflows, reduce paperwork, and streamline coordination between stations and control rooms.",
+      title:
+        "Higher operational efficiency - Automate manual workflows, reduce paperwork, and streamline coordination between stations and control rooms.",
     },
     {
       number: "03",
-      title: "Better asset utilization - Optimize seat allocation, coach usage, and train capacity to improve yields per train.",
+      title:
+        "Better asset utilization - Optimize seat allocation, coach usage, and train capacity to improve yields per train.",
     },
     {
       number: "04",
-      title: "Data-driven decision making - Use detailed analytics to plan routes, schedules, pricing, and staffing with confidence.",
+      title:
+        "Data-driven decision making - Use detailed analytics to plan routes, schedules, pricing, and staffing with confidence.",
     },
     {
       number: "05",
-      title: "Improved passenger experience - Provide clear, timely information on train status, platforms, and delays, boosting satisfaction and trust.",
+      title:
+        "Improved passenger experience - Provide clear, timely information on train status, platforms, and delays, boosting satisfaction and trust.",
     },
     {
       number: "06",
-      title: "Stronger revenue and compliance - Increase ticket revenue through optimization while maintaining auditability, security, and regulatory compliance.",
+      title:
+        "Stronger revenue and compliance - Increase ticket revenue through optimization while maintaining auditability, security, and regulatory compliance.",
     },
   ];
 
@@ -105,11 +111,21 @@ export default function RBMS() {
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              RBMS - <span className="text-primary">Restaurant Billing Management System</span>
+              RBMS -{" "}
+              <span className="text-primary">
+                Railway Booking Management System
+              </span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              Our Railway Booking Management System (RBMS) is a modern, end to end platform designed for large railway networks such as Southern Railways. It centralizes ticket booking, reservation management, seat allocation, and passenger communication while providing real time train tracking and deep operational analytics. RBMS connects stations, ticket counters, web portals, and mobile apps into a single, secure ecosystem so passengers get a seamless experience and railway teams get full visibility and control.
+              Our Railway Booking Management System (RBMS) is a modern, end to
+              end platform designed for large railway networks such as Southern
+              Railways. It centralizes ticket booking, reservation management,
+              seat allocation, and passenger communication while providing real
+              time train tracking and deep operational analytics. RBMS connects
+              stations, ticket counters, web portals, and mobile apps into a
+              single, secure ecosystem so passengers get a seamless experience
+              and railway teams get full visibility and control.
             </p>
 
             <Link
@@ -123,8 +139,6 @@ export default function RBMS() {
                 className="w-6 h-6 "
               />
             </Link>
-
-            
           </div>
 
           {/* Two Image Boxes */}
@@ -152,33 +166,35 @@ export default function RBMS() {
                 Key Features
               </h2>
               <p className="text-base font-semibold md:text-xl text-gray-700 max-w-2xl mx-auto px-14">
-                We craft workflow automations and bespoke AI solutions for forward thinking companies.
+                We craft workflow automations and bespoke AI solutions for
+                forward thinking companies.
               </p>
             </div>
 
-            {/* Right Side - Features List */
-            <div className="space-y-4">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className=" flex items-start gap-4  p-4 rounded-xl "
-                >
-                  {/* Blue Arrow Icon */}
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary rounded flex items-center justify-center">
-                    <img
-                      src="/right-up-white.png"
-                      alt="right-up"
-                      className="w-8 h-8"
-                    />
+            {
+              /* Right Side - Features List */
+              <div className="space-y-4">
+                {features.map((feature, index) => (
+                  <div
+                    key={index}
+                    className=" flex items-start gap-4  p-4 rounded-xl "
+                  >
+                    {/* Blue Arrow Icon */}
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary rounded flex items-center justify-center">
+                      <img
+                        src="/right-up-white.png"
+                        alt="right-up"
+                        className="w-8 h-8"
+                      />
+                    </div>
+                    {/* Feature Text */}
+                    <p className="text-lg text-gray-900 leading-relaxed flex-1">
+                      {feature}
+                    </p>
                   </div>
-                  {/* Feature Text */}
-                  <p className="text-lg text-gray-900 leading-relaxed flex-1">
-                    {feature}
-                  </p>
-                </div>
-              ))}
-            </div>
-}
+                ))}
+              </div>
+            }
           </div>
         </div>
       </section>
@@ -192,30 +208,32 @@ export default function RBMS() {
               How Your Business Benefits
             </h2>
             <p className="text-base font-semibold md:text-xl text-gray-700 max-w-2xl mx-auto px-14">
-              We craft workflow automations and bespoke AI solutions for forward thinking companies.
+              We craft workflow automations and bespoke AI solutions for forward
+              thinking companies.
             </p>
           </div>
 
-          {/* Benefits Grid */
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {benefits.map((benefit) => (
-              <div
-                key={benefit.number}
-                className="h-48 bg-gray-100 rounded-xl p-6 justify-between flex flex-col"
-              >
-                {/* Number Badge */}
-                <div className="inline-flex items-center justify-center w-10 h-10 bg-primary text-white font-bold rounded mb-4">
-                  {benefit.number}
-                </div>
+          {
+            /* Benefits Grid */
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {benefits.map((benefit) => (
+                <div
+                  key={benefit.number}
+                  className="h-48 bg-gray-100 rounded-xl p-6 justify-between flex flex-col"
+                >
+                  {/* Number Badge */}
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-primary text-white font-bold rounded mb-4">
+                    {benefit.number}
+                  </div>
 
-                {/* Title */}
-                <h3 className="text-lg text-gray-700 leading-relaxed">
-                  {benefit.title}
-                </h3>
-              </div>
-            ))}
-          </div>
-}
+                  {/* Title */}
+                  <h3 className="text-lg text-gray-700 leading-relaxed">
+                    {benefit.title}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          }
         </div>
       </section>
 
@@ -336,7 +354,9 @@ export default function RBMS() {
               Ready to Transform Your Business?
             </h2>
             <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-              Contact our team today to explore how our RBMS - Railway Booking Management System services can help you achieve your business goals.
+              Contact our team today to explore how our RBMS - Railway Booking
+              Management System services can help you achieve your business
+              goals.
             </p>
             <Link
               href="/contact"
