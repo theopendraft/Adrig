@@ -1,16 +1,16 @@
 export default function Footer() {
   const leftLinks = [
-    { name: "Home", href: "#home" },
+    { name: "Home", href: "/" },
     { name: "Service", href: "#services" },
     { name: "Product", href: "#product" },
-    { name: "Work", href: "#work" },
-    { name: "Plan", href: "#plan" },
+    { name: "Work", href: "/work" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const rightLinks = [
     { name: "AI Automation", href: "#ai-automation" },
-    { name: "Software Development", href: "#software" },
-    { name: "Data Analysis", href: "#data-analysis" },
+    { name: "Software Development", href: "/services/saas-development" },
+    { name: "Predictive Analytics", href: "/services/predictive-analytics" },
     { name: "Chatbot Development", href: "#chatbot" },
     { name: "Workflow Automations", href: "#workflow" },
   ];

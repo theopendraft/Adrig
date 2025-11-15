@@ -21,14 +21,14 @@ const DROPDOWN_TABS = [
 // Regular navigation links
 const NAV_LINKS = [
   { name: "Work", href: "/work" },
-  { name: "Plan", href: "#innovation" },
+  // { name: "Plan", href: "#innovation" },
   { name: "Team", href: "#partnership" },
   { name: "Contact", href: "/contact" },
 ];
 
 export default function AdrigNavbarTabs() {
   return (
-    <header className="bg-[#0a1f5e]  backdrop-blur-sm absolute top-0 left-0 right-0 z-50">
+    <header className="bg-[#0a1f5e] backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
       <nav className="container-custom my-2">
         <div className=" rounded-2xl">
           <div className="flex items-center justify-between px-2 py-4">
@@ -295,7 +295,7 @@ function Nub({
 function ServicesContent() {
   const services = [
     { name: "Chatbot Development", href: "#services" },
-    { name: "Software Development", href: "#services" },
+    { name: "Software Development", href: "/services/saas-development" },
     { name: "Workflow Automations", href: "#services" },
     { name: "Predictive Analytics", href: "/services/predictive-analytics" },
     { name: "LLM Development", href: "#services" },

@@ -512,7 +512,7 @@ export default function Header() {
                   }`}
                 >
                   {productDropdown.map((item) => (
-                    <a
+                    <a 
                       key={item.name}
                       href={item.href}
                       className="block text-gray-700 hover:text-primary hover:bg-blue-50 py-2 px-2 rounded transition-colors duration-200"

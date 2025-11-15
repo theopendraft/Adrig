@@ -119,14 +119,19 @@ export default function PredictiveAnalytics() {
               they occur, giving your business a competitive edge.
             </p>
 
-            <button className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-200 shadow-lg">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-200 shadow-lg"
+            >
               SCHEDULE A CONSULTATION
               <img
                 src="/right-up-white.png"
                 alt="right-up"
                 className="w-6 h-6 "
               />
-            </button>
+            </Link>
+
+            
           </div>
 
           {/* Two Image Boxes */}
