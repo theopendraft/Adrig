@@ -1,9 +1,60 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 export default function Work() {
+  const [projectsCount, setProjectsCount] = useState(0);
+  const [ongoingCount, setOngoingCount] = useState(0);
+  const [industriesCount, setIndustriesCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+
+          // Animate Projects Delivered to 20
+          let projects = 0;
+          const projectsInterval = setInterval(() => {
+            projects += 1;
+            setProjectsCount(projects);
+            if (projects >= 20) clearInterval(projectsInterval);
+          }, 50);
+
+          // Animate Ongoing Projects to 5
+          let ongoing = 0;
+          const ongoingInterval = setInterval(() => {
+            ongoing += 1;
+            setOngoingCount(ongoing);
+            if (ongoing >= 5) clearInterval(ongoingInterval);
+          }, 200);
+
+          // Animate Industries Served to 10
+          let industries = 0;
+          const industriesInterval = setInterval(() => {
+            industries += 1;
+            setIndustriesCount(industries);
+            if (industries >= 10) clearInterval(industriesInterval);
+          }, 100);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
   const projects = [
     { id: 1, name: "Miporis" },
     { id: 2, name: "Southern Railways" },
@@ -47,10 +98,10 @@ export default function Work() {
               </Link>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-6">
+              <div ref={statsRef} className="grid grid-cols-3 gap-6">
                 <div className="bg-gray-200 rounded-lg p-6 min-h-[180px] flex flex-col justify-end">
                   <div className="text-4xl md:text-4xl font-bold text-gray-900 mb-2">
-                    20+
+                    {projectsCount}+
                   </div>
                   <div className="text-xs text-gray-700">
                     Projects Delivered
@@ -58,13 +109,13 @@ export default function Work() {
                 </div>
                 <div className="bg-gray-200 rounded-lg p-6 min-h-[180px] flex flex-col justify-end">
                   <div className="text-4xl md:text-4xl font-bold text-gray-900 mb-2">
-                    05
+                    {ongoingCount < 10 ? `0${ongoingCount}` : ongoingCount}
                   </div>
                   <div className="text-xs text-gray-700">On-going Projects</div>
                 </div>
                 <div className="bg-gray-200 rounded-lg p-6 min-h-[180px] flex flex-col justify-end">
                   <div className="text-4xl md:text-4xl font-bold text-gray-900 mb-2">
-                    10+
+                    {industriesCount}+
                   </div>
                   <div className="text-xs text-gray-700">Industries Served</div>
                 </div>

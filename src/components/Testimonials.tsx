@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Testimonials() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -58,19 +59,21 @@ export default function Testimonials() {
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
               Hear What Our Clients Say About Us
             </h3>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed mb-8">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
               nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
               erat volutpat.
             </p>
-            <button className="btn-primary px-8 py-4 text-base font-semibold flex items-center gap-2 rounded-full">
-              OUR WORK
-              <img
+            <Link href="/work">
+              <button className="btn-primary px-8 py-4 text-base font-semibold flex items-center gap-2 rounded-full mt-8">
+                OUR WORK
+                <img
                   src="/right-up-white.png"
                   alt="right-up"
                   className="w-6 h-6"
                 />
-            </button>
+              </button>
+            </Link>
           </div>
 
           {/* Right Side - Testimonial Carousel */}
@@ -83,7 +86,7 @@ export default function Testimonials() {
                   {testimonials[currentSlide].company}
                 </h4>
                 <div className="flex items-center gap-2">
-                  <button className="text-gray-900 hover:text-primary transition-colors">
+                  {/* <button className="text-gray-900 hover:text-primary transition-colors">
                     <svg
                       className="w-6 h-6"
                       viewBox="0 0 24 24"
@@ -91,15 +94,15 @@ export default function Testimonials() {
                     >
                       <path d="M8 5v14l11-7z" />
                     </svg>
-                  </button>
-                  <div className="flex gap-1">
+                  </button> */}
+                  {/* <div className="flex gap-1">
                     {[...Array(5)].map((_, i) => (
                       <div
                         key={i}
                         className="w-1 h-4 bg-gray-400 rounded-full"
                       ></div>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </div>
 

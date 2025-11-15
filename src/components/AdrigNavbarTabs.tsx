@@ -294,12 +294,12 @@ function Nub({
 // Services Content - 8 AI Solutions in 2-column grid
 function ServicesContent() {
   const services = [
-    { name: "Chatbot Development", href: "#services" },
+    { name: "Chatbot Development", href: "/services/chatbot-development" },
     { name: "Software Development", href: "/services/saas-development" },
-    { name: "Workflow Automations", href: "#services" },
+    { name: "Workflow Automations", href: "/services/workflow-automation" },
     { name: "Predictive Analytics", href: "/services/predictive-analytics" },
-    { name: "LLM Development", href: "#services" },
-    { name: "AI Consulting", href: "#services" },
+    { name: "LLM Development", href: "/services/llm-development" },
+    { name: "AI Consulting", href: "/services/ai-consulting" },
     // { name: "Data Analysis", href: "#services" },
     // { name: "Talent Acquisition", href: "#services" },
   ];
@@ -369,44 +369,60 @@ function ServicesContent() {
 // Product Content - Solutions and Case Studies
 function ProductContent() {
   const products = [
-    { name: "Our Solutions", href: "#innovation" },
-    { name: "Case Studies", href: "#clients" },
-    { name: "Success Stories", href: "#testimonials" },
-    { name: "Innovation Lab", href: "#innovation" },
-    { name: "Client Portfolio", href: "#clients" },
-    { name: "Technology Stack", href: "#services" },
+    { name: "RBMS", href: "/products/rbms", isExternal: false },
+    { name: "BillsApp", href: "/products/billsapp", isExternal: false },
+    { name: "Aladdyn.io", href: "https://aladdyn.io/", isExternal: true },
+    { name: "Track-On", href: "https://trackon-ruddy.vercel.app/", isExternal: true },
   ];
 
   return (
     <div className="p-3">
       <h3 className="text-lg font-bold text-gray-900 mb-4">Our Products</h3>
       <div className="grid grid-cols-2">
-        {products.map((product, index) => (
-          <a
-            key={index}
-            href={product.href}
-            className="group flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 transition-colors"
-          >
-            <div className="w-7 h-7 rounded-lg bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-colors">
-              <svg
-                className="w-4 h-4 text-purple-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                />
-              </svg>
-            </div>
-            <span className="font-normal text-gray-700 group-hover:text-purple-600">
-              {product.name}
-            </span>
-          </a>
-        ))}
+        {products.map((product, index) => {
+          const content = (
+            <>
+              <div className="w-7 h-7 rounded-lg bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                <svg
+                  className="w-4 h-4 text-purple-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  />
+                </svg>
+              </div>
+              <span className="font-normal text-gray-700 group-hover:text-purple-600">
+                {product.name}
+              </span>
+            </>
+          );
+
+          return product.isExternal ? (
+            <a
+              key={index}
+              href={product.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 transition-colors"
+            >
+              {content}
+            </a>
+          ) : (
+            <Link
+              key={index}
+              href={product.href}
+              className="group flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 transition-colors"
+            >
+              {content}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

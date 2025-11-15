@@ -8,11 +8,12 @@ export default function Footer() {
   ];
 
   const rightLinks = [
-    { name: "AI Automation", href: "#ai-automation" },
+    { name: "LLM Development", href: "/services/llm-development" },
     { name: "Software Development", href: "/services/saas-development" },
     { name: "Predictive Analytics", href: "/services/predictive-analytics" },
-    { name: "Chatbot Development", href: "#chatbot" },
-    { name: "Workflow Automations", href: "#workflow" },
+    { name: "Chatbot Development", href: "/services/chatbot-development" },
+    { name: "Workflow Automations", href: "/services/workflow-automation" },
+    { name: "AI Consulting", href: "/services/ai-consulting" },
   ];
 
   return (
