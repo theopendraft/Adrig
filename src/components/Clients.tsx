@@ -1,79 +1,296 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Client data structure
+// All 21 client logos
+const clientLogos = [
+  "/adrig client logos/1.png",
+  "/adrig client logos/2.png",
+  "/adrig client logos/3.png",
+  "/adrig client logos/4.png",
+  "/adrig client logos/5.png",
+  "/adrig client logos/6.png",
+  "/adrig client logos/7.png",
+  "/adrig client logos/8.png",
+  "/adrig client logos/9.png",
+  "/adrig client logos/10.png",
+  "/adrig client logos/11.png",
+  "/adrig client logos/12.png",
+  "/adrig client logos/13.png",
+  "/adrig client logos/14.png",
+  "/adrig client logos/15.png",
+  "/adrig client logos/16.png",
+  "/adrig client logos/17.png",
+  "/adrig client logos/18.png",
+  "/adrig client logos/19.png",
+  "/adrig client logos/20.png",
+  "/adrig client logos/21.png",
+];
+
+// Client data structure - 21 clients matching the logos
 const clientsData = [
   {
     id: 1,
-    logoSrc: "BMW",
-    headline: "See how BMW increased efficiency by 25% with AI automation",
+    logoSrc: clientLogos[0],
+    logoAlt: "Client 1",
+    headline: "Transforming business operations with AI-powered automation",
     stats: [
-      { label: "+25%", description: "Efficiency Improvement" },
-      { label: "+15%", description: "Cost Reduction" },
+      { label: "+35%", description: "Operational Efficiency" },
+      { label: "+28%", description: "Cost Reduction" },
     ],
     products: ["AI Automation", "Workflow Optimization"],
   },
   {
     id: 2,
-    logoSrc: "Amazon",
-    headline:
-      "See how Amazon improved customer satisfaction by 30% with intelligent chatbots",
+    logoSrc: clientLogos[1],
+    logoAlt: "Client 2",
+    headline: "Revolutionizing customer engagement with intelligent solutions",
     stats: [
-      { label: "+30%", description: "Customer Satisfaction" },
-      { label: "+40%", description: "Response Time Reduction" },
+      { label: "+42%", description: "Customer Satisfaction" },
+      { label: "+35%", description: "Response Time Improvement" },
     ],
     products: ["Chatbot Development", "AI Consulting"],
   },
   {
     id: 3,
-    logoSrc: "Maersk",
-    headline:
-      "See how Maersk optimized logistics operations with predictive analytics",
+    logoSrc: clientLogos[2],
+    logoAlt: "Client 3",
+    headline: "Optimizing supply chain with predictive analytics",
     stats: [
-      { label: "+20%", description: "Operational Efficiency" },
-      { label: "+18%", description: "Cost Savings" },
+      { label: "+30%", description: "Process Efficiency" },
+      { label: "+25%", description: "Cost Savings" },
     ],
-    products: ["Data Analysis", "LLM Development"],
+    products: ["Predictive Analytics", "Data Analysis"],
   },
   {
     id: 4,
-    logoSrc: "Twilio",
-    headline:
-      "See how Twilio increased authorization rates by 10% with Stripe integration",
+    logoSrc: clientLogos[3],
+    logoAlt: "Client 4",
+    headline: "Accelerating digital transformation with custom AI solutions",
     stats: [
-      { label: "+5.5%", description: "Uplift from Global Infrastructure" },
-      { label: "+1%", description: "Uplift from Adaptive Acceptance" },
+      { label: "+40%", description: "Development Speed" },
+      { label: "+32%", description: "Team Productivity" },
     ],
-    products: ["Payments", "Stripe Sigma"],
+    products: ["Custom AI Development", "System Integration"],
   },
   {
     id: 5,
-    logoSrc: "Microsoft",
-    headline:
-      "See how Microsoft accelerated development cycles by 35% with AI-powered tools",
+    logoSrc: clientLogos[4],
+    logoAlt: "Client 5",
+    headline: "Enhancing decision-making with real-time data insights",
     stats: [
-      { label: "+35%", description: "Development Speed" },
-      { label: "+22%", description: "Team Productivity" },
+      { label: "+45%", description: "Data Processing Speed" },
+      { label: "+38%", description: "Decision Accuracy" },
     ],
-    products: ["Software Development", "AI Automation"],
+    products: ["LLM Development", "Analytics Platform"],
+  },
+  {
+    id: 6,
+    logoSrc: clientLogos[5],
+    logoAlt: "Client 6",
+    headline: "Streamlining workflows with intelligent automation",
+    stats: [
+      { label: "+33%", description: "Workflow Efficiency" },
+      { label: "+27%", description: "Error Reduction" },
+    ],
+    products: ["Workflow Automation", "Process Optimization"],
+  },
+  {
+    id: 7,
+    logoSrc: clientLogos[6],
+    logoAlt: "Client 7",
+    headline: "Improving service delivery with AI-powered chatbots",
+    stats: [
+      { label: "+50%", description: "Support Efficiency" },
+      { label: "+44%", description: "Customer Response Time" },
+    ],
+    products: ["Chatbot Solutions", "Customer Support AI"],
+  },
+  {
+    id: 8,
+    logoSrc: clientLogos[7],
+    logoAlt: "Client 8",
+    headline: "Driving growth with data-driven insights and automation",
+    stats: [
+      { label: "+36%", description: "Revenue Growth" },
+      { label: "+29%", description: "Market Reach" },
+    ],
+    products: ["Business Intelligence", "AI Strategy"],
+  },
+  {
+    id: 9,
+    logoSrc: clientLogos[8],
+    logoAlt: "Client 9",
+    headline: "Modernizing infrastructure with scalable AI platforms",
+    stats: [
+      { label: "+48%", description: "System Performance" },
+      { label: "+41%", description: "Scalability" },
+    ],
+    products: ["Cloud AI Solutions", "Infrastructure Modernization"],
+  },
+  {
+    id: 10,
+    logoSrc: clientLogos[9],
+    logoAlt: "Client 10",
+    headline: "Enhancing security with intelligent threat detection",
+    stats: [
+      { label: "+55%", description: "Threat Detection Rate" },
+      { label: "+47%", description: "Response Time" },
+    ],
+    products: ["AI Security", "Predictive Threat Analysis"],
+  },
+  {
+    id: 11,
+    logoSrc: clientLogos[10],
+    logoAlt: "Client 11",
+    headline: "Optimizing resource allocation with smart analytics",
+    stats: [
+      { label: "+37%", description: "Resource Efficiency" },
+      { label: "+31%", description: "Cost Optimization" },
+    ],
+    products: ["Resource Management AI", "Analytics"],
+  },
+  {
+    id: 12,
+    logoSrc: clientLogos[11],
+    logoAlt: "Client 12",
+    headline: "Personalizing customer experiences with AI insights",
+    stats: [
+      { label: "+43%", description: "Customer Engagement" },
+      { label: "+36%", description: "Personalization Accuracy" },
+    ],
+    products: ["Customer Analytics", "Personalization Engine"],
+  },
+  {
+    id: 13,
+    logoSrc: clientLogos[12],
+    logoAlt: "Client 13",
+    headline: "Automating compliance and risk management processes",
+    stats: [
+      { label: "+52%", description: "Compliance Efficiency" },
+      { label: "+45%", description: "Risk Detection" },
+    ],
+    products: ["Compliance Automation", "Risk Analytics"],
+  },
+  {
+    id: 14,
+    logoSrc: clientLogos[13],
+    logoAlt: "Client 14",
+    headline: "Transforming sales operations with predictive AI",
+    stats: [
+      { label: "+39%", description: "Sales Conversion" },
+      { label: "+34%", description: "Lead Quality" },
+    ],
+    products: ["Sales AI", "Predictive Lead Scoring"],
+  },
+  {
+    id: 15,
+    logoSrc: clientLogos[14],
+    logoAlt: "Client 15",
+    headline: "Improving quality control with computer vision AI",
+    stats: [
+      { label: "+60%", description: "Defect Detection" },
+      { label: "+53%", description: "Quality Assurance Speed" },
+    ],
+    products: ["Computer Vision", "Quality AI"],
+  },
+  {
+    id: 16,
+    logoSrc: clientLogos[15],
+    logoAlt: "Client 16",
+    headline: "Accelerating R&D with AI-powered research tools",
+    stats: [
+      { label: "+46%", description: "Research Speed" },
+      { label: "+40%", description: "Innovation Rate" },
+    ],
+    products: ["Research AI", "Innovation Platform"],
+  },
+  {
+    id: 17,
+    logoSrc: clientLogos[16],
+    logoAlt: "Client 17",
+    headline: "Optimizing inventory management with predictive models",
+    stats: [
+      { label: "+44%", description: "Inventory Accuracy" },
+      { label: "+38%", description: "Stock Optimization" },
+    ],
+    products: ["Inventory AI", "Demand Forecasting"],
+  },
+  {
+    id: 18,
+    logoSrc: clientLogos[17],
+    logoAlt: "Client 18",
+    headline: "Enhancing HR operations with intelligent recruitment",
+    stats: [
+      { label: "+49%", description: "Hiring Efficiency" },
+      { label: "+42%", description: "Candidate Quality" },
+    ],
+    products: ["HR AI", "Recruitment Automation"],
+  },
+  {
+    id: 19,
+    logoSrc: clientLogos[18],
+    logoAlt: "Client 19",
+    headline: "Streamlining financial operations with AI analytics",
+    stats: [
+      { label: "+51%", description: "Financial Accuracy" },
+      { label: "+46%", description: "Processing Speed" },
+    ],
+    products: ["Financial AI", "Analytics Platform"],
+  },
+  {
+    id: 20,
+    logoSrc: clientLogos[19],
+    logoAlt: "Client 20",
+    headline: "Revolutionizing customer support with intelligent automation",
+    stats: [
+      { label: "+47%", description: "Support Efficiency" },
+      { label: "+41%", description: "Customer Satisfaction" },
+    ],
+    products: ["Support Automation", "AI Chatbots"],
+  },
+  {
+    id: 21,
+    logoSrc: clientLogos[20],
+    logoAlt: "Client 21",
+    headline: "Driving innovation with custom AI and machine learning",
+    stats: [
+      { label: "+54%", description: "Innovation Speed" },
+      { label: "+48%", description: "Competitive Advantage" },
+    ],
+    products: ["Custom AI Solutions", "Machine Learning"],
   },
 ];
 
 export default function Clients() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [carouselIndex, setCarouselIndex] = useState(0);
 
-  // Auto-advance every 5 seconds - FIXED: Timer resets on activeIndex change
+  // Auto-advance case study every 5 seconds
   useEffect(() => {
-    // Set up new interval - this runs fresh every time activeIndex changes
     const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % clientsData.length);
+      setActiveIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % clientsData.length;
+        // Update carousel to center the active logo
+        setCarouselIndex(nextIndex);
+        return nextIndex;
+      });
     }, 5000);
 
-    // CRITICAL: Clean up the previous interval before creating a new one
     return () => clearInterval(interval);
-  }, [activeIndex]); // Re-run when activeIndex changes
+  }, [activeIndex]);
+
+  // Remove auto-advance for carousel - it will follow activeIndex
+  // Auto-advance carousel every 3 seconds
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCarouselIndex((prevIndex) => (prevIndex + 1) % clientsData.length);
+  //   }, 3000);
+
+  //   return () => clearInterval(interval);
+  // }, [carouselIndex]);
 
   const activeClient = clientsData[activeIndex];
 
@@ -113,9 +330,13 @@ export default function Clients() {
                 >
                   {/* Logo Badge */}
                   <div className="inline-block bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 mb-4 self-start">
-                    <span className="text-white font-bold">
-                      {activeClient.logoSrc}
-                    </span>
+                    <Image
+                      src={activeClient.logoSrc}
+                      alt={activeClient.logoAlt}
+                      width={100}
+                      height={50}
+                      className="object-contain"
+                    />
                   </div>
 
                   {/* Headline */}
@@ -171,7 +392,7 @@ export default function Clients() {
                 />
               </div>
 
-              {/* Active Brand Name */}
+              {/* Active Brand Logo */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
@@ -181,9 +402,15 @@ export default function Clients() {
                   transition={{ duration: 0.3 }}
                   className="flex justify-center"
                 >
-                  <span className="text-2xl font-bold text-gray-900">
-                    {activeClient.logoSrc}
-                  </span>
+                  <div className="bg-white p-4 rounded-xl shadow-sm">
+                    <Image
+                      src={activeClient.logoSrc}
+                      alt={activeClient.logoAlt}
+                      width={120}
+                      height={60}
+                      className="object-contain"
+                    />
+                  </div>
                   {/* <div className="flex gap-2">
                     <button
                       onClick={() =>
@@ -331,9 +558,13 @@ export default function Clients() {
                 {/* Logo */}
                 <div className="mb-8">
                   <div className="inline-block bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
-                    <span className="text-white text-xl font-bold">
-                      {activeClient.logoSrc}
-                    </span>
+                    <Image
+                      src={activeClient.logoSrc}
+                      alt={activeClient.logoAlt}
+                      width={120}
+                      height={60}
+                      className="object-contain"
+                    />
                   </div>
                 </div>
 
@@ -346,42 +577,250 @@ export default function Clients() {
           </div>
         </div>
 
-        {/* Client Logos - Desktop Only */}
-        <div className="hidden lg:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 items-center">
-          {clientsData.map((client, index) => (
-            <div key={client.id} className="flex flex-col gap-2">
-              {/* Progress Bar - Above the box */}
-              <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-                {activeIndex === index && (
-                  <motion.div
-                    className="h-full bg-blue-600"
-                    initial={{ width: "0%" }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 5, ease: "linear" }}
-                    key={`progress-${activeIndex}`}
-                  />
-                )}
-              </div>
+        {/* Client Logos Carousel - Desktop Only */}
+        <div className="hidden lg:block relative overflow-hidden">
+          <div className="relative">
+            <motion.div
+              className="flex gap-3"
+              animate={{
+                x: `calc(-${
+                  ((carouselIndex % clientsData.length) + clientsData.length) *
+                  (100 / 7)
+                }% + ${(100 / 7) * 3}%)`,
+              }}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
+            >
+              {/* Triple the logos for seamless infinite loop */}
+              {[...clientsData, ...clientsData, ...clientsData].map(
+                (client, index) => {
+                  const originalIndex = index % clientsData.length;
+                  return (
+                    <div
+                      key={`${client.id}-${index}`}
+                      className="flex-shrink-0"
+                      style={{ width: `${100 / 7}%` }}
+                    >
+                      <div className="flex flex-col gap-2 px-1.5">
+                        {/* Progress Bar - Above the box */}
+                        <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                          {activeIndex === originalIndex && (
+                            <motion.div
+                              className="h-full bg-blue-600"
+                              initial={{ width: "0%" }}
+                              animate={{ width: "100%" }}
+                              transition={{ duration: 5, ease: "linear" }}
+                              key={`progress-${activeIndex}-${index}`}
+                            />
+                          )}
+                        </div>
 
-              {/* Logo Box */}
-              <button
-                onClick={() => setActiveIndex(index)}
-                className={`bg-white rounded-xl p-6 flex items-center justify-center h-24 transition-all ${
-                  activeIndex === index ? "  scale-105" : " hover:scale-105 "
-                }`}
-              >
-                <div className="w-full h-full flex items-center justify-center">
-                  <span
-                    className={`text-lg font-bold ${
-                      activeIndex === index ? "text-blue-600" : "text-gray-400"
-                    }`}
-                  >
-                    {client.logoSrc}
-                  </span>
-                </div>
-              </button>
-            </div>
-          ))}
+                        {/* Logo Box */}
+                        <button
+                          onClick={() => {
+                            setActiveIndex(originalIndex);
+                            setCarouselIndex(originalIndex);
+                          }}
+                          className={`bg-white rounded-xl p-4 flex items-center justify-center h-20 transition-all ${
+                            activeIndex === originalIndex
+                              ? "scale-105 shadow-lg"
+                              : "hover:scale-105 shadow-sm"
+                          }`}
+                        >
+                          <div className="w-full h-full flex items-center justify-center">
+                            <Image
+                              src={client.logoSrc}
+                              alt={client.logoAlt}
+                              width={80}
+                              height={50}
+                              className={`object-contain transition-all ${
+                                activeIndex === originalIndex
+                                  ? "opacity-100"
+                                  : "opacity-60"
+                              }`}
+                            />
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  );
+                }
+              )}
+            </motion.div>
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={() => {
+              const newIndex =
+                (activeIndex - 1 + clientsData.length) % clientsData.length;
+              setActiveIndex(newIndex);
+              setCarouselIndex(newIndex);
+            }}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-10"
+            aria-label="Previous logos"
+          >
+            <svg
+              className="w-5 h-5 text-gray-700"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={() => {
+              const newIndex = (activeIndex + 1) % clientsData.length;
+              setActiveIndex(newIndex);
+              setCarouselIndex(newIndex);
+            }}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-10"
+            aria-label="Next logos"
+          >
+            <svg
+              className="w-5 h-5 text-gray-700"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* Client Logos Carousel - Mobile View */}
+        <div className="block lg:hidden relative overflow-hidden mt-8">
+          <div className="relative">
+            <motion.div
+              className="flex gap-4"
+              animate={{
+                x: `calc(-${
+                  ((carouselIndex % clientsData.length) + clientsData.length) *
+                  (100 / 3)
+                }% + ${(100 / 3) * 1}%)`,
+              }}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
+            >
+              {/* Triple the logos for seamless infinite loop */}
+              {[...clientsData, ...clientsData, ...clientsData].map(
+                (client, index) => {
+                  const originalIndex = index % clientsData.length;
+                  return (
+                    <div
+                      key={`${client.id}-${index}`}
+                      className="flex-shrink-0"
+                      style={{ width: `${100 / 3}%` }}
+                    >
+                      <div className="flex flex-col gap-2 px-2">
+                        {/* Progress Bar */}
+                        <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                          {activeIndex === originalIndex && (
+                            <motion.div
+                              className="h-full bg-blue-600"
+                              initial={{ width: "0%" }}
+                              animate={{ width: "100%" }}
+                              transition={{ duration: 5, ease: "linear" }}
+                              key={`mobile-progress-${activeIndex}-${index}`}
+                            />
+                          )}
+                        </div>
+
+                        {/* Logo Box */}
+                        <button
+                          onClick={() => {
+                            setActiveIndex(originalIndex);
+                            setCarouselIndex(originalIndex);
+                          }}
+                          className={`bg-white rounded-xl p-3 flex items-center justify-center h-16 transition-all ${
+                            activeIndex === originalIndex
+                              ? "scale-105 shadow-lg"
+                              : "shadow-sm"
+                          }`}
+                        >
+                          <Image
+                            src={client.logoSrc}
+                            alt={client.logoAlt}
+                            width={60}
+                            height={40}
+                            className={`object-contain transition-all ${
+                              activeIndex === originalIndex
+                                ? "opacity-100"
+                                : "opacity-60"
+                            }`}
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  );
+                }
+              )}
+            </motion.div>
+          </div>
+
+          {/* Navigation Arrows - Mobile */}
+          <button
+            onClick={() => {
+              const newIndex =
+                (activeIndex - 1 + clientsData.length) % clientsData.length;
+              setActiveIndex(newIndex);
+              setCarouselIndex(newIndex);
+            }}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors z-10"
+            aria-label="Previous logos"
+          >
+            <svg
+              className="w-4 h-4 text-gray-700"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={() => {
+              const newIndex = (activeIndex + 1) % clientsData.length;
+              setActiveIndex(newIndex);
+              setCarouselIndex(newIndex);
+            }}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors z-10"
+            aria-label="Next logos"
+          >
+            <svg
+              className="w-4 h-4 text-gray-700"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </section>

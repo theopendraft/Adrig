@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import AdrigNavbarTabs from "@/components/AdrigNavbarTabs";
 import Footer from "@/components/Footer";
 
@@ -53,6 +54,16 @@ export default function SouthernRailwaysPage() {
                 <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
                   Safety System
                 </span>
+              </div>
+              <div className="mt-12">
+                <Image
+                  src="/Website/Products/Rbms/portrait-railroader-man-worker-with-clipboard-standing-by-railroad-tracks-cargo-freight-train-background.jpg"
+                  alt="Railway Worker at Southern Railways"
+                  width={1200}
+                  height={600}
+                  className="rounded-2xl shadow-2xl"
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -354,6 +365,15 @@ export default function SouthernRailwaysPage() {
                     immediately alerts the user and restricts submission —
                     ensuring no two teams work on the same track simultaneously.
                   </p>
+                  <div className="mt-6">
+                    <Image
+                      src="/Website/Products/Rbms/people-watching-as-train-approaches.jpg"
+                      alt="Railway Safety Operations"
+                      width={800}
+                      height={500}
+                      className="rounded-xl shadow-lg w-full"
+                    />
+                  </div>
                 </div>
 
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
@@ -482,30 +502,30 @@ export default function SouthernRailwaysPage() {
         </section>
 
         {/* CTA Section */}
-                <section className="py-20 md:py-32 bg-gray-100">
-                  <div className="container-custom">
-                    <div className="max-w-3xl mx-auto text-center">
-                      <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
-                        Ready to Get Started?
-                      </h2>
-                      <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-                        Let&apos;s discuss how our predictive analytics solutions can
-                        help your business gain a competitive edge and drive growth.
-                      </p>
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-200 shadow-lg"
-                      >
-                        GET IN TOUCH
-                        <img
-                          src="/right-up-white.png"
-                          alt="Arrow Right"
-                          className="w-6 h-6 "
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </section>
+        <section className="py-20 md:py-32 bg-gray-100">
+          <div className="container-custom">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
+                Ready to Get Started?
+              </h2>
+              <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
+                Let&apos;s discuss how our predictive analytics solutions can
+                help your business gain a competitive edge and drive growth.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-200 shadow-lg"
+              >
+                GET IN TOUCH
+                <img
+                  src="/right-up-white.png"
+                  alt="Arrow Right"
+                  className="w-6 h-6 "
+                />
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

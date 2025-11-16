@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import AdrigNavbarTabs from "@/components/AdrigNavbarTabs";
 import Footer from "@/components/Footer";
 
@@ -56,6 +57,16 @@ export default function BillsAppPage() {
                   Financial Analytics
                 </span>
               </div>
+            </div>
+            <div className="mt-12 max-w-4xl">
+              <Image
+                src="/Website/Products/Billzapp/man-looking-bill-energy-crisis.jpg"
+                alt="Bill Management System"
+                width={1200}
+                height={600}
+                className="rounded-2xl shadow-2xl"
+                priority
+              />
             </div>
           </div>
         </section>
@@ -382,6 +393,15 @@ export default function BillsAppPage() {
                 <p className="text-gray-600 mt-4 font-medium">
                   This eliminates manual entry completely.
                 </p>
+                <div className="mt-6">
+                  <Image
+                    src="/Website/Products/Billzapp/close-up-delivery-man-with-tablet.jpg"
+                    alt="Digital Bill Processing"
+                    width={800}
+                    height={500}
+                    className="rounded-xl shadow-lg w-full"
+                  />
+                </div>
               </div>
 
               {/* Feature 3 */}
@@ -889,7 +909,7 @@ export default function BillsAppPage() {
           </div>
         </section>
 
-{/* CTA Section */}
+        {/* CTA Section */}
         <section className="py-20 md:py-32 bg-gray-100">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto text-center">
