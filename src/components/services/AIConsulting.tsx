@@ -60,7 +60,7 @@ export default function AIConsulting() {
       number: "01.",
       title: "Tailored AI Strategies",
       description:
-        "Every business is unique—our AI solutions are built exclusively around your workflows and goals.",
+        "Every business is unique-our AI solutions are built exclusively around your workflows and goals.",
     },
     {
       number: "02.",
@@ -85,7 +85,7 @@ export default function AIConsulting() {
     {
       question: "Do we need technical expertise to work with you?",
       answer:
-        "No. Our team handles everything—from strategy to deployment. You don't need an internal tech or data science team to start.",
+        "No. Our team handles everything-from strategy to deployment. You don't need an internal tech or data science team to start.",
     },
     {
       question: "How long does it take to see results from AI solutions?",

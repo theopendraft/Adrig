@@ -73,7 +73,7 @@ export default function LLMDevelopment() {
       number: "03.",
       title: "Post-Launch Optimization",
       description:
-        "We continuously improve model quality, speed, and accuracy — ensuring your AI stays powerful and up-to-date.",
+        "We continuously improve model quality, speed, and accuracy - ensuring your AI stays powerful and up-to-date.",
     },
   ];
 

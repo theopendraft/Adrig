@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import AuthModal from "./AuthModal";
 
 // Dropdown tabs (Services and Product)
 const DROPDOWN_TABS = [
@@ -22,77 +23,104 @@ const DROPDOWN_TABS = [
 const NAV_LINKS = [
   { name: "Work", href: "/work" },
   // { name: "Plan", href: "#innovation" },
-  { name: "Team", href: "#partnership" },
+  { name: "Team", href: "/team" },
   { name: "Contact", href: "/contact" },
 ];
 
 export default function AdrigNavbarTabs() {
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<"login" | "signup">("login");
+
+  const handleLoginClick = () => {
+    setAuthMode("login");
+    setIsAuthModalOpen(true);
+  };
+
+  const handleSignupClick = () => {
+    setAuthMode("signup");
+    setIsAuthModalOpen(true);
+  };
+
   return (
-    <header className="bg-[#0a1f5e] backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
-      <nav className="container-custom my-2">
-        <div className=" rounded-2xl">
-          <div className="flex items-center justify-between px-2 py-4">
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <Link href="/" className="flex items-center space-x-3">
-                <img
-                  src="/images/Adrig.PNG"
-                  alt="Adrig Logo"
-                  className="w-10 h-10 object-contain"
-                />
-                <div className="flex flex-col">
-                  <span className="text-xl font-bold text-white leading-tight">
-                    ADRIG AI
-                  </span>
-                  <span className="text-xs text-blue-200 leading-tight">
-                    Technologies
-                  </span>
-                </div>
-              </Link>
-            </div>
+    <>
+      <header className="bg-[#0a1f5e] backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <nav className="container-custom my-2">
+          <div className=" rounded-2xl">
+            <div className="flex items-center justify-between px-2 py-4">
+              {/* Logo */}
+              <div className="flex-shrink-0">
+                <Link href="/" className="flex items-center space-x-3">
+                  <img
+                    src="/images/Adrig.PNG"
+                    alt="Adrig Logo"
+                    className="w-10 h-10 object-contain"
+                  />
+                  <div className="flex flex-col">
+                    <span className="text-xl font-bold text-white leading-tight">
+                      ADRIG AI
+                    </span>
+                    <span className="text-xs text-blue-200 leading-tight">
+                      Technologies
+                    </span>
+                  </div>
+                </Link>
+              </div>
 
-            {/* Navigation - Dropdowns + Links */}
-            <div className="hidden lg:flex items-center gap-1">
-              <Tabs tabs={DROPDOWN_TABS} />
-              {NAV_LINKS.map((link) =>
-                link.href.startsWith("#") ? (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="px-2 py-1 text-white hover:text-blue-200 font-medium transition-colors duration-200 rounded-full hover:bg-white/10"
-                  >
-                    {link.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="px-2 py-1 text-white hover:text-blue-200 font-medium transition-colors duration-200 rounded-full hover:bg-white/10"
-                  >
-                    {link.name}
-                  </Link>
-                )
-              )}
-            </div>
+              {/* Navigation - Dropdowns + Links */}
+              <div className="hidden lg:flex items-center gap-1">
+                <Tabs tabs={DROPDOWN_TABS} />
+                {NAV_LINKS.map((link) =>
+                  link.href.startsWith("#") ? (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      className="px-2 py-1 text-white hover:text-blue-200 font-medium transition-colors duration-200 rounded-full hover:bg-white/10"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className="px-2 py-1 text-white hover:text-blue-200 font-medium transition-colors duration-200 rounded-full hover:bg-white/10"
+                    >
+                      {link.name}
+                    </Link>
+                  )
+                )}
+              </div>
 
-            {/* Auth Buttons */}
-            <div className="hidden lg:flex items-center space-x-4">
-              <button className="px-4 py-2 text-white font-normal rounded-full border border-white/100 hover:bg-white/10 transition-colors duration-200">
-                LOGIN
-              </button>
-              <button className="px-4 py-2 bg-white text-primary font-normal rounded-full hover:bg-blue-50 transition-colors duration-200 flex items-center space-x-1">
-                <span>SIGN UP</span>
-                <img
-                  src="/right-up-blue.png"
-                  alt="right-up"
-                  className="w-6 h-6"
-                />
-              </button>
+              {/* Auth Buttons */}
+              <div className="hidden lg:flex items-center space-x-4">
+                <button
+                  onClick={handleLoginClick}
+                  className="px-4 py-2 text-white font-normal rounded-full border border-white/100 hover:bg-white/10 transition-colors duration-200"
+                >
+                  LOGIN
+                </button>
+                <button
+                  onClick={handleSignupClick}
+                  className="px-4 py-2 bg-white text-primary font-normal rounded-full hover:bg-blue-50 transition-colors duration-200 flex items-center space-x-1"
+                >
+                  <span>SIGN UP</span>
+                  <img
+                    src="/right-up-blue.png"
+                    alt="right-up"
+                    className="w-6 h-6"
+                  />
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
+
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        initialMode={authMode}
+      />
+    </>
   );
 }
 

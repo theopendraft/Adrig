@@ -56,15 +56,15 @@ export default function Work() {
   }, [hasAnimated]);
 
   const projects = [
-    { id: 1, name: "Miporis" },
-    { id: 2, name: "Southern Railways" },
-    { id: 3, name: "ShopifyQ" },
-    { id: 4, name: "Barron Tech Serve" },
-    { id: 5, name: "Aladdyn" },
-    { id: 6, name: "Data Drone" },
-    { id: 7, name: "Dagala" },
-    { id: 8, name: "VIT" },
-    { id: 9, name: "SRM University" },
+    { id: 1, name: "Miporis", slug: "miporis" },
+    { id: 2, name: "Southern Railways", slug: "southern-railways" },
+    { id: 3, name: "Dagala Analytics", slug: "dagala-analytics" },
+    { id: 4, name: "Barron Tech Serve", slug: "barron-tech-serve" },
+    { id: 5, name: "Aladdyn", slug: "aladdyn" },
+    { id: 6, name: "BillsApp", slug: "billsapp" },
+    { id: 7, name: "Dagala", slug: "dagala" },
+    { id: 8, name: "TrackOn (Southern Railways)", slug: "trackon" },
+    { id: 9, name: "Rail Rules (Southern Railways)", slug: "rail-rules" },
   ];
 
   return (
@@ -147,9 +147,10 @@ export default function Work() {
           {/* Projects Grid - 3x3 */}
           <div className="mx-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9">
             {projects.map((project) => (
-              <div
+              <Link
                 key={project.id}
-                className="relative bg-gray-100 rounded-lg p-8 min-h-[280px] flex flex-col justify-between group"
+                href={`/work/${project.slug}`}
+                className="relative bg-gray-100 rounded-lg p-8 min-h-[280px] flex flex-col justify-between group hover:bg-gray-200 transition-colors"
               >
                 {/* Project Name */}
                 <h3 className="text-xl font-bold text-gray-900">
@@ -158,7 +159,7 @@ export default function Work() {
 
                 {/* Plus Button */}
                 <div className="flex justify-end">
-                  <button className="w-10 h-10 bg-primary text-white rounded flex items-center justify-center hover:bg-primary-dark transition-colors">
+                  <div className="w-10 h-10 bg-primary text-white rounded flex items-center justify-center group-hover:bg-blue-700 transition-colors">
                     <svg
                       className="w-5 h-5"
                       fill="none"
@@ -172,9 +173,9 @@ export default function Work() {
                         d="M12 4v16m8-8H4"
                       />
                     </svg>
-                  </button>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

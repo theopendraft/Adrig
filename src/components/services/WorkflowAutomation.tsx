@@ -79,7 +79,7 @@ export default function WorkflowAutomation() {
     {
       question: "What processes can be automated?",
       answer:
-        "Anything from approvals, data entry, ticketing, billing, onboarding, and customer support—almost all repetitive processes.",
+        "Anything from approvals, data entry, ticketing, billing, onboarding, and customer support-almost all repetitive processes.",
     },
     {
       question: "How long does workflow automation implementation take?",
