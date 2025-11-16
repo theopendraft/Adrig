@@ -1,7 +1,7 @@
 export default function Footer() {
   const leftLinks = [
     { name: "Home", href: "/" },
-    { name: "Service", href: "#services" },
+    { name: "Service", href: "/#services" },
     { name: "Product", href: "#product" },
     { name: "Work", href: "/work" },
     { name: "Contact", href: "/contact" },

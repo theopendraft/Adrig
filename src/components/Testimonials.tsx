@@ -55,8 +55,8 @@ export default function Testimonials() {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Side - Text Content */}
-          <div className="space-y-6">
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+          <div className="space-y-6 pr-14">
+            <h3 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 leading-tight ">
               Hear What Our Clients Say About Us
             </h3>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
@@ -65,7 +65,7 @@ export default function Testimonials() {
               erat volutpat.
             </p>
             <Link href="/work">
-              <button className="btn-primary px-8 py-4 text-base font-semibold flex items-center gap-2 rounded-full mt-8">
+              <button className="btn-primary px-4 sm:px-8 py-2 text-xs sm:text-sm font-semibold flex items-center gap-2 rounded-full mt-8">
                 OUR WORK
                 <img
                   src="/right-up-white.png"

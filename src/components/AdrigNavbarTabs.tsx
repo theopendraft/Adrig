@@ -94,13 +94,13 @@ export default function AdrigNavbarTabs() {
               <div className="hidden lg:flex items-center space-x-4">
                 <button
                   onClick={handleLoginClick}
-                  className="px-4 py-2 text-white font-normal rounded-full border border-white/100 hover:bg-white/10 transition-colors duration-200"
+                  className="w-full sm:w-auto px-4 sm:px-8 py-2 bg-transparent text-white font-medium rounded-full border-2 border-white hover:bg-white/10 transition-all duration-200 uppercase text-xs sm:text-sm tracking-wide"
                 >
                   LOGIN
                 </button>
                 <button
                   onClick={handleSignupClick}
-                  className="px-4 py-2 bg-white text-primary font-normal rounded-full hover:bg-blue-50 transition-colors duration-200 flex items-center space-x-1"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-2 bg-white text-primary font-semibold rounded-full hover:bg-blue-50 transition-all duration-200 shadow-lg hover:shadow-xl uppercase text-xs sm:text-sm tracking-wide flex items-center justify-center"
                 >
                   <span>SIGN UP</span>
                   <img

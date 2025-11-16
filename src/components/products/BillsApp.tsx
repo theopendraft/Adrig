@@ -217,7 +217,7 @@ export default function BillsApp() {
               {benefits.map((benefit) => (
                 <div
                   key={benefit.number}
-                  className="h-48 bg-gray-100 rounded-xl p-6 justify-between flex flex-col"
+                  className="min-h-[12rem] bg-gray-100 rounded-xl p-6 justify-between flex flex-col"
                 >
                   {/* Number Badge */}
                   <div className="inline-flex items-center justify-center w-10 h-10 bg-primary text-white font-bold rounded mb-4">

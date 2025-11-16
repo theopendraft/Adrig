@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import InnovationCard from "./InnovationCard";
+import Team from "@/components/Team";
 
 export default function Innovation() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -99,9 +100,11 @@ export default function Innovation() {
               create groundbreaking solutions that effectively meet today&apos;s
               challenges.
             </p>
-            <button className="btn-primary px-8 py-4 text-base font-semibold rounded-full">
-              ABOUT US
-            </button>
+            <a href="/team" className="inline-block">
+              <button className="btn-primary px-4 sm:px-8 py-2 text-xs sm:text-sm font-semibold rounded-full">
+                ABOUT US
+              </button>
+            </a>
           </div>
 
           {/* Right Side - 2x2 Grid of Cards with Interactive Effects */}

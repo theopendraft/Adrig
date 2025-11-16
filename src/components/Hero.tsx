@@ -29,9 +29,13 @@ export default function Hero() {
             thinking companies.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+
+            <a href="#services" className="inline-block">
             <button className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-transparent text-white font-semibold rounded-full border-2 border-white hover:bg-white/10 transition-all duration-200 uppercase text-xs sm:text-sm tracking-wide">
               OUR SERVICES
             </button>
+            </a>
+
             <Link
               href="/contact"
               className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-white text-primary font-semibold rounded-full hover:bg-blue-50 transition-all duration-200 shadow-lg hover:shadow-xl uppercase text-xs sm:text-sm tracking-wide flex items-center justify-center"

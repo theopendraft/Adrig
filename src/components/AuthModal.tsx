@@ -183,7 +183,7 @@ export default function AuthModal({
                 <span className="ml-2 text-gray-600">Remember me</span>
               </label>
               <Link
-                href="/forgot-password"
+                href="/"
                 className="text-primary hover:text-blue-700 font-medium"
               >
                 Forgot password?
@@ -285,7 +285,7 @@ export default function AuthModal({
                 onClick={() => setMode("signup")}
                 className="text-primary hover:text-blue-700 font-semibold"
               >
-                Login
+                Sign up
               </button>
             </p>
           ) : (
@@ -295,14 +295,14 @@ export default function AuthModal({
                 onClick={() => setMode("login")}
                 className="text-primary hover:text-blue-700 font-semibold"
               >
-                Login
+                Sign in
               </button>
             </p>
           )}
         </div>
 
         {/* Terms */}
-        {mode === "signup" && (
+        {/* {mode === "signup" && (
           <p className="mt-3 text-xs text-center text-gray-500">
             By signing up, you agree to our{" "}
             <Link href="/terms" className="text-primary hover:underline">
@@ -313,7 +313,7 @@ export default function AuthModal({
               Privacy Policy
             </Link>
           </p>
-        )}
+        )} */}
       </div>
     </div>
   );

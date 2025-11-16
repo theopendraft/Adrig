@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Work() {
   const [projectsCount, setProjectsCount] = useState(0);
@@ -57,7 +58,7 @@ export default function Work() {
 
   const projects = [
     { id: 1, name: "Miporis", slug: "miporis" },
-    { id: 2, name: "Southern Railways", slug: "southern-railways" },
+    { id: 2, name: "Southern Railways (RBMS)", slug: "southern-railways" },
     { id: 3, name: "Dagala Analytics", slug: "dagala-analytics" },
     { id: 4, name: "Barron Tech Serve", slug: "barron-tech-serve" },
     { id: 5, name: "Aladdyn", slug: "aladdyn" },
@@ -123,9 +124,18 @@ export default function Work() {
             </div>
 
             {/* Right Side - Image Box */}
-            <div className="aspect-[4/4.2] bg-gray-500 rounded-3xl overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-gray-500 to-gray-600"></div>
-            </div>
+            <div className="relative">
+                        <div className="aspect-[4/5] bg-gray-500 rounded-3xl shadow-2xl overflow-hidden">
+                          <Image
+                            src="/Website/Work/team-business-people-stacking-hands.jpg"
+                            alt="Partnership"
+                            width={800}
+                            height={1000}
+                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                            priority
+                          />
+                        </div>
+                      </div>
           </div>
         </div>
       </section>
