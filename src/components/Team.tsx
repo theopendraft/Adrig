@@ -1,34 +1,77 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { useState, useRef } from "react";
 import AdrigNavbarTabs from "./AdrigNavbarTabs";
 import Footer from "./Footer";
 
 export default function Team() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 400;
+      const newScrollPosition =
+        scrollContainerRef.current.scrollLeft +
+        (direction === "right" ? scrollAmount : -scrollAmount);
+      scrollContainerRef.current.scrollTo({
+        left: newScrollPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+  const teamMembers = [
+    {
+      name: "Amara Okafor",
+      role: "Head of Marketing",
+      image: "/Website/Home/scroll.jpg",
+      linkedin: "#",
+    },
+    {
+      name: "Jakob George",
+      role: "Head of Finance",
+      image: "/Website/Home/scroll.jpg",
+      linkedin: "#",
+    },
+    {
+      name: "Leila Khatami",
+      role: "Accountant",
+      image: "/Website/Home/scroll.jpg",
+      linkedin: "#",
+    },
+    {
+      name: "Nathan Kim",
+      role: "Product Manager",
+      image: "/Website/Home/scroll.jpg",
+      linkedin: "#",
+    },
+  ];
+
   const metrics = [
     {
-      number: "4.8 / 5",
-      label: "Customer Satisfaction",
-      description:
-        "Our clients consistently rate us high for trust, support, and performance.",
-    },
-    {
-      number: "1000+",
-      label: "Businesses Powered Across India",
-      description:
-        "From Bangalore to Chennai to Mumbai - we serve a diverse range of industries and company sizes.",
-    },
-    {
       number: "95%",
-      label: "Client Retention",
+      label: "Customer satisfaction",
       description:
-        "We build long-term partnerships and value that keeps our customers coming back.",
+        "Trusted by millions, our service ensures unparalleled customer satisfaction with dedicated support and innovative solutions tailored to your needs.",
     },
     {
-      number: "⚡",
-      label: "Instant Insights, Real-Time Decisions",
+      number: "10+",
+      label: "Innovation & insight",
       description:
-        "Live dashboards and automated reporting for timely actions.",
+        "Driving over a decade of groundbreaking innovations and deep industry insights to empower businesses worldwide.",
+    },
+    {
+      number: "$10m",
+      label: "Efficient financial",
+      description:
+        "Streamlined processes delivering over $10 million in financial savings and value creation for our clients.",
+    },
+    {
+      number: "50m",
+      label: "Users worldwide",
+      description:
+        "Serving a global community of over 50 million users, delivering impactful and reliable solutions every day.",
     },
   ];
 
@@ -111,10 +154,89 @@ export default function Team() {
 
   return (
     <>
-      
-        {/* 1. Hero / Intro (About Us) */}
-        <section className="relative bg-gray-100 py-20 md:py-32">
-          <div className="container-custom">
+      {/* 1. Hero Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Side - Content */}
+            <div className="space-y-8">
+              {/* Rating Badge */}
+              <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-sm">
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+                <span className="text-gray-900 font-semibold">
+                  4.97/5 reviews
+                </span>
+              </div>
+
+              {/* Heading */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                Discover our journey and what drives us
+              </h1>
+
+              {/* Description */}
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Founded by data experts, we create cutting-edge SaaS analytics
+                platforms tailored for businesses of all sizes.
+              </p>
+
+              {/* Buttons */}
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact">
+                  <button className="btn-primary px-8 py-4 text-base font-semibold flex items-center gap-2 rounded-full">
+                    Get Started
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </button>
+                </Link>
+                <Link href="/contact">
+                  <button className="px-8 py-4 text-base font-semibold border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+                    Free trial
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Side - Image */}
+            <div className="relative">
+              <div className="aspect-[4/5] bg-gray-300 rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/Website/Home/scroll.jpg"
+                  alt="Team"
+                  width={800}
+                  height={1000}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 1. Hero / Intro (About Us) */}
+      <section className="relative bg-gray-100 py-20 md:py-32 hidden">
+        <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center animate-slide-up">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                 Empowering Indian Businesses with{" "}
@@ -157,6 +279,53 @@ export default function Team() {
         {/* 2. Our Impact (Trust / Metrics) */}
         <section className="section-padding bg-white">
           <div className="container-custom">
+            <div className="grid lg:grid-cols-[45%_1fr] gap-12 lg:gap-16 items-center">
+              {/* Left Side - Image */}
+              <div className="relative">
+                <div className="aspect-[4/5] bg-gray-300 rounded-3xl overflow-hidden shadow-xl">
+                  <Image
+                    src="/Website/Home/scroll.jpg"
+                    alt="Our Impact"
+                    width={800}
+                    height={1000}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Right Side - Stats */}
+              <div className="space-y-6">
+                {metrics.map((metric, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-50 p-6 md:p-8 rounded-2xl hover:shadow-lg transition-shadow"
+                  >
+                    <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
+                      {/* Number */}
+                      <div className="flex-shrink-0">
+                        <div className="text-4xl md:text-5xl font-bold text-gray-900">
+                          {metric.number}
+                        </div>
+                        <div className="text-base md:text-lg font-semibold text-gray-900 mt-2">
+                          {metric.label}
+                        </div>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-gray-600 text-base leading-relaxed md:pt-2">
+                        {metric.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Old Impact Section - Hidden */}
+        <section className="section-padding bg-white hidden">
+          <div className="container-custom">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-4">
                 Our Impact
@@ -187,8 +356,111 @@ export default function Team() {
           </div>
         </section>
 
-        {/* 3. Who We Are */}
+        {/* 3. Meet the Team */}
         <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            {/* Header with Navigation Buttons */}
+            <div className="flex justify-between items-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                Meet the Financer team
+              </h2>
+
+              {/* Navigation Buttons */}
+              <div className="flex gap-4">
+                <button
+                  onClick={() => scroll("left")}
+                  className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-orange-500 hover:bg-orange-600 text-white flex items-center justify-center transition-colors shadow-lg"
+                  aria-label="Scroll left"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => scroll("right")}
+                  className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-orange-500 hover:bg-orange-600 text-white flex items-center justify-center transition-colors shadow-lg"
+                  aria-label="Scroll right"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Scrollable Team Cards Container */}
+            <div
+              ref={scrollContainerRef}
+              className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {teamMembers.map((member, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-[280px] md:w-[340px] lg:w-[380px]"
+                >
+                  {/* Image Container */}
+                  <div className="relative aspect-[3/4] bg-gray-300 rounded-3xl overflow-hidden mb-4 shadow-lg">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={380}
+                      height={506}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  {/* Card Info */}
+                  <div className="bg-white rounded-2xl p-6 shadow-md flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-1">
+                        {member.name}
+                      </h3>
+                      <p className="text-gray-500 text-sm">{member.role}</p>
+                    </div>
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-lg bg-orange-500 hover:bg-orange-600 flex items-center justify-center transition-colors"
+                    >
+                      <svg
+                        className="w-5 h-5 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 4. Who We Are */}
+        <section className="section-padding bg-white hidden">
           <div className="container-custom">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left Side - Image Box */}
@@ -215,8 +487,8 @@ export default function Team() {
           </div>
         </section>
 
-        {/* 4. Our Journey */}
-        <section className="section-padding bg-white">
+        {/* 5. Our Journey */}
+        <section className="section-padding bg-white hidden">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
@@ -246,8 +518,8 @@ export default function Team() {
           </div>
         </section>
 
-        {/* 5. What We Offer */}
-        <section className="section-padding bg-white">
+        {/* 6. What We Offer */}
+        <section className="section-padding bg-gray-50 hidden">
           <div className="container-custom">
             <div className="text-center mb-16 ">
               <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-4 px-32">
@@ -280,8 +552,8 @@ export default function Team() {
           </div>
         </section>
 
-        {/* 6. What Our Clients Say */}
-        <section className="section-padding bg-white">
+        {/* 7. What Our Clients Say */}
+        <section className="section-padding bg-gray-50 hidden">
           <div className="container-custom">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-4">

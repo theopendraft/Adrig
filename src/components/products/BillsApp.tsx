@@ -157,7 +157,7 @@ export default function BillsApp() {
             </div>
 
             {/* Right Box */}
-                        <div className="relative">
+            <div className="relative">
               <div className="aspect-[4/2] bg-gray-500 rounded-3xl shadow-2xl overflow-hidden">
                 <Image
                   src="/Website/Products/BillzApp/billsapp_2.jpg"

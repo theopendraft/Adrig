@@ -63,7 +63,7 @@ export default function Partnership() {
           <div className="relative">
             <div className="aspect-[4/5] bg-gray-500 rounded-3xl shadow-2xl overflow-hidden">
               <Image
-                src="/Website/Home/scroll.jpg"
+                src="/Website/Home/Scroll.jpg"
                 alt="Partnership"
                 width={800}
                 height={1000}
