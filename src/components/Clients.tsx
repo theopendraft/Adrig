@@ -64,17 +64,17 @@ const clientsData = [
     ],
     products: ["AI Research Support", "Prototype Development", "Technical Consulting"],
   },
-  {
-    id: 4,
-    logoSrc: clientLogos[3],
-    logoAlt: "Client 4",
-    headline: "Licfo Books – Technical Support & Web Modernization",
-    stats: [
-      { label: "+52%", description: "Website Performance Improvement" },
-      { label: "+41%", description: "Support Response Efficiency" },
-    ],
-    products: ["Web Development", "24/7 Technical Support", "Cloud & Hosting Services"],
-  },
+  // {
+  //   id: 4,
+  //   logoSrc: clientLogos[3],
+  //   logoAlt: "Client 4",
+  //   headline: "Licfo Books – Technical Support & Web Modernization",
+  //   stats: [
+  //     { label: "+52%", description: "Website Performance Improvement" },
+  //     { label: "+41%", description: "Support Response Efficiency" },
+  //   ],
+  //   products: ["Web Development", "24/7 Technical Support", "Cloud & Hosting Services"],
+  // },
   // {
   //   id: 5,
   //   logoSrc: clientLogos[4],
