@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function RBMS() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -144,14 +145,34 @@ export default function RBMS() {
           {/* Two Image Boxes */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             {/* Left Box */}
-            <div className="aspect-video bg-gray-400 rounded-3xl overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-gray-500 to-gray-600"></div>
-            </div>
+            
+              <div className="relative">
+                                      <div className="aspect-[4/2] bg-gray-500 rounded-3xl shadow-2xl overflow-hidden">
+                                        <Image
+                                          src="/Website/Products/Rbms/train.jpg"
+                                          alt="Rbms_1"
+                                          width={1000}
+                                          height={800}
+                                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                          priority
+                                        />
+                                      </div>
+                                    </div>
+            
 
             {/* Right Box */}
-            <div className="aspect-video bg-gray-400 rounded-3xl overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-gray-500 to-gray-600"></div>
-            </div>
+            <div className="relative">
+                                      <div className="aspect-[4/2] bg-gray-500 rounded-3xl shadow-2xl overflow-hidden">
+                                        <Image
+                                          src="/Website/Products/Rbms/train2.jpg"
+                                          alt="Rbms_2"
+                                          width={1000}
+                                          height={800}
+                                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                          priority
+                                        />
+                                      </div>
+                                    </div>
           </div>
         </div>
       </section>
