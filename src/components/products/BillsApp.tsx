@@ -146,8 +146,8 @@ export default function BillsApp() {
             <div className="relative">
               <div className="aspect-[4/2] bg-gray-500 rounded-3xl shadow-2xl overflow-hidden">
                 <Image
-                  src="/Website/Products/BillzApp/billsapp_1.jpg"
-                  alt="Rbms_1"
+                  src="/Website/Products/Billzapp/billsapp_1.jpg"
+                  alt="billsapp_1"
                   width={1000}
                   height={800}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
@@ -160,8 +160,8 @@ export default function BillsApp() {
             <div className="relative">
               <div className="aspect-[4/2] bg-gray-500 rounded-3xl shadow-2xl overflow-hidden">
                 <Image
-                  src="/Website/Products/BillzApp/billsapp_2.jpg"
-                  alt="Rbms_1"
+                  src="/Website/Products/Billzapp/billsapp_2.jpg"
+                  alt="billsapp_2"
                   width={1000}
                   height={800}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
