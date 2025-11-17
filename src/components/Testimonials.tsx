@@ -8,16 +8,24 @@ export default function Testimonials() {
 
   const testimonials = [
     {
+      company: "Miporis",
+      text: "Adrig AI helped us automate our compliance workflows with precision. Their solutions improved our accuracy and reduced manual workload significantly.",
+    },
+    {
+      company: "Licfo Books",
+      text: "The team manages our entire tech ecosystem — from the website to backend support. Fast, reliable, and always available.",
+    },
+    {
+      company: "Barron Tech",
+      text: "The employee tracking app transformed our daily operations. We now have transparent movement logs and automated expense calculations.",
+    },
+    {
       company: "Southern Railways",
-      text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+      text: "Adrig AI modernized core railway systems with scalable, intelligent solutions. Their contribution has improved our efficiency and safety.",
     },
     {
       company: "VIT Chennai",
-      text: "sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-    },
-    {
-      company: "DMI College",
-      text: "nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.",
+      text: "Our research teams received exceptional support from Adrig AI. Their technical expertise accelerated our innovation projects.",
     },
   ];
 

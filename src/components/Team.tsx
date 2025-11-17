@@ -23,27 +23,69 @@ export default function Team() {
   };
   const teamMembers = [
     {
-      name: "Amara Okafor",
-      role: "Head of Marketing",
-      image: "/Website/Home/scrolll.jpg",
+      name: "Deva",
+      role: "Software Engineer",
+      image: "/Website/Teams/members/Deva.jpg",
       linkedin: "#",
     },
     {
-      name: "Jakob George",
-      role: "Head of Finance",
-      image: "/Website/Home/scrolll.jpg",
+      name: "Jagatheswar",
+      role: "Full Stack Developer",
+      image: "/Website/Teams/members/Jagatheswar.png",
       linkedin: "#",
     },
     {
-      name: "Leila Khatami",
-      role: "Accountant",
-      image: "/Website/Home/scrolll.jpg",
+      name: "Jerome",
+      role: "Project Manager",
+      image: "/Website/Teams/members/Jerome.jpg",
       linkedin: "#",
     },
     {
-      name: "Nathan Kim",
-      role: "Product Manager",
-      image: "/Website/Home/scrolll.jpg",
+      name: "Nishant",
+      role: "Data Scientist",
+      image: "/Website/Teams/members/Nishant.jpg",
+      linkedin: "#",
+    },
+    {
+      name: "Rohan",
+      role: "UI/UX Designer",
+      image: "/Website/Teams/members/Rohan.jpg",
+      linkedin: "#",
+    },
+    {
+      name: "Sneha",
+      role: "Business Analyst",
+      image: "/Website/Teams/members/Sneha.jpg",
+      linkedin: "#",
+    },
+    {
+      name: "Sridhar",
+      role: "DevOps Engineer",
+      image: "/Website/Teams/members/Sridhar.jpg",
+      linkedin: "#",
+    },
+    {
+      name: "Vijay",
+      role: "AI Engineer",
+      image: "/Website/Teams/members/Vijay.jpg",
+      linkedin: "#",
+    },
+    {
+      name: "Yogesh",
+      role: "Backend Developer",
+      image: "/Website/Teams/members/Yogesh.jpg",
+      linkedin: "#",
+    },
+    {
+      name: "Team Member",
+      role: "Software Developer",
+      image: "/Website/Teams/members/Member1.png",
+      linkedin: "#",
+    },
+    {
+      name: "Yogesh",
+      role: "Frontend Developer",
+      image: "/Website/Teams/members/Yogesh2.jpg",
       linkedin: "#",
     },
   ];
@@ -221,7 +263,7 @@ export default function Team() {
             <div className="relative">
               <div className="aspect-[4/5] bg-gray-300 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/Website/Home/scrolll.jpg"
+                  src="/Website/Teams/Teams1.jpg"
                   alt="Team"
                   width={800}
                   height={1000}
@@ -284,7 +326,7 @@ export default function Team() {
             <div className="relative">
               <div className="aspect-[4/5] bg-gray-300 rounded-3xl overflow-hidden shadow-xl">
                 <Image
-                  src="/Website/Home/scrolll.jpg"
+                  src="/Website/Teams/Teams2.jpg"
                   alt="Our Impact"
                   width={800}
                   height={1000}
@@ -307,17 +349,22 @@ export default function Team() {
                         {metric.number}
                       </div>
                       <div className="text-base md:text-lg font-semibold text-gray-900 mt-2">
-                        {metric.label.split(' ').map((word, i, arr) => {
+                        {metric.label.split(" ").map((word, i, arr) => {
                           const midpoint = Math.ceil(arr.length / 2);
                           if (i === midpoint) {
                             return (
                               <span key={i}>
                                 <br />
-                                {word}{' '}
+                                {word}{" "}
                               </span>
                             );
                           }
-                          return <span key={i}>{word}{i < arr.length - 1 ? ' ' : ''}</span>;
+                          return (
+                            <span key={i}>
+                              {word}
+                              {i < arr.length - 1 ? " " : ""}
+                            </span>
+                          );
                         })}
                       </div>
                     </div>
