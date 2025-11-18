@@ -8,18 +8,18 @@ export default function Hero() {
       className="relative min-h-screen bg-[#1a3a8a]overflow-hidden"
     >
       {/* Background Animation */}
-      <div className="absolute inset-0 opacity-20 items-center">
+      <div className="absolute inset-0 items-center">
         <Silk
           speed={5}
           scale={1}
-          color="#7B7481"
+          color="#2463eb"
           noiseIntensity={1.5}
           rotation={0}
         />
       </div>
 
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a1f5e]/80 via-[#1a3a8a]/70 to-[#2463eb]/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0a1f5e]/30 via-[#1a3a8a]/20 to-transparent"></div>
 
       <div className="container-custom relative z-10 pt-24 pb-16 px-6 md:pt-80 md:pb-40 lg:pt-80 flex items-center min-h-screen">
         {/* Left Content Only */}
