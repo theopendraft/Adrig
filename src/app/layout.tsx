@@ -10,6 +10,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Adrig",
   description: "Adrig website built with Next.js",
+  icons: {
+    icon: "/Adrig_blue.png",
+  },
 };
 
 export default function RootLayout({

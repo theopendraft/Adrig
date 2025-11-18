@@ -28,66 +28,74 @@ export default function Team() {
       image: "/Website/Teams/members/Vijay.jpg",
       linkedin: "https://www.linkedin.com/in/vijayasvj/",
     },
-    {
-      name: "Sarakesh Ramesh",
-      role: "Project Manager",
-      image: "/Website/Teams/members/Sarakesh.png",
-      linkedin: "https://www.linkedin.com/in/sarakesh-r-8b8942270/",
-    },
-    {
-      name: "Nishaanth M S",
-      role: "Senior Architect",
-      image: "/Website/Teams/members/Nishant.jpg",
-      linkedin: "https://www.linkedin.com/in/nishaaanth2/",
-    },
-    {
-      name: "Devadharsanp",
-      role: "Project Manager",
-      image: "/Website/Teams/members/Deva.jpg",
-      linkedin: "https://www.linkedin.com/in/devadharsan-p-481a972a4/",
-    },
+
     {
       name: "Sneha",
       role: "Director",
       image: "/Website/Teams/members/Sneha.jpg",
       linkedin: "https://www.linkedin.com/in/d-a-sneha-046551151/",
     },
+
     {
       name: "Jerome Ignatius",
       role: "Director",
       image: "/Website/Teams/members/Jerome.jpg",
       linkedin: "https://www.linkedin.com/in/jeromeignatius/",
     },
+
+    {
+      name: "Nishaanth M S",
+      role: "Senior Architect",
+      image: "/Website/Teams/members/Nishant.jpg",
+      linkedin: "https://www.linkedin.com/in/nishaaanth2/",
+    },
+
     {
       name: "Rohan Murmu",
-      role: "Full Stack Developer",
+      role: "Senior Developer",
       image: "/Website/Teams/members/Rohan.jpg",
       linkedin: "https://www.linkedin.com/in/rohan-murmu/",
     },
+
     {
       name: "Sridhar Jeyakumar",
-      role: "Full Stack Developer",
+      role: "Senior Developer",
       image: "/Website/Teams/members/Sridhar.jpg",
       linkedin: "https://www.linkedin.com/in/sridhar-jeyakumar-41522621a/",
     },
+    
+    {
+      name: "Devadharsanp",
+      role: "Sr. Project Manager",
+      image: "/Website/Teams/members/Deva.jpg",
+      linkedin: "https://www.linkedin.com/in/devadharsan-p-481a972a4/",
+    },
+
     {
       name: "Jagatheswar R V",
-      role: "Data Analyst",
+      role: "Sr. Data Analyst",
       image: "/Website/Teams/members/Jagatheswar.png",
       linkedin: "https://www.linkedin.com/in/jagatheswarrv/",
     },
     {
       name: "Yokesh Selevakumar",
-      role: "Full Stack Developer",
+      role: "Senior Developer",
       image: "/Website/Teams/members/Yogesh.jpg",
       linkedin: "https://www.linkedin.com/in/yogeshwaran-k-a44342275/",
     },
     {
       name: "Yogeshwaram",
-      role: "Full Stack Developer",
+      role: "Senior Developer",
       image: "/Website/Teams/members/Yogesh2.jpg",
       linkedin: "#",
     },
+    {
+      name: "Sarakesh Ramesh",
+      role: "Sr. Project Manager",
+      image: "/Website/Teams/members/Sarakesh.png",
+      linkedin: "https://www.linkedin.com/in/sarakesh-r-8b8942270/",
+    },
+
   ];
 
   const metrics = [

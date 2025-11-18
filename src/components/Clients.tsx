@@ -608,86 +608,54 @@ export default function Clients() {
         </div>
 
         {/* Client Logos Carousel - Desktop Only */}
-        <div className="hidden lg:block relative overflow-hidden">
-          <div className="relative">
-            <motion.div
-              className="flex gap-4"
-              animate={
-                clientsData.length === 5
-                  ? {}
-                  : {
-                      x: `calc(-${
-                        ((carouselIndex % clientsData.length) +
-                          clientsData.length) *
-                        (100 / 5)
-                      }% + ${(100 / 5) * 2}%)`,
-                    }
-              }
-              transition={{
-                duration: 0.5,
-                ease: "easeInOut",
-              }}
-            >
-              {/* Triple the logos for seamless infinite loop - or just show once if exactly 5 */}
-              {(clientsData.length === 5
-                ? clientsData
-                : [...clientsData, ...clientsData, ...clientsData]
-              ).map((client, index) => {
-                const originalIndex = index % clientsData.length;
-                return (
-                  <div
-                    key={`${client.id}-${index}`}
-                    className="flex-shrink-0"
-                    style={{ width: `${100 / 5}%` }}
-                  >
-                    <div className="flex flex-col gap-2 px-2">
-                      {/* Progress Bar - Above the box */}
-                      <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-                        {activeIndex === originalIndex && (
-                          <motion.div
-                            className="h-full bg-blue-600"
-                            initial={{ width: "0%" }}
-                            animate={{ width: "100%" }}
-                            transition={{ duration: 5, ease: "linear" }}
-                            key={`progress-${activeIndex}-${index}`}
-                          />
-                        )}
-                      </div>
-
-                      {/* Logo Box */}
-                      <button
-                        onClick={() => {
-                          setActiveIndex(originalIndex);
-                          setCarouselIndex(originalIndex);
-                        }}
-                        className={`bg-white rounded-xl p-6 flex items-center justify-center h-28 transition-all ${
-                          activeIndex === originalIndex
-                            ? "scale-105 shadow-lg"
-                            : "hover:scale-105 shadow-sm"
-                        }`}
-                      >
-                        <div className="w-full h-full flex items-center justify-center">
-                          <Image
-                            src={client.logoSrc}
-                            alt={client.logoAlt}
-                            width={100}
-                            height={60}
-                            className={`object-contain transition-all ${
-                              activeIndex === originalIndex
-                                ? "opacity-100"
-                                : "opacity-60"
-                            }`}
-                          />
-                        </div>
-                      </button>
-                    </div>
+        <div className="hidden lg:block relative">
+          <div className="flex gap-4 justify-center">
+            {clientsData.map((client, index) => (
+              <div key={client.id} className="flex-shrink-0 w-[18%]">
+                <div className="flex flex-col gap-2 px-2">
+                  {/* Progress Bar - Above the box */}
+                  <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                    {activeIndex === index && (
+                      <motion.div
+                        className="h-full bg-blue-600"
+                        initial={{ width: "0%" }}
+                        animate={{ width: "100%" }}
+                        transition={{ duration: 5, ease: "linear" }}
+                        key={`progress-${activeIndex}`}
+                      />
+                    )}
                   </div>
-                );
-              })}
-            </motion.div>
+
+                  {/* Logo Box */}
+                  <button
+                    onClick={() => {
+                      setActiveIndex(index);
+                      setCarouselIndex(index);
+                    }}
+                    className={`bg-white rounded-xl p-6 flex items-center justify-center h-28 transition-all ${
+                      activeIndex === index
+                        ? "scale-105 shadow-lg"
+                        : "hover:scale-105 shadow-sm"
+                    }`}
+                  >
+                    <div className="w-full h-full flex items-center justify-center">
+                      <Image
+                        src={client.logoSrc}
+                        alt={client.logoAlt}
+                        width={100}
+                        height={60}
+                        className={`object-contain transition-all ${
+                          activeIndex === index ? "opacity-100" : "opacity-60"
+                        }`}
+                      />
+                    </div>
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Navigation Arrows - Only show if more than 5 clients */}
+          {/* Navigation Arrows - Hidden for exactly 5 clients */}
           {clientsData.length > 5 && (
             <>
               <button

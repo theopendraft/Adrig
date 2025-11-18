@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import AuthModal from "./AuthModal";
 
 // Dropdown tabs (Services and Product)
@@ -30,6 +31,18 @@ const NAV_LINKS = [
 export default function AdrigNavbarTabs() {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"login" | "signup">("login");
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleLoginClick = () => {
     setAuthMode("login");
@@ -41,9 +54,16 @@ export default function AdrigNavbarTabs() {
     setIsAuthModalOpen(true);
   };
 
+  const navbarBgClass =
+    isHomePage && !isScrolled
+      ? "bg-transparent"
+      : "bg-[#0a1f5e] backdrop-blur-sm";
+
   return (
     <>
-      <header className="bg-[#0a1f5e] backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+      <header
+        className={`${navbarBgClass} fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
+      >
         <nav className="container-custom my-2">
           <div className=" rounded-2xl">
             <div className="flex items-center justify-between px-2 py-4">
