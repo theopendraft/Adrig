@@ -23,22 +23,16 @@ export default function Team() {
   };
   const teamMembers = [
     {
-      name: "Devadharsanp",
+      name: "Vijay Murugadoss",
+      role: "Founder & CEO",
+      image: "/Website/Teams/members/Vijay.jpg",
+      linkedin: "https://www.linkedin.com/in/vijayasvj/",
+    },
+    {
+      name: "Sarakesh Ramesh",
       role: "Project Manager",
-      image: "/Website/Teams/members/Deva.jpg",
-      linkedin: "https://www.linkedin.com/in/devadharsan-p-481a972a4/",
-    },
-    {
-      name: "Jagatheswar R V",
-      role: "Data Analyst",
-      image: "/Website/Teams/members/Jagatheswar.png",
-      linkedin: "https://www.linkedin.com/in/jagatheswarrv/",
-    },
-    {
-      name: "Jerome Ignatius",
-      role: "Director",
-      image: "/Website/Teams/members/Jerome.jpg",
-      linkedin: "https://www.linkedin.com/in/jeromeignatius/",
+      image: "/Website/Teams/members/Sarakesh.png",
+      linkedin: "https://www.linkedin.com/in/sarakesh-r-8b8942270/",
     },
     {
       name: "Nishaanth M S",
@@ -47,10 +41,10 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/nishaaanth2/",
     },
     {
-      name: "Rohan Murmu",
-      role: "Full Stack Developer",
-      image: "/Website/Teams/members/Rohan.jpg",
-      linkedin: "https://www.linkedin.com/in/rohan-murmu/",
+      name: "Devadharsanp",
+      role: "Project Manager",
+      image: "/Website/Teams/members/Deva.jpg",
+      linkedin: "https://www.linkedin.com/in/devadharsan-p-481a972a4/",
     },
     {
       name: "Sneha",
@@ -59,28 +53,34 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/d-a-sneha-046551151/",
     },
     {
+      name: "Jerome Ignatius",
+      role: "Director",
+      image: "/Website/Teams/members/Jerome.jpg",
+      linkedin: "https://www.linkedin.com/in/jeromeignatius/",
+    },
+    {
+      name: "Rohan Murmu",
+      role: "Full Stack Developer",
+      image: "/Website/Teams/members/Rohan.jpg",
+      linkedin: "https://www.linkedin.com/in/rohan-murmu/",
+    },
+    {
       name: "Sridhar Jeyakumar",
       role: "Full Stack Developer",
       image: "/Website/Teams/members/Sridhar.jpg",
       linkedin: "https://www.linkedin.com/in/sridhar-jeyakumar-41522621a/",
     },
     {
-      name: "Vijay Murugadoss",
-      role: "Founder & CEO",
-      image: "/Website/Teams/members/Vijay.jpg",
-      linkedin: "https://www.linkedin.com/in/vijayasvj/",
+      name: "Jagatheswar R V",
+      role: "Data Analyst",
+      image: "/Website/Teams/members/Jagatheswar.png",
+      linkedin: "https://www.linkedin.com/in/jagatheswarrv/",
     },
     {
       name: "Yokesh Selevakumar",
       role: "Full Stack Developer",
       image: "/Website/Teams/members/Yogesh.jpg",
       linkedin: "https://www.linkedin.com/in/yogeshwaran-k-a44342275/",
-    },
-    {
-      name: "Sarakesh Ramesh",
-      role: "Project Manager",
-      image: "/Website/Teams/members/Sarakesh.png",
-      linkedin: "https://www.linkedin.com/in/sarakesh-r-8b8942270/",
     },
     {
       name: "Yogeshwaram",

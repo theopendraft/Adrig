@@ -1,17 +1,20 @@
 import Link from "next/link";
+import Silk from "./Silk";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen bg-gradient-to-br from-[#0a1f5e] via-[#1a3a8a] to-[#2463eb] overflow-hidden"
+      className="relative min-h-screen bg-[#1a3a8a]overflow-hidden"
     >
-      {/* Background Image */}
+      {/* Background Animation */}
       <div className="absolute inset-0 opacity-20 items-center">
-        <img
-          src="/images/bg.jpg"
-          alt="Background"
-          className="w-full h-full object-cover"
+        <Silk
+          speed={5}
+          scale={1}
+          color="#7B7481"
+          noiseIntensity={1.5}
+          rotation={0}
         />
       </div>
 

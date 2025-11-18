@@ -57,15 +57,60 @@ export default function Work() {
   }, [hasAnimated]);
 
   const projects = [
-    { id: 1, name: "Miporis", slug: "miporis" },
-    { id: 2, name: "Southern Railways (RBMS)", slug: "southern-railways" },
-    { id: 3, name: "Dagala Analytics", slug: "dagala-analytics" },
-    { id: 4, name: "Barron Tech Serve", slug: "barron-tech-serve" },
-    { id: 5, name: "Aladdyn", slug: "aladdyn" },
-    { id: 6, name: "BillsApp", slug: "billsapp" },
-    { id: 7, name: "Dagala", slug: "dagala" },
-    { id: 8, name: "TrackOn (Southern Railways)", slug: "trackon" },
-    { id: 9, name: "Rail Rules (Southern Railways)", slug: "rail-rules" },
+    {
+      id: 1,
+      name: "Miporis",
+      slug: "miporis",
+      image: "/Website/Work/works/Mipors.jpg",
+    },
+    {
+      id: 2,
+      name: "Southern Railways (RBMS)",
+      slug: "southern-railways",
+      image: "/Website/Work/works/RBMS.jpg",
+    },
+    {
+      id: 3,
+      name: "Dagala Analytics",
+      slug: "dagala-analytics",
+      image: "/Website/Work/works/Dagala analytics.jpg",
+    },
+    {
+      id: 4,
+      name: "Barron Tech Serve",
+      slug: "barron-tech-serve",
+      image: "/Website/Work/works/Barron.jpg",
+    },
+    {
+      id: 5,
+      name: "Aladdyn",
+      slug: "aladdyn",
+      image: "/Website/Work/works/aladdyn.jpg",
+    },
+    {
+      id: 6,
+      name: "BillsApp",
+      slug: "billsapp",
+      image: "/Website/Work/works/Bills app.jpg",
+    },
+    {
+      id: 7,
+      name: "Dagala",
+      slug: "dagala",
+      image: "/Website/Work/works/dagala.jpg",
+    },
+    {
+      id: 8,
+      name: "TrackOn (Southern Railways)",
+      slug: "trackon",
+      image: "/Website/Work/works/Trackon.jpg",
+    },
+    {
+      id: 9,
+      name: "Rail Rules (Southern Railways)",
+      slug: "rail-rules",
+      image: "/Website/Work/works/Rail Rules.jpg",
+    },
   ];
 
   return (
@@ -100,42 +145,70 @@ export default function Work() {
 
               {/* Stats */}
               <div ref={statsRef} className="grid grid-cols-3 gap-6">
-                <div className="bg-gray-200 rounded-lg p-6 min-h-[180px] flex flex-col justify-end">
-                  <div className="text-4xl md:text-4xl font-bold text-gray-900 mb-2">
-                    {projectsCount}+
-                  </div>
-                  <div className="text-xs text-gray-700">
-                    Projects Delivered
+                <div className="relative bg-gray-200 rounded-lg p-6 min-h-[180px] flex flex-col justify-end overflow-hidden">
+                  <Image
+                    src="/Website/Work/stats1.jpg"
+                    alt="Projects Delivered"
+                    fill
+                    className="absolute inset-0 object-cover opacity-30"
+                  />
+                  <div className="relative z-10">
+                    <div className="text-4xl md:text-4xl font-bold text-gray-900 mb-2">
+                      {projectsCount}+
+                    </div>
+                    <div className="text-xs text-gray-700 font-semibold">
+                      Projects Delivered
+                    </div>
                   </div>
                 </div>
-                <div className="bg-gray-200 rounded-lg p-6 min-h-[180px] flex flex-col justify-end">
-                  <div className="text-4xl md:text-4xl font-bold text-gray-900 mb-2">
-                    {ongoingCount < 10 ? `0${ongoingCount}` : ongoingCount}
+                <div className="relative bg-gray-200 rounded-lg p-6 min-h-[180px] flex flex-col justify-end overflow-hidden">
+                  <Image
+                    src="/Website/Work/stats2.jpg"
+                    alt="On-going Projects"
+                    fill
+                    className="absolute inset-0 object-cover opacity-30"
+                  />
+                  <div className="relative z-10">
+                    <div className="text-4xl md:text-4xl font-bold text-gray-900 mb-2">
+                      {ongoingCount < 10 ? `0${ongoingCount}` : ongoingCount}
+                    </div>
+                    <div className="text-xs text-gray-700 font-semibold">
+                      On-going Projects
+                    </div>
                   </div>
-                  <div className="text-xs text-gray-700">On-going Projects</div>
                 </div>
-                <div className="bg-gray-200 rounded-lg p-6 min-h-[180px] flex flex-col justify-end">
-                  <div className="text-4xl md:text-4xl font-bold text-gray-900 mb-2">
-                    {industriesCount}+
+                <div className="relative bg-gray-200 rounded-lg p-6 min-h-[180px] flex flex-col justify-end overflow-hidden">
+                  <Image
+                    src="/Website/Work/stats3.jpg"
+                    alt="Industries Served"
+                    fill
+                    className="absolute inset-0 object-cover opacity-30"
+                  />
+                  <div className="relative z-10">
+                    <div className="text-4xl md:text-4xl font-bold text-gray-900 mb-2">
+                      {industriesCount}+
+                    </div>
+                    <div className="text-xs text-gray-700 font-semibold">
+                      Industries Served
+                    </div>
                   </div>
-                  <div className="text-xs text-gray-700">Industries Served</div>
                 </div>
               </div>
             </div>
 
             {/* Right Side - Image Box */}
             <div className="relative">
-                        <div className="aspect-[4/5] bg-gray-500 rounded-3xl shadow-2xl overflow-hidden">
-                          <Image
-                            src="/Website/Work/team-business-people-stacking-hands.jpg"
-                            alt="Partnership"
-                            width={800}
-                            height={1000}
-                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                            priority
-                          />
-                        </div>
-                      </div>
+              <div className="aspect-[4/5] bg-gray-500 rounded-3xl shadow-2xl overflow-hidden">
+                <Image
+                  src="/Website/Work/team-business-people-stacking-hands.jpg"
+                  alt="Partnership"
+                  width={800}
+                  height={1000}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -160,16 +233,28 @@ export default function Work() {
               <Link
                 key={project.id}
                 href={`/work/${project.slug}`}
-                className="relative bg-gray-100 rounded-lg p-8 min-h-[280px] flex flex-col justify-between group hover:bg-gray-200 transition-colors"
+                className="relative bg-gray-100 rounded-lg p-8 min-h-[280px] flex flex-col justify-between group transition-all overflow-hidden"
               >
+                {/* Background Image with Scale Effect */}
+                <div className="absolute inset-0">
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  {/* Gradient Overlay from Bottom */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                </div>
+
                 {/* Project Name */}
-                <h3 className="text-xl font-bold text-gray-900">
+                <h3 className="relative z-10 text-xl font-bold text-white drop-shadow-lg">
                   {project.name}
                 </h3>
 
                 {/* Plus Button */}
-                <div className="flex justify-end">
-                  <div className="w-10 h-10 bg-primary text-white rounded flex items-center justify-center group-hover:bg-blue-700 transition-colors">
+                <div className="relative z-10 flex justify-end">
+                  <div className="w-10 h-10 bg-primary text-white rounded flex items-center justify-center group-hover:bg-blue-700 transition-colors shadow-lg">
                     <svg
                       className="w-5 h-5"
                       fill="none"

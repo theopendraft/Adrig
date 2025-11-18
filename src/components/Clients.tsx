@@ -35,12 +35,17 @@ const clientsData = [
     id: 1,
     logoSrc: clientLogos[0],
     logoAlt: "Client 1",
+    image: "/Website/Home/client/RBMS.png",
     headline: "Southern Railways – Advanced Railway Digital Systems",
     stats: [
       { label: "+42%", description: "Process Digitization" },
       { label: "+33%", description: "Operational Time Reduction" },
     ],
-    products: ["RBMS (Rolling Block System)", "Data Analytics Platform", "AI Rule Clarifier", "IoT Tracking Solutions" ],
+    products: [
+      "RBMS (Rolling Block System)",
+      "Data Analytics Platform",
+      "AI Rule Clarifier",
+    ],
   },
   // {
   //   id: 2,
@@ -57,12 +62,17 @@ const clientsData = [
     id: 3,
     logoSrc: clientLogos[2],
     logoAlt: "Client 3",
+    image: "/Website/Home/client/VIT.jpg",
     headline: "VIT Chennai – Research & Innovation Collaboration",
     stats: [
       { label: "+57%", description: " Research Acceleration" },
       { label: "+29%", description: "Automation of Academic Workflows" },
     ],
-    products: ["AI Research Support", "Prototype Development", "Technical Consulting"],
+    products: [
+      "AI Research Support",
+      "Prototype Development",
+      "Technical Consulting",
+    ],
   },
   // {
   //   id: 4,
@@ -145,12 +155,17 @@ const clientsData = [
     id: 11,
     logoSrc: clientLogos[10],
     logoAlt: "Client 11",
+    image: "/Website/Home/client/Barron.jpg",
     headline: "Barron Tech – Employee Tracking & Expense Automation",
     stats: [
       { label: "+39%", description: "Operational Transparency" },
       { label: "+46%", description: "Field Team Efficiency" },
     ],
-    products: ["Mobile App Development", "GPS & Movement Tracking", " Expense Automation AI"],
+    products: [
+      "Mobile App Development",
+      "GPS & Movement Tracking",
+      " Expense Automation AI",
+    ],
   },
   // {
   //   id: 12,
@@ -222,12 +237,17 @@ const clientsData = [
     id: 18,
     logoSrc: clientLogos[17],
     logoAlt: "Client 18",
+    image: "/Website/Home/client/Miporis.jpg",
     headline: "Mipors – Financial Compliance Enhancement",
     stats: [
       { label: "+48%", description: "Operational Accuracy" },
       { label: "+37%", description: "Compliance Efficiency Improvement" },
     ],
-    products: ["AI Automation", "Financial Compliance Tools", "Custom Dashboard Development"],
+    products: [
+      "AI Automation",
+      "Financial Compliance Tools",
+      "Custom Dashboard Development",
+    ],
   },
   // {
   //   id: 19,
@@ -523,9 +543,19 @@ export default function Clients() {
           </div>
 
           {/* Right Side - Case Study Panel with Animation */}
-          <div className="bg-gray-400 rounded-3xl aspect-video w-full flex items-center justify-between p-12 md:p-20 relative overflow-hidden">
-            {/* Background Image Placeholder - Fixed */}
-            <div className="absolute inset-0 bg-black/10"></div>
+          <div className="group bg-gray-400 rounded-3xl aspect-video w-full flex items-center justify-between p-12 md:p-20 relative overflow-hidden">
+            {/* Background Image with Scale Effect */}
+            <div className="absolute inset-0">
+              <Image
+                src={activeClient.image}
+                alt={activeClient.headline}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
+
+            {/* Blue Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-600/40 to-transparent"></div>
 
             {/* Document Icon - Fixed Position */}
             <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-sm rounded-full p-3 z-20">
@@ -581,124 +611,134 @@ export default function Clients() {
         <div className="hidden lg:block relative overflow-hidden">
           <div className="relative">
             <motion.div
-              className="flex gap-3"
-              animate={{
-                x: `calc(-${
-                  ((carouselIndex % clientsData.length) + clientsData.length) *
-                  (100 / 7)
-                }% + ${(100 / 7) * 3}%)`,
-              }}
+              className="flex gap-4"
+              animate={
+                clientsData.length === 5
+                  ? {}
+                  : {
+                      x: `calc(-${
+                        ((carouselIndex % clientsData.length) +
+                          clientsData.length) *
+                        (100 / 5)
+                      }% + ${(100 / 5) * 2}%)`,
+                    }
+              }
               transition={{
                 duration: 0.5,
                 ease: "easeInOut",
               }}
             >
-              {/* Triple the logos for seamless infinite loop */}
-              {[...clientsData, ...clientsData, ...clientsData].map(
-                (client, index) => {
-                  const originalIndex = index % clientsData.length;
-                  return (
-                    <div
-                      key={`${client.id}-${index}`}
-                      className="flex-shrink-0"
-                      style={{ width: `${100 / 7}%` }}
-                    >
-                      <div className="flex flex-col gap-2 px-1.5">
-                        {/* Progress Bar - Above the box */}
-                        <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-                          {activeIndex === originalIndex && (
-                            <motion.div
-                              className="h-full bg-blue-600"
-                              initial={{ width: "0%" }}
-                              animate={{ width: "100%" }}
-                              transition={{ duration: 5, ease: "linear" }}
-                              key={`progress-${activeIndex}-${index}`}
-                            />
-                          )}
-                        </div>
-
-                        {/* Logo Box */}
-                        <button
-                          onClick={() => {
-                            setActiveIndex(originalIndex);
-                            setCarouselIndex(originalIndex);
-                          }}
-                          className={`bg-white rounded-xl p-4 flex items-center justify-center h-20 transition-all ${
-                            activeIndex === originalIndex
-                              ? "scale-105 shadow-lg"
-                              : "hover:scale-105 shadow-sm"
-                          }`}
-                        >
-                          <div className="w-full h-full flex items-center justify-center">
-                            <Image
-                              src={client.logoSrc}
-                              alt={client.logoAlt}
-                              width={80}
-                              height={50}
-                              className={`object-contain transition-all ${
-                                activeIndex === originalIndex
-                                  ? "opacity-100"
-                                  : "opacity-60"
-                              }`}
-                            />
-                          </div>
-                        </button>
+              {/* Triple the logos for seamless infinite loop - or just show once if exactly 5 */}
+              {(clientsData.length === 5
+                ? clientsData
+                : [...clientsData, ...clientsData, ...clientsData]
+              ).map((client, index) => {
+                const originalIndex = index % clientsData.length;
+                return (
+                  <div
+                    key={`${client.id}-${index}`}
+                    className="flex-shrink-0"
+                    style={{ width: `${100 / 5}%` }}
+                  >
+                    <div className="flex flex-col gap-2 px-2">
+                      {/* Progress Bar - Above the box */}
+                      <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                        {activeIndex === originalIndex && (
+                          <motion.div
+                            className="h-full bg-blue-600"
+                            initial={{ width: "0%" }}
+                            animate={{ width: "100%" }}
+                            transition={{ duration: 5, ease: "linear" }}
+                            key={`progress-${activeIndex}-${index}`}
+                          />
+                        )}
                       </div>
+
+                      {/* Logo Box */}
+                      <button
+                        onClick={() => {
+                          setActiveIndex(originalIndex);
+                          setCarouselIndex(originalIndex);
+                        }}
+                        className={`bg-white rounded-xl p-6 flex items-center justify-center h-28 transition-all ${
+                          activeIndex === originalIndex
+                            ? "scale-105 shadow-lg"
+                            : "hover:scale-105 shadow-sm"
+                        }`}
+                      >
+                        <div className="w-full h-full flex items-center justify-center">
+                          <Image
+                            src={client.logoSrc}
+                            alt={client.logoAlt}
+                            width={100}
+                            height={60}
+                            className={`object-contain transition-all ${
+                              activeIndex === originalIndex
+                                ? "opacity-100"
+                                : "opacity-60"
+                            }`}
+                          />
+                        </div>
+                      </button>
                     </div>
-                  );
-                }
-              )}
+                  </div>
+                );
+              })}
             </motion.div>
           </div>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={() => {
-              const newIndex =
-                (activeIndex - 1 + clientsData.length) % clientsData.length;
-              setActiveIndex(newIndex);
-              setCarouselIndex(newIndex);
-            }}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-10"
-            aria-label="Previous logos"
-          >
-            <svg
-              className="w-5 h-5 text-gray-700"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-          <button
-            onClick={() => {
-              const newIndex = (activeIndex + 1) % clientsData.length;
-              setActiveIndex(newIndex);
-              setCarouselIndex(newIndex);
-            }}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-10"
-            aria-label="Next logos"
-          >
-            <svg
-              className="w-5 h-5 text-gray-700"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
+          {/* Navigation Arrows - Only show if more than 5 clients */}
+          {clientsData.length > 5 && (
+            <>
+              <button
+                onClick={() => {
+                  const newIndex =
+                    (activeIndex - 1 + clientsData.length) % clientsData.length;
+                  setActiveIndex(newIndex);
+                  setCarouselIndex(newIndex);
+                }}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-10"
+                aria-label="Previous logos"
+              >
+                <svg
+                  className="w-5 h-5 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+              <button
+                onClick={() => {
+                  const newIndex = (activeIndex + 1) % clientsData.length;
+                  setActiveIndex(newIndex);
+                  setCarouselIndex(newIndex);
+                }}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-10"
+                aria-label="Next logos"
+              >
+                <svg
+                  className="w-5 h-5 text-gray-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </>
+          )}
         </div>
 
         {/* Client Logos Carousel - Mobile View */}

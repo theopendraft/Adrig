@@ -68,9 +68,7 @@ export default function Testimonials() {
               Hear What Our Clients Say About Us
             </h3>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat.
+Adrig AI's innovative approach and deep expertise were instrumental in transforming our operational processes. Their dedication to delivering high-quality, scalable AI solutions is truly commendable.
             </p>
             <Link href="/work">
               <button className="btn-primary px-4 sm:px-8 py-2 text-xs sm:text-sm font-semibold flex items-center gap-2 rounded-full mt-8">
