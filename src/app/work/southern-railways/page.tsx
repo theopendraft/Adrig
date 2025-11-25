@@ -57,7 +57,7 @@ export default function SouthernRailwaysPage() {
               </div>
               <div className="mt-12">
                 <Image
-                  src="/Website/Products/Rbms/portrait-railroader-man-worker-with-clipboard-standing-by-railroad-tracks-cargo-freight-train-background.jpg"
+                  src="/Website/Products/Rbms/train2.jpg"
                   alt="Railway Worker at Southern Railways"
                   width={1200}
                   height={600}
@@ -367,7 +367,7 @@ export default function SouthernRailwaysPage() {
                   </p>
                   <div className="mt-6">
                     <Image
-                      src="/Website/Products/Rbms/people-watching-as-train-approaches.jpg"
+                      src="/Website/Products/Rbms/train.jpg"
                       alt="Railway Safety Operations"
                       width={800}
                       height={500}
