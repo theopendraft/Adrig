@@ -49,6 +49,7 @@ export default function ServiceCard({
       onClick={handleClick}
       animate={{
         flex: !isMobile && isExpanded ? 1.2 : !isMobile ? 1 : undefined,
+        height: isMobile && isExpanded ? "auto" : isMobile ? "auto" : undefined,
       }}
       transition={{
         type: "spring",
@@ -78,19 +79,36 @@ export default function ServiceCard({
           </h3>
 
           {/* Description with smooth reveal */}
-          <motion.div
-            className="overflow-hidden text-gray-700 absolute left-4 right-4 bottom-12 md:left-6 md:right-6 md:bottom-16 h-16"
-            animate={{
-              y: isExpanded ? 0 : 12,
-              opacity: isExpanded ? 1 : 0,
-            }}
-            transition={{
-              y: { type: "spring", stiffness: 300, damping: 28 },
-              opacity: { duration: 0.25, delay: isExpanded ? 0 : 0 },
-            }}
-          >
-            <p className="text-sm leading-relaxed">{description}</p>
-          </motion.div>
+          {isMobile ? (
+            <motion.div
+              className="overflow-hidden"
+              initial={false}
+              animate={{
+                height: isExpanded ? "auto" : 0,
+                opacity: isExpanded ? 1 : 0,
+              }}
+              transition={{
+                height: { duration: 0.3, ease: "easeInOut" },
+                opacity: { duration: 0.2, delay: isExpanded ? 0.1 : 0 },
+              }}
+            >
+              <p className="text-sm text-gray-700 leading-relaxed pb-2">{description}</p>
+            </motion.div>
+          ) : (
+            <motion.div
+              className="overflow-hidden text-gray-700 absolute left-4 right-4 bottom-12 md:left-6 md:right-6 md:bottom-16 h-16"
+              animate={{
+                y: isExpanded ? 0 : 12,
+                opacity: isExpanded ? 1 : 0,
+              }}
+              transition={{
+                y: { type: "spring", stiffness: 300, damping: 28 },
+                opacity: { duration: 0.25, delay: isExpanded ? 0 : 0 },
+              }}
+            >
+              <p className="text-sm leading-relaxed">{description}</p>
+            </motion.div>
+          )}
         </div>
 
         {/* Plus/Minus Icon Button */}

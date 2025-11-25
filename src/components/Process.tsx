@@ -3,6 +3,7 @@
 import React, { useState, useEffect, MouseEvent } from "react";
 import { motion, useMotionValue, useTransform, PanInfo } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 // Custom hook to detect mobile view
 function useIsMobile(breakpoint: number = 768): boolean {
@@ -79,9 +80,33 @@ export default function Process() {
           {/* Left Side - Circular Profiles */}
           <div className="flex items-center gap-4">
             <div className="flex -space-x-3">
-              <div className="w-12 h-12 rounded-full bg-gray-400 border-4 border-gray-100"></div>
-              <div className="w-12 h-12 rounded-full bg-gray-500 border-4 border-gray-100"></div>
-              <div className="w-12 h-12 rounded-full bg-gray-600 border-4 border-gray-100"></div>
+              <div className="w-12 h-12 rounded-full bg-white border-4 border-gray-100 overflow-hidden flex items-center justify-center p-2">
+                <Image
+                  src="/adrig client logos/18.png"
+                  alt="Client"
+                  width={48}
+                  height={48}
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-12 h-12 rounded-full bg-white border-4 border-gray-100 overflow-hidden flex items-center justify-center p-2">
+                <Image
+                  src="/adrig client logos/11.png"
+                  alt="Client"
+                  width={48}
+                  height={48}
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-12 h-12 rounded-full bg-white border-4 border-gray-100 overflow-hidden flex items-center justify-center p-2">
+                <Image
+                  src="/adrig client logos/2.png"
+                  alt="Client"
+                  width={48}
+                  height={48}
+                  className="object-contain"
+                />
+              </div>
             </div>
             <p className="text-lg font-semibold text-gray-900 ml-2">
               Align with businesses that choose excellence
@@ -94,11 +119,7 @@ export default function Process() {
             className="btn-primary px-4 py-2 text-base flex items-center gap-2 whitespace-nowrap rounded-full"
           >
             GET IN TOUCH
-            <img
-                  src="/right-up-white.png"
-                  alt="right-up"
-                  className="w-6 h-6"
-                />
+            <img src="/right-up-white.png" alt="right-up" className="w-6 h-6" />
           </Link>
         </div>
       </div>
