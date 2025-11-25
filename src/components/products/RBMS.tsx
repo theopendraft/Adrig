@@ -114,13 +114,13 @@ export default function RBMS() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
               RBMS -{" "}
               <span className="text-primary">
-                Railway Booking Management System
+                Rolling Block Management System
               </span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              Our Railway Booking Management System (RBMS) is a modern, end to
-              end platform designed for large railway networks such as Southern
+              Our Rolling Block Management System (RBMS) is a modern, end to end
+              platform designed for large railway networks such as Southern
               Railways. It centralizes ticket booking, reservation management,
               seat allocation, and passenger communication while providing real
               time train tracking and deep operational analytics. RBMS connects
@@ -374,7 +374,7 @@ export default function RBMS() {
               Ready to Transform Your Business?
             </h2>
             <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
-              Contact our team today to explore how our RBMS - Railway Booking
+              Contact our team today to explore how our RBMS - Rolling Block
               Management System services can help you achieve your business
               goals.
             </p>
