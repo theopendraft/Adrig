@@ -191,7 +191,7 @@ export default function ChatbotDevelopment() {
                   className=" flex items-start gap-4  p-4 rounded-xl "
                 >
                   {/* Blue Arrow Icon */}
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary rounded flex items-center justify-center">
+                  <div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
                     <img
                       src="/right-up-white.png"
                       alt="right-up"
@@ -231,7 +231,7 @@ export default function ChatbotDevelopment() {
                 className="h-48 bg-gray-100 rounded-xl p-6 justify-between flex flex-col"
               >
                 {/* Number Badge */}
-                <div className="inline-flex items-center justify-center w-10 h-10 bg-primary text-white font-bold rounded mb-4">
+                <div className="inline-flex items-center justify-center w-10 h-10 bg-blue-600 text-white font-bold rounded mb-4">
                   {benefit.number}
                 </div>
 
@@ -265,7 +265,7 @@ export default function ChatbotDevelopment() {
               <div key={index} className="">
                 <div className="flex items-start gap-4">
                   {/* Blue Arrow Icon */}
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary rounded flex items-center justify-center">
+                  <div className="flex-shrink-0 w-10 h-10 bg-blue-600 rounded flex items-center justify-center">
                     <img
                       src="/right-up-white.png"
                       alt="right-up"
@@ -312,14 +312,10 @@ export default function ChatbotDevelopment() {
               >
                 {/* Question */}
                 <button
-                  className="w-full flex items-center justify-between p-6 text-left"
+                  className="w-full flex items-center gap-4 p-6 text-left"
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 >
-                  <span className="font-bold text-gray-900 pr-8">
-                    {faq.question}
-                  </span>
-
-                  {/* Icon */}
+                  {/* Icon - Left Side */}
                   <div className="flex-shrink-0">
                     {openFaq === index ? (
                       <div className="w-8 h-8 flex items-center justify-center bg-gray-300 rounded">
@@ -330,11 +326,16 @@ export default function ChatbotDevelopment() {
                         />
                       </div>
                     ) : (
-                      <div className="w-8 h-8 flex items-center justify-center bg-primary rounded-sm">
+                      <div className="w-8 h-8 flex items-center justify-center bg-blue-600 rounded-sm">
                         <img src="/plus.png" alt="plus" className="w-4 h-4" />
                       </div>
                     )}
                   </div>
+
+                  {/* Question Text */}
+                  <span className="font-bold text-gray-900 flex-1 text-left">
+                    {faq.question}
+                  </span>
                 </button>
 
                 {/* Answer */}

@@ -195,7 +195,7 @@ export default function AIConsulting() {
                 className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300"
               >
                 {/* Number Badge */}
-                <div className="inline-flex items-center justify-center px-4 py-2 bg-primary text-white font-bold rounded mb-6">
+                <div className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white font-bold rounded mb-6">
                   {service.number}
                 </div>
 
@@ -287,7 +287,7 @@ export default function AIConsulting() {
                 {/* Button - only show on middle card (index 1) */}
                 {index === 1 && (
                   <Link href="/contact">
-                    <button className="mt-6 w-full bg-primary text-white font-semibold py-4 px-8 rounded-full hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 text-sm tracking-wider">
+                    <button className="mt-6 w-full bg-blue-600 text-white font-semibold py-4 px-8 rounded-full hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 text-sm tracking-wider">
                       GET STARTED
                       <img
                         src="/right-up-white.png"
@@ -324,14 +324,10 @@ export default function AIConsulting() {
               >
                 {/* Question */}
                 <button
-                  className="w-full flex items-center justify-between p-6 text-left"
+                  className="w-full flex items-center gap-4 p-6 text-left"
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 >
-                  <span className="font-bold text-gray-900 pr-8">
-                    {faq.question}
-                  </span>
-
-                  {/* Icon */}
+                  {/* Icon - Left Side */}
                   <div className="flex-shrink-0">
                     {openFaq === index ? (
                       <div className="w-8 h-8 flex items-center justify-center bg-gray-300 rounded">
@@ -342,11 +338,16 @@ export default function AIConsulting() {
                         />
                       </div>
                     ) : (
-                      <div className="w-8 h-8 flex items-center justify-center bg-primary rounded-sm">
+                      <div className="w-8 h-8 flex items-center justify-center bg-blue-600 rounded-sm">
                         <img src="/plus.png" alt="plus" className="w-4 h-4" />
                       </div>
                     )}
                   </div>
+
+                  {/* Question Text */}
+                  <span className="font-bold text-gray-900 flex-1 text-left">
+                    {faq.question}
+                  </span>
                 </button>
 
                 {/* Answer */}

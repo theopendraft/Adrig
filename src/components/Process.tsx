@@ -116,9 +116,9 @@ export default function Process() {
           {/* Right Side - Button */}
           <Link
             href="/contact"
-            className="btn-primary px-4 py-2 text-base flex items-center gap-2 whitespace-nowrap rounded-full"
+            className="btn-primary px-6 py-3 text-base flex items-center gap-2 whitespace-nowrap rounded-full"
           >
-            GET IN TOUCH
+            GET STARTED
             <img src="/right-up-white.png" alt="right-up" className="w-6 h-6" />
           </Link>
         </div>

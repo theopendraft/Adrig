@@ -9,24 +9,24 @@ export default function Partnership() {
 
   const stats = [
     {
-      number: 30,
+      number: 3,
       suffix: "+",
-      label: "Indian Clients",
+      label: "Years of Experience",
     },
     {
-      number: 10,
+      number: 20,
       suffix: "+",
-      label: "International Clients",
+      label: "Countries",
     },
     {
-      number: 15,
-      suffix: "",
+      number: 25,
+      suffix: "+",
       label: "In-house Experts",
     },
     {
-      number: 2,
+      number: 250,
       suffix: "+",
-      label: "Years of Excellence",
+      label: "Projects",
     },
   ];
 
@@ -54,7 +54,7 @@ export default function Partnership() {
   return (
     <section
       id="partnership"
-      className="section-padding bg-gray-50"
+      className="section-padding bg-white"
       ref={sectionRef}
     >
       <div className="container-custom">
@@ -75,25 +75,29 @@ export default function Partnership() {
 
           {/* Right: Content */}
           <div className="space-y-8">
-            <h2 className="text-4xl md:text-4xl lg:text-4xl font-bold text-gray-900 leading-tight lg:text-center">
+            <h2 className="text-4xl md:text-4xl lg:text-4xl font-bold text-gray-900 leading-tight">
               Proudly partnering with leading organizations{" "}
-              <span className="text-primary">Internationally.</span>
+              <span className="text-blue-600">Internationally.</span>
             </h2>
 
-            <p className="text-md text-gray-600 leading-relaxed lg:text-center lg:px-20">
+            <p className="text-md text-gray-600 leading-relaxed">
               Delivering cutting-edge AI solutions that fuel growth and
               transformation with leading organizations in India, the UK, and
               the US.
             </p>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-1">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-gray-100 rounded-md p-4 lg:pt-16 transition-shadow duration-300"
+                  className="bg-white rounded-lg p-6 border border-gray-200 transition-shadow duration-300 hover:shadow-md"
                 >
-                  <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+                  <div className={`font-bold text-gray-900 mb-2 ${
+                    stat.number >= 100 
+                      ? "text-3xl lg:text-4xl" 
+                      : "text-4xl lg:text-5xl"
+                  }`}>
                     <CountUp
                       end={stat.number}
                       suffix={stat.suffix}

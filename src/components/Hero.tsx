@@ -1,46 +1,39 @@
 import Link from "next/link";
-import Silk from "./Silk";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen bg-[#1a3a8a]overflow-hidden"
+      className="relative min-h-screen overflow-hidden"
+      style={{
+        backgroundImage: 'url(/%3Ahero-bg.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
-      {/* Background Animation */}
-      <div className="absolute inset-0 items-center">
-        <Silk
-          speed={5}
-          scale={1}
-          color="#2463eb"
-          noiseIntensity={1.5}
-          rotation={0}
-        />
-      </div>
+      {/* Optional subtle overlay for better text readability if needed */}
+      <div className="absolute inset-0 bg-black/10"></div>
 
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a1f5e]/30 via-[#1a3a8a]/20 to-transparent"></div>
-
-      <div className="container-custom relative z-10 pt-24 pb-16 px-6 md:pt-80 md:pb-40 lg:pt-80 flex items-center min-h-screen">
+      <div className="container mx-auto relative z-10 pt-32 pb-16 px-6 lg:px-8 flex items-center min-h-screen">
         {/* Left Content Only */}
-        <div className="max-w-4xl w-full">
-          <h1 className="mb-4 text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+        <div className="max-w-2xl w-full">
+          <h1 className="mb-6 text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
             Driving growth with AI
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl text-blue-100 mb-8 max-w-md leading-relaxed">
-            We craft workflow automations and bespoke AI solutions for forward
-            thinking companies.
+          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-8 max-w-xl leading-relaxed">
+            We craft workflow automations and bespoke AI solutions for forward thinking companies.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <a href="#services" className="inline-block">
-              <button className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-transparent text-white font-semibold rounded-full border-2 border-white hover:bg-white/10 transition-all duration-200 uppercase text-xs sm:text-sm tracking-wide">
+              <button className="w-full sm:w-auto px-8 py-3 bg-transparent text-white font-medium rounded-full border-2 border-white hover:bg-white/10 transition-all duration-200 uppercase text-sm tracking-wide">
                 OUR SERVICES
               </button>
             </a>
 
             <Link
               href="/contact"
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-white text-primary font-semibold rounded-full hover:bg-blue-50 transition-all duration-200 shadow-lg hover:shadow-xl uppercase text-xs sm:text-sm tracking-wide flex items-center justify-center"
+              className="w-full sm:w-auto px-8 py-3 bg-white text-blue-600 font-medium rounded-full hover:bg-blue-50 transition-all duration-200 shadow-lg hover:shadow-xl uppercase text-sm tracking-wide flex items-center justify-center"
             >
               GET IN TOUCH
             </Link>

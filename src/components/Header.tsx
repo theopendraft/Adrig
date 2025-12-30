@@ -23,146 +23,130 @@ export default function Header() {
   const [hoveredService, setHoveredService] = useState<string | null>(null);
 
   const servicesData: ServicesDataType = {
-    "Chatbot Development": {
-      description: "Build intelligent conversational AI solutions",
-      subOptions: [
-        {
-          name: "Custom AI Chatbots",
-          description: "Tailored chatbot solutions for your business needs",
-        },
-        {
-          name: "Voice Assistants",
-          description: "Natural language voice-enabled assistants",
-        },
-        {
-          name: "Multi-platform Integration",
-          description: "Deploy across web, mobile, and messaging apps",
-        },
-      ],
-      href: "#services",
-    },
     "Software Development": {
       description: "Custom software solutions for your business",
       subOptions: [
         {
-          name: "Web Applications",
-          description: "Scalable and responsive web solutions",
+          name: "Software Development",
+          description: "Custom software development services",
         },
         {
-          name: "Mobile Apps",
-          description: "Native and cross-platform mobile development",
+          name: "SAAS Development",
+          description: "Software as a Service solutions",
         },
         {
-          name: "Enterprise Systems",
-          description: "Complex enterprise-grade software solutions",
+          name: "Software Consulting",
+          description: "Expert software consulting services",
+        },
+        {
+          name: "UI Design Services",
+          description: "User interface and experience design",
+        },
+        {
+          name: "Enterprise Software Development",
+          description: "Large-scale enterprise solutions",
+        },
+        {
+          name: "Web Application Development",
+          description: "Modern web application solutions",
+        },
+        {
+          name: "Digital Transformation",
+          description: "Digital transformation consulting",
+        },
+        {
+          name: "Mobile App Development",
+          description: "Native and cross-platform mobile apps",
         },
       ],
       href: "#services",
     },
-    "Workflow Automations": {
-      description: "Streamline operations with smart automation",
+    "Generative AI": {
+      description: "Advanced AI solutions for content generation",
       subOptions: [
         {
-          name: "Process Automation",
-          description: "Automate repetitive business processes",
+          name: "AI Content Creation",
+          description: "Automated content generation and optimization",
         },
         {
-          name: "Integration Services",
-          description: "Connect and sync your business tools",
+          name: "Custom AI Models",
+          description: "Tailored generative AI models for your needs",
         },
         {
-          name: "Custom Workflows",
-          description: "Design workflows tailored to your needs",
+          name: "AI Integration",
+          description: "Seamless integration of AI into existing systems",
         },
       ],
       href: "#services",
     },
-    "AI Automation": {
-      description: "Intelligent automation powered by AI",
+    "Artificial Intelligence and ML": {
+      description: "Machine learning and AI solutions",
       subOptions: [
         {
           name: "Predictive Analytics",
           description: "AI-driven insights and forecasting",
         },
         {
-          name: "Smart Decision Making",
-          description: "Automated intelligent decision systems",
+          name: "ML Model Development",
+          description: "Custom machine learning model creation",
         },
         {
-          name: "ML Model Deployment",
-          description: "Production-ready machine learning models",
+          name: "AI Automation",
+          description: "Intelligent process automation solutions",
         },
       ],
       href: "#services",
     },
-    "LLM Development": {
-      description: "Custom Large Language Model solutions",
+    "Data Engineering": {
+      description: "Robust data infrastructure and pipeline solutions",
       subOptions: [
         {
-          name: "Fine-tuned Models",
-          description: "Domain-specific language models",
+          name: "Data Pipeline Development",
+          description: "Scalable data processing and ETL solutions",
         },
         {
-          name: "RAG Systems",
-          description: "Retrieval-augmented generation solutions",
+          name: "Data Warehouse Design",
+          description: "Enterprise data storage and management",
         },
         {
-          name: "Prompt Engineering",
-          description: "Optimized prompts for better results",
+          name: "Real-time Analytics",
+          description: "Live data processing and streaming solutions",
         },
       ],
       href: "#services",
     },
-    "AI Consulting": {
-      description: "Strategic AI guidance for your business",
+    "Cyber Security": {
+      description: "Comprehensive security solutions for your business",
       subOptions: [
         {
-          name: "AI Strategy",
-          description: "Develop comprehensive AI roadmaps",
+          name: "Security Assessment",
+          description: "Vulnerability analysis and risk evaluation",
         },
         {
-          name: "Technology Assessment",
-          description: "Evaluate and select the right AI tools",
+          name: "Security Implementation",
+          description: "Deploy robust security measures and protocols",
         },
         {
-          name: "Implementation Support",
-          description: "Hands-on guidance for AI adoption",
+          name: "Compliance & Monitoring",
+          description: "Ongoing security monitoring and compliance",
         },
       ],
       href: "#services",
     },
-    "Data Analysis": {
-      description: "Turn data into actionable insights",
-      subOptions: [
-        {
-          name: "Business Intelligence",
-          description: "Comprehensive BI dashboards and reports",
-        },
-        {
-          name: "Data Visualization",
-          description: "Interactive charts and visual analytics",
-        },
-        {
-          name: "Predictive Modeling",
-          description: "Statistical models for forecasting",
-        },
-      ],
-      href: "#services",
-    },
-    "Talent Acquisition": {
-      description: "Find the right AI and tech talent",
+    "Hire Developers": {
+      description: "Find and hire top-tier development talent",
       subOptions: [
         {
           name: "Technical Recruitment",
-          description: "Source skilled AI and software engineers",
+          description: "Source skilled developers and engineers",
         },
         {
           name: "Team Augmentation",
-          description: "Scale your team with experts",
+          description: "Scale your development team with experts",
         },
         {
           name: "Contract Specialists",
-          description: "Flexible hiring for project needs",
+          description: "Flexible hiring for project-based needs",
         },
       ],
       href: "#services",
@@ -192,7 +176,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <a href="#home" className="flex items-center space-x-3">
               <img
-                src="/images/Adrig.PNG"
+                src="/Adrig_blue.png"
                 alt="Adrig Logo"
                 className="w-10 h-10 object-contain flex items-center justify-center"
               />

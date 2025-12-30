@@ -196,7 +196,7 @@ export default function LLMDevelopment() {
                 className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300"
               >
                 {/* Number Badge */}
-                <div className="inline-flex items-center justify-center px-4 py-2 bg-primary text-white font-bold rounded mb-6">
+                <div className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white font-bold rounded mb-6">
                   {service.number}
                 </div>
 
@@ -228,6 +228,223 @@ export default function LLMDevelopment() {
 
             {/* Right Side - Content */}
             <div className="order-1 lg:order-2">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Types of LLM Solutions We Build
+              </h2>
+              <p className="text-lg text-gray-700 mb-8">
+                From intelligent chatbots to document analysis systems, we create
+                custom LLM solutions that transform how your business operates.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {solutions.map((solution, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                  >
+                    <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-800 font-medium">
+                      {solution.title}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 md:py-32 bg-gray-900">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Why Choose Adrig for LLM Development?
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              We combine deep AI expertise with practical business understanding to
+              deliver LLM solutions that drive real results.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {reasons.map((reason) => (
+              <div
+                key={reason.number}
+                className="text-center group hover:transform hover:scale-105 transition-all duration-300"
+              >
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 text-white font-bold text-xl rounded-full mb-6 group-hover:bg-white group-hover:text-blue-600 transition-colors duration-300">
+                  {reason.number.replace('.', '')}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">
+                  {reason.title}
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  {reason.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Our LLM Development Process
+            </h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              A systematic approach to building powerful, reliable LLM solutions
+              tailored to your business needs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Discovery & Analysis",
+                description: "We analyze your data, workflows, and requirements to design the optimal LLM solution."
+              },
+              {
+                step: "02",
+                title: "Model Selection & Training",
+                description: "Choose and fine-tune the best model architecture for your specific use case."
+              },
+              {
+                step: "03",
+                title: "Integration & Testing",
+                description: "Seamlessly integrate the LLM into your systems with comprehensive testing."
+              },
+              {
+                step: "04",
+                title: "Deployment & Optimization",
+                description: "Deploy to production and continuously optimize for performance and accuracy."
+              }
+            ].map((process) => (
+              <div key={process.step} className="text-center group">
+                <div className="relative mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 text-white font-bold text-xl rounded-full group-hover:bg-gray-900 transition-colors duration-300">
+                    {process.step}
+                  </div>
+                  {process.step !== "04" && (
+                    <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gray-200"></div>
+                  )}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {process.title}
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {process.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 md:py-32 bg-gray-50">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-lg text-gray-700">
+                Get answers to common questions about LLM development and implementation.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl border border-gray-200 overflow-hidden"
+                >
+                  <button
+                    className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  >
+                    <span className="text-lg font-semibold text-gray-900 pr-4">
+                      {faq.question}
+                    </span>
+                    <div className="flex-shrink-0">
+                      <div
+                        className={`w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center transition-transform duration-200 ${
+                          openFaq === index ? "rotate-45" : ""
+                        }`}
+                      >
+                        <svg
+                          className="w-4 h-4 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                  {openFaq === index && (
+                    <div className="px-8 pb-6">
+                      <p className="text-gray-700 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 md:py-32 bg-gradient-to-r from-primary to-blue-600">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+              Ready to Transform Your Business with LLM Technology?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Let's discuss how custom LLM solutions can automate your workflows,
+              enhance customer experiences, and drive growth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-full hover:bg-gray-100 transition-all duration-200 shadow-lg"
+              >
+                START YOUR PROJECT
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-primary transition-all duration-200"
+              >
+                VIEW OUR WORK
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+} <div className="order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
                 Types of LLM Solutions We Build
               </h2>
@@ -288,7 +505,7 @@ export default function LLMDevelopment() {
                 {/* Button - only show on middle card (index 1) */}
                 {index === 1 && (
                   <Link href="/contact">
-                    <button className="mt-6 w-full bg-primary text-white font-semibold py-4 px-8 rounded-full hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 text-sm tracking-wider">
+                    <button className="mt-6 w-full bg-blue-600 text-white font-semibold py-4 px-8 rounded-full hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 text-sm tracking-wider">
                       GET STARTED
                       <img
                         src="/right-up-white.png"
@@ -325,14 +542,10 @@ export default function LLMDevelopment() {
               >
                 {/* Question */}
                 <button
-                  className="w-full flex items-center justify-between p-6 text-left"
+                  className="w-full flex items-center gap-4 p-6 text-left"
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 >
-                  <span className="font-bold text-gray-900 pr-8">
-                    {faq.question}
-                  </span>
-
-                  {/* Icon */}
+                  {/* Icon - Left Side */}
                   <div className="flex-shrink-0">
                     {openFaq === index ? (
                       <div className="w-8 h-8 flex items-center justify-center bg-gray-300 rounded">
@@ -343,11 +556,16 @@ export default function LLMDevelopment() {
                         />
                       </div>
                     ) : (
-                      <div className="w-8 h-8 flex items-center justify-center bg-primary rounded-sm">
+                      <div className="w-8 h-8 flex items-center justify-center bg-blue-600 rounded-sm">
                         <img src="/plus.png" alt="plus" className="w-4 h-4" />
                       </div>
                     )}
                   </div>
+
+                  {/* Question Text */}
+                  <span className="font-bold text-gray-900 flex-1 text-left">
+                    {faq.question}
+                  </span>
                 </button>
 
                 {/* Answer */}

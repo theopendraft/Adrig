@@ -27,7 +27,7 @@ export default function Footer() {
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/20">
                   <img
-                    src="/images/Adrig.PNG"
+                    src="/Adrig_blue.png"
                     alt="Adrig Logo"
                     className="w-6 h-6 object-contain"
                   />
