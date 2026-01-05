@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Lenis from "@studio-freight/lenis";
-import type LenisType from "@studio-freight/lenis";
+import Lenis from "lenis";
+import type LenisType from "lenis";
 
 export default function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
