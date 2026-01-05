@@ -65,3 +65,4 @@ Based on the image descriptions provided, here's the recommended assignment:
    - Content images: 1:1 aspect ratio (recommended: 1200x1200px or similar)
 3. All images will automatically display once placed in the correct locations
 
+
