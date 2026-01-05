@@ -4,121 +4,121 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function AIConsulting() {
+export default function EnterpriseAIDevelopment() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const services = [
     {
       number: "01",
-      title: "AI Strategy Development",
+      title: "Strategic AI Consulting",
       description:
-        "We start with a stakeholder-driven consultation to understand your goals and challenges, then deliver a clear AI implementation roadmap with defined steps and timelines.",
+        "Navigate the complexities of AI integration with our expert consultation. We don't just develop AI solutions; we strategize their alignment with your enterprise goals, ensuring sustainable growth. Our approach emphasizes responsible AI practices and data governance, ensuring your AI implementations are ethical and compliant with relevant regulations.",
     },
     {
       number: "02",
-      title: "AI Opportunity Mapping",
+      title: "PoC and MVP Development",
       description:
-        "We assess your operations and data to identify high-impact AI use cases, delivering a strategic roadmap that prioritizes initiatives with maximum ROI and long-term alignment.",
+        "Our team of experts meticulously crafts Proof of Concepts to validate the feasibility of your AI solution's concept, showcasing its potential through scaled-down versions. Moving forward, we design Minimum Viable Products that deliver essential functionalities, enabling real user validation, iterative enhancements and swift market entry.",
     },
     {
       number: "03",
-      title: "Domain-specific Model Development",
+      title: "Enterprise-grade AI Solutions Development",
       description:
-        "We analyze your domain in depth to fine-tune and integrate the most suitable foundation model with your proprietary data, ensuring validated alignment with your business needs.",
+        "Our experienced team collaborates closely with your enterprise to craft customized AI solutions, offering end-to-end development from ideation to deployment. We prioritize scalability, performance, and robust security, ensuring your AI systems meet your current needs and adapt well to future challenges.",
     },
     {
       number: "04",
-      title: "Generative AI Solutions Development",
+      title: "Custom AI Solutions Development",
       description:
-        "We deliver end-to-end generative AI solutions—from UX/UI design to model integration—building chatbots, content tools, and AI agents tailored to your business needs.",
+        "We collaborate with you to create AI-powered web and mobile apps that precisely align with your unique business needs. From the user interface to the algorithm, we meticulously engineer every aspect of your solution to guarantee optimal performance. Committed to both security and ethical AI, our AI development approach prioritizes responsible innovation.",
     },
     {
       number: "05",
-      title: "Data Engineering",
+      title: "Custom Model Development",
       description:
-        "Our data engineering services span the full data lifecycle, delivering clean, structured, and enriched data optimized for accurate and reliable AI model training.",
+        "We handle the entire custom AI model development process for our clients. This encompasses meticulous data preparation, rigorous model training, multi-level testing, and seamless deployment of the model. With deep expertise in fine-tuning AI models for specific tasks and domains, we ensure the models precisely match your business needs.",
     },
     {
       number: "06",
-      title: "AI Integration",
+      title: "AI Integration and Deployment",
       description:
-        "We go beyond AI development to seamlessly integrate solutions into your existing systems, ensuring a smooth transition and effective adoption across your operations.",
+        "We go beyond crafting robust AI solutions by seamlessly integrating and deploying them into your existing infrastructure, empowering your business with AI capabilities that align with your established processes. With AI embedded into your operational framework, you witness remarkable gains in efficiency, productivity, and innovation.",
     },
   ];
 
-  const approach = [
-    { title: "Assessment Phase" },
-    { title: "Strategy Development" },
-    { title: "Data Collection and Preparation" },
-    { title: "Custom Model Development" },
-    { title: "Model Integration/Solution Development" },
-    { title: "Monitoring and Maintenance" },
+  const solutions = [
+    { title: "Conversational AI Solutions" },
+    { title: "AI Image & Speech Recognition Solutions" },
+    { title: "Predictive Analysis Solutions" },
+    { title: "Fraud Detection & Prevention Solutions" },
+    { title: "Customer Service Automation Solutions" },
+    { title: "Recommendation Systems" },
   ];
 
-  const reasons = [
-    {
-      number: "01.",
-      title: "Deep Experience and Expertise",
-      description:
-        "Trusted AI expertise delivering strategic insight, seamless execution, and measurable business impact across industries.",
-    },
-    {
-      number: "02.",
-      title: "Extensive Technical Skills",
-      description:
-        "Our team brings deep technical expertise across the entire AI development lifecycle, from strategy to deployment and maintenance.",
-    },
-    {
-      number: "03.",
-      title: "Responsible AI Development",
-      description:
-        "We prioritize ethical AI practices, ensuring transparency, fairness, and compliance with industry standards and regulations.",
-    },
+  const process = [
+    { title: "Assessment & Requirement Gathering" },
+    { title: "Exploration & Use Case Definition" },
+    { title: "Pilot Implementation" },
+    { title: "Model Integration" },
+    { title: "Testing & Quality Assurance" },
+    { title: "Deployment, Integration and maintenance" },
   ];
 
   const faqs = [
     {
-      question: "What is AI consulting, and why do you need it?",
+      question: "What is an enterprise AI solution?",
       answer: (
         <>
-          AI consulting involves working with an experienced team of AI experts who can help your business identify and implement artificial intelligence solutions to improve your operations and help you achieve your goals. If you want to automate repetitive tasks, analyze large amounts of data, or improve customer experiences through chatbots or other AI-powered tools, contact LeewayHertz's AI consultants today.
+          An enterprise AI solution is a software system designed to provide artificial intelligence capabilities to businesses, organizations, and other entities. These solutions can be used to analyze large amounts of data, automate processes, make predictions, and improve decision-making in various business areas, including finance, marketing, customer service, and operations.
+          <br /><br />
+          Enterprise AI solutions often incorporate machine learning algorithms, natural language processing, computer vision, and other AI technologies. They may be cloud-based, on-premises, or a hybrid of both and may integrate with existing software systems.
+          <br /><br />
+          The goal of an enterprise AI solution is to help businesses operate more efficiently and effectively by leveraging the power of AI to gain insights, automate tasks, and make better decisions. Some examples of enterprise AI solutions include chatbots for customer service, predictive analytics for supply chain management, and fraud detection systems for financial institutions.
         </>
       ),
     },
     {
-      question: "What industries do you serve?",
+      question: "What industries can benefit from enterprise AI development services?",
       answer: "",
     },
     {
-      question: "How do you approach AI consulting?",
+      question: "What AI technologies do you use in your enterprise AI development process?",
       answer: "",
     },
     {
-      question: "What kind of AI solutions do you provide?",
+      question: "What is your process for developing enterprise AI solutions?",
       answer: "",
     },
     {
-      question: "How can AI consulting companies assist in data-driven decision-making for my business?",
+      question: "What security features do your enterprise AI solutions have?",
       answer: "",
     },
     {
-      question: "What measures does your AI consulting company take to ensure data security and compliance with privacy regulations?",
+      question: "Do you integrate AI solutions into clients' existing systems as part of your enterprise AI services?",
       answer: "",
     },
     {
-      question: "How do AI consulting companies tailor their solutions to meet the unique needs of clients?",
+      question: "Do you provide post-development support?",
       answer: "",
     },
     {
-      question: "How does AI consulting contribute to business growth?",
+      question: "How do you ensure the quality of your enterprise AI solutions?",
       answer: "",
     },
     {
-      question: "What key areas of expertise do AI consultants possess?",
+      question: "What are the components that constitute enterprise AI?",
       answer: "",
     },
     {
-      question: "What impact does AI consulting have on businesses?",
+      question: "How do you ensure that your AI solutions align with clients' business goals?",
+      answer: "",
+    },
+    {
+      question: "Why choose LeewayHertz for your enterprise AI development needs?",
+      answer: "",
+    },
+    {
+      question: "What industries can benefit from enterprise AI, and what are some specific applications for each industry?",
       answer: "",
     },
   ];
@@ -130,11 +130,11 @@ export default function AIConsulting() {
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              AI Consulting <span className="text-blue-600">Company</span>
+              Enterprise AI Development <span className="text-blue-600">Company</span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              Our comprehensive AI consulting services help you harness the transformative power of AI, enhancing your operational capabilities and product offerings. Our experts partner with you to understand your unique challenges and objectives, creating customized AI strategies and solutions that yield tangible results. We are also proficient in generative AI, with expertise in leveraging advanced models like GPT, Gemini, Llama, PaLM, and Mistral to build innovative solutions for diverse use cases. From enhancing operations through intelligent automation to exploring the creative potential of generative AI, we guide you through every step of your AI journey.
+              Eliminate workflow pain points and accelerate your digital transformation journey with our enterprise AI development services. We use advanced AI techniques like machine learning, predictive analytics, deep learning, and NLP to develop robust AI-powered solutions. Our solutions, deployable at scale, enable enterprises to handle diverse tasks from predictive maintenance and fraud detection to inventory optimization and improving customer services.
             </p>
 
             <div className="flex justify-center">
@@ -159,15 +159,15 @@ export default function AIConsulting() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
               <div className="aspect-[16/10] rounded-lg overflow-hidden">
                 <img
-                  src="/Website/Service/Consulting/consulting1.jpg"
-                  alt="AI Consulting"
+                  src="/Website/Service/AI/ai1.jpg"
+                  alt="Enterprise AI Development"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-[16/10] rounded-lg overflow-hidden">
                 <img
-                  src="/Website/Service/Consulting/consulting2.png"
-                  alt="AI Consulting"
+                  src="/Website/Service/AI/ai2.jpg"
+                  alt="Enterprise AI Development"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -182,11 +182,8 @@ export default function AIConsulting() {
           {/* Section Heading */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our AI Consulting Services
+              Enterprise AI Development Services We Offer
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Strategic AI guidance to identify opportunities, define roadmaps, and maximize business value through intelligent technologies.
-            </p>
           </div>
 
           {/* Services Grid - 2x3 */}
@@ -216,64 +213,16 @@ export default function AIConsulting() {
         </div>
       </section>
 
-      {/* Why Choose LeewayHertz Section */}
-      <section className="py-20 md:py-32 bg-gray-100">
-        <div className="container-custom">
-          {/* Section Heading */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Why Choose <span className="text-primary">LeewayHertz</span> for AI Consulting Services?
-            </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-              Trusted AI expertise delivering strategic insight, seamless execution, and measurable business impact across industries.
-            </p>
-          </div>
-
-          {/* Reasons Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {reasons.map((reason, index) => (
-              <div key={index} className="flex flex-col">
-                <div className="bg-white border border-gray-200 rounded-lg p-8 flex flex-col flex-1">
-                  {/* Number and Title */}
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                    {reason.number} {reason.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-lg text-gray-900 leading-relaxed">
-                    {reason.description}
-                  </p>
-                </div>
-
-                {/* Button - only show on middle card (index 1) */}
-                {index === 1 && (
-                  <Link href="/contact" className="mt-6">
-                    <button className="w-full bg-blue-600 text-white font-semibold py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
-                      GET STARTED
-                      <img
-                        src="/right-up-white.png"
-                        alt="Arrow"
-                        className="w-5 h-5"
-                      />
-                    </button>
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Approach Section */}
+      {/* Solutions Section */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container-custom">
           {/* Section Heading - Centered */}
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Approach to AI Consulting
+              Enterprise AI Solutions We Develop
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              A structured, insight-driven methodology that aligns AI strategy, technology, and execution with your business objectives.
+              Empower your enterprise with our comprehensive suite of AI-driven solutions
             </p>
           </div>
 
@@ -282,8 +231,8 @@ export default function AIConsulting() {
             <div>
               <div className="relative aspect-square rounded-lg overflow-hidden">
                 <img
-                  src="/Website/Service/Consulting/consulting1.jpg"
-                  alt="AI Consulting Approach"
+                  src="/Website/Service/AI/ai3.jpg"
+                  alt="Enterprise AI Solutions"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -291,9 +240,9 @@ export default function AIConsulting() {
 
             {/* Right Side - Content */}
             <div>
-              {/* Approach List */}
+              {/* Solutions List */}
               <div className="grid grid-cols-2 gap-4">
-                {approach.map((item, index) => (
+                {solutions.map((solution, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center flex-shrink-0">
                       <img
@@ -303,12 +252,47 @@ export default function AIConsulting() {
                       />
                     </div>
                     <span className="text-base text-gray-900 font-medium">
-                      {item.title}
+                      {solution.title}
                     </span>
                   </div>
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20 md:py-32 bg-gray-100">
+        <div className="container-custom">
+          {/* Section Heading */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
+              Our Enterprise AI Development Process
+            </h2>
+          </div>
+
+          {/* Process Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {process.map((step, index) => (
+              <div
+                key={index}
+                className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center flex-shrink-0 mt-1">
+                    <img
+                      src="/right-up-white.png"
+                      alt="Arrow"
+                      className="w-4 h-4"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">
+                    {step.title}
+                  </h3>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -385,7 +369,7 @@ export default function AIConsulting() {
               Ready to Get Started?
             </h2>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              Let&apos;s discuss how our AI consulting services can help
+              Let&apos;s discuss how our enterprise AI development services can help
               your business scale, innovate, and drive growth.
             </p>
             <div className="flex justify-center">
@@ -407,3 +391,4 @@ export default function AIConsulting() {
     </>
   );
 }
+

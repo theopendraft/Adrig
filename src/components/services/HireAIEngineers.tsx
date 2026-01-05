@@ -4,121 +4,112 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function AIConsulting() {
+export default function HireAIEngineers() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const services = [
+  const expertise = [
     {
       number: "01",
-      title: "AI Strategy Development",
+      title: "Diverse AI Technologies",
       description:
-        "We start with a stakeholder-driven consultation to understand your goals and challenges, then deliver a clear AI implementation roadmap with defined steps and timelines.",
+        "ADRIG's AI engineers leverage deep expertise in machine learning, computer vision, and natural language processing to build scalable, industry-agnostic AI solutions.",
     },
     {
       number: "02",
-      title: "AI Opportunity Mapping",
+      title: "Programming Languages & Frameworks",
       description:
-        "We assess your operations and data to identify high-impact AI use cases, delivering a strategic roadmap that prioritizes initiatives with maximum ROI and long-term alignment.",
+        "Our engineers use Python, R, and frameworks like TensorFlow, PyTorch, and Scikit-Learn to build high-performance AI solutions that maximize business value.",
     },
     {
       number: "03",
-      title: "Domain-specific Model Development",
+      title: "Data Engineering",
       description:
-        "We analyze your domain in depth to fine-tune and integrate the most suitable foundation model with your proprietary data, ensuring validated alignment with your business needs.",
+        "Our AI engineers excel in data engineering, efficiently managing data preparation and transformation to support machine learning training, advanced analytics, and accurate predictions.",
     },
     {
       number: "04",
-      title: "Generative AI Solutions Development",
+      title: "LLM Fine-tuning",
       description:
-        "We deliver end-to-end generative AI solutions—from UX/UI design to model integration—building chatbots, content tools, and AI agents tailored to your business needs.",
+        "Our AI experts are proficient with models like GPT and Llama 2, enabling them to select and fine-tune the most suitable architecture to meet your specific business needs.",
     },
     {
       number: "05",
-      title: "Data Engineering",
+      title: "Machine Learning Techniques",
       description:
-        "Our data engineering services span the full data lifecycle, delivering clean, structured, and enriched data optimized for accurate and reliable AI model training.",
+        "Our AI engineers specialize in supervised, unsupervised, deep, and reinforcement learning to deliver machine learning solutions tailored to specific business needs.",
     },
     {
       number: "06",
-      title: "AI Integration",
+      title: "Prompt Engineering",
       description:
-        "We go beyond AI development to seamlessly integrate solutions into your existing systems, ensuring a smooth transition and effective adoption across your operations.",
+        "Our AI engineers excel in context-aware prompt engineering to deliver seamless, accurate, and high-value conversational AI experiences.",
     },
-  ];
-
-  const approach = [
-    { title: "Assessment Phase" },
-    { title: "Strategy Development" },
-    { title: "Data Collection and Preparation" },
-    { title: "Custom Model Development" },
-    { title: "Model Integration/Solution Development" },
-    { title: "Monitoring and Maintenance" },
   ];
 
   const reasons = [
     {
       number: "01.",
-      title: "Deep Experience and Expertise",
+      title: "Highly Skilled",
       description:
-        "Trusted AI expertise delivering strategic insight, seamless execution, and measurable business impact across industries.",
+        "Our highly skilled AI engineers bring years of hands-on industry experience to deliver expertly crafted, best-in-class AI solutions.",
     },
     {
       number: "02.",
-      title: "Extensive Technical Skills",
+      title: "Diverse Expertise",
       description:
-        "Our team brings deep technical expertise across the entire AI development lifecycle, from strategy to deployment and maintenance.",
+        "Our AI engineers offer broad expertise across NLP, computer vision, predictive analytics, and other AI domains to meet diverse project needs.",
     },
     {
       number: "03.",
-      title: "Responsible AI Development",
+      title: "Timely Delivery",
       description:
-        "We prioritize ethical AI practices, ensuring transparency, fairness, and compliance with industry standards and regulations.",
+        "Our dedicated AI engineers ensure reliable, on-time deployment of AI solutions that meet your business objectives and delivery timelines.",
+    },
+  ];
+
+  const additionalReasons = [
+    {
+      title: "Quality Assurance",
+      description:
+        "We uphold the highest quality standards through rigorous testing to deliver reliable, high-performance AI solutions.",
+    },
+    {
+      title: "Proven Track Record",
+      description:
+        "Our proven portfolio reflects consistent delivery of innovative, high-quality AI solutions across diverse industries.",
+    },
+    {
+      title: "End-to-end Support",
+      description:
+        "We offer end-to-end AI support from concept to deployment, with our engineers managing the entire development lifecycle to ensure a seamless experience.",
     },
   ];
 
   const faqs = [
     {
-      question: "What is AI consulting, and why do you need it?",
+      question: "What are AI engineers?",
       answer: (
         <>
-          AI consulting involves working with an experienced team of AI experts who can help your business identify and implement artificial intelligence solutions to improve your operations and help you achieve your goals. If you want to automate repetitive tasks, analyze large amounts of data, or improve customer experiences through chatbots or other AI-powered tools, contact LeewayHertz's AI consultants today.
+          AI engineers are professionals who design, develop, and implement artificial intelligence systems and solutions. They combine their computer science, mathematics, and engineering knowledge to build systems that can perform tasks that normally require human intelligence, such as recognizing patterns in data, making predictions, and making decisions.
+          <br /><br />
+          They work on a wide range of projects, from developing recommendation systems, natural language processing applications, computer vision technologies, and more. Their role is to harness AI and ML to solve complex problems, automate tasks, and improve processes in various industries, including healthcare, finance, manufacturing, and technology, among others.
         </>
       ),
     },
     {
-      question: "What industries do you serve?",
+      question: "What technologies are your AI engineers proficient in?",
       answer: "",
     },
     {
-      question: "How do you approach AI consulting?",
+      question: "Why should I hire LeewayHertz's AI engineers?",
       answer: "",
     },
     {
-      question: "What kind of AI solutions do you provide?",
+      question: "What types of AI tools does LeewayHertz build?",
       answer: "",
     },
     {
-      question: "How can AI consulting companies assist in data-driven decision-making for my business?",
-      answer: "",
-    },
-    {
-      question: "What measures does your AI consulting company take to ensure data security and compliance with privacy regulations?",
-      answer: "",
-    },
-    {
-      question: "How do AI consulting companies tailor their solutions to meet the unique needs of clients?",
-      answer: "",
-    },
-    {
-      question: "How does AI consulting contribute to business growth?",
-      answer: "",
-    },
-    {
-      question: "What key areas of expertise do AI consultants possess?",
-      answer: "",
-    },
-    {
-      question: "What impact does AI consulting have on businesses?",
+      question: "Does LeewayHertz provide post-deployment services?",
       answer: "",
     },
   ];
@@ -130,11 +121,11 @@ export default function AIConsulting() {
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              AI Consulting <span className="text-blue-600">Company</span>
+              Hire AI <span className="text-blue-600">Engineers</span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              Our comprehensive AI consulting services help you harness the transformative power of AI, enhancing your operational capabilities and product offerings. Our experts partner with you to understand your unique challenges and objectives, creating customized AI strategies and solutions that yield tangible results. We are also proficient in generative AI, with expertise in leveraging advanced models like GPT, Gemini, Llama, PaLM, and Mistral to build innovative solutions for diverse use cases. From enhancing operations through intelligent automation to exploring the creative potential of generative AI, we guide you through every step of your AI journey.
+              Whether you want to initiate or advance your AI journey, trust our AI engineers to provide the expertise you need. With knowledge and experience spanning diverse AI domains such as machine learning, deep learning, natural language processing, computer vision, and data science, our AI engineers build custom AI models and solutions tailored to your unique business needs. We follow a comprehensive approach that goes beyond AI development, encompassing the seamless integration of AI solutions into your existing systems, and offering consulting services to guide you through the intricate AI landscape.
             </p>
 
             <div className="flex justify-center">
@@ -159,15 +150,15 @@ export default function AIConsulting() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
               <div className="aspect-[16/10] rounded-lg overflow-hidden">
                 <img
-                  src="/Website/Service/Consulting/consulting1.jpg"
-                  alt="AI Consulting"
+                  src="/Website/Service/AI/ai1.jpg"
+                  alt="Hire AI Engineers"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-[16/10] rounded-lg overflow-hidden">
                 <img
-                  src="/Website/Service/Consulting/consulting2.png"
-                  alt="AI Consulting"
+                  src="/Website/Service/AI/ai2.jpg"
+                  alt="Hire AI Engineers"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -176,39 +167,39 @@ export default function AIConsulting() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Expertise Section */}
       <section id="services" className="py-20 md:py-32 bg-white">
         <div className="container-custom">
           {/* Section Heading */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our AI Consulting Services
+              Expertise of Our AI Engineers
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Strategic AI guidance to identify opportunities, define roadmaps, and maximize business value through intelligent technologies.
+              When you choose LeewayHertz, you join forces with a team of highly skilled AI engineers with a wealth of knowledge and expertise in various areas, including
             </p>
           </div>
 
-          {/* Services Grid - 2x3 */}
+          {/* Expertise Grid - 2x3 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
+            {expertise.map((item) => (
               <div
-                key={service.number}
+                key={item.number}
                 className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
               >
                 {/* Number Badge */}
                 <div className="inline-flex items-center justify-center w-10 h-10 bg-blue-600 text-white font-bold rounded-full mb-4">
-                  {service.number}
+                  {item.number}
                 </div>
 
                 {/* Title */}
                 <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
-                  {service.title}
+                  {item.title}
                 </h3>
 
                 {/* Description */}
                 <p className="text-gray-700 leading-relaxed">
-                  {service.description}
+                  {item.description}
                 </p>
               </div>
             ))}
@@ -216,17 +207,14 @@ export default function AIConsulting() {
         </div>
       </section>
 
-      {/* Why Choose LeewayHertz Section */}
+      {/* Why Hire Our AI Engineers Section */}
       <section className="py-20 md:py-32 bg-gray-100">
         <div className="container-custom">
           {/* Section Heading */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Why Choose <span className="text-primary">LeewayHertz</span> for AI Consulting Services?
+              Why Hire Our AI Engineers?
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-              Trusted AI expertise delivering strategic insight, seamless execution, and measurable business impact across industries.
-            </p>
           </div>
 
           {/* Reasons Grid */}
@@ -261,54 +249,19 @@ export default function AIConsulting() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Our Approach Section */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="container-custom">
-          {/* Section Heading - Centered */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Approach to AI Consulting
-            </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              A structured, insight-driven methodology that aligns AI strategy, technology, and execution with your business objectives.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-12">
-            {/* Left Side - Image */}
-            <div>
-              <div className="relative aspect-square rounded-lg overflow-hidden">
-                <img
-                  src="/Website/Service/Consulting/consulting1.jpg"
-                  alt="AI Consulting Approach"
-                  className="w-full h-full object-cover"
-                />
+          {/* Additional Reasons Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            {additionalReasons.map((reason, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-lg p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {reason.title}
+                </h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {reason.description}
+                </p>
               </div>
-            </div>
-
-            {/* Right Side - Content */}
-            <div>
-              {/* Approach List */}
-              <div className="grid grid-cols-2 gap-4">
-                {approach.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center flex-shrink-0">
-                      <img
-                        src="/right-up-white.png"
-                        alt="Arrow"
-                        className="w-4 h-4"
-                      />
-                    </div>
-                    <span className="text-base text-gray-900 font-medium">
-                      {item.title}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -385,7 +338,7 @@ export default function AIConsulting() {
               Ready to Get Started?
             </h2>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              Let&apos;s discuss how our AI consulting services can help
+              Let&apos;s discuss how our AI engineers can help
               your business scale, innovate, and drive growth.
             </p>
             <div className="flex justify-center">
@@ -407,3 +360,4 @@ export default function AIConsulting() {
     </>
   );
 }
+

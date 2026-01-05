@@ -4,121 +4,123 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function AIConsulting() {
+export default function MLOpsConsulting() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const services = [
     {
       number: "01",
-      title: "AI Strategy Development",
+      title: "ML Pipeline Development",
       description:
-        "We start with a stakeholder-driven consultation to understand your goals and challenges, then deliver a clear AI implementation roadmap with defined steps and timelines.",
+        "We design automated ML pipelines that process data and code seamlessly to ensure accurate model training and high-quality machine learning outcomes.",
     },
     {
       number: "02",
-      title: "AI Opportunity Mapping",
+      title: "Model Deployment and Implementation",
       description:
-        "We assess your operations and data to identify high-impact AI use cases, delivering a strategic roadmap that prioritizes initiatives with maximum ROI and long-term alignment.",
+        "We deploy machine learning models on cloud-native platforms like AWS, Azure, and GCP to ensure high availability, scalability, and reliability.",
     },
     {
       number: "03",
-      title: "Domain-specific Model Development",
+      title: "Continuous Delivery for Machine Learning",
       description:
-        "We analyze your domain in depth to fine-tune and integrate the most suitable foundation model with your proprietary data, ensuring validated alignment with your business needs.",
+        "Our CI/CD services automate the building, testing, and deployment of ML pipelines, enabling faster experimentation, quicker iterations, and accelerated time-to-market.",
     },
     {
       number: "04",
-      title: "Generative AI Solutions Development",
+      title: "Model Monitoring",
       description:
-        "We deliver end-to-end generative AI solutions—from UX/UI design to model integration—building chatbots, content tools, and AI agents tailored to your business needs.",
+        "Our observability solutions deliver real-time insights through distributed tracing, log analysis, and anomaly detection to optimize AI model accuracy and performance.",
     },
     {
       number: "05",
-      title: "Data Engineering",
+      title: "Data Engineering and Management Services",
       description:
-        "Our data engineering services span the full data lifecycle, delivering clean, structured, and enriched data optimized for accurate and reliable AI model training.",
+        "We provide expert guidance on data acquisition, cleaning, and processing to ensure high-quality, reliable datasets that improve ML model performance and reduce errors.",
     },
     {
       number: "06",
-      title: "AI Integration",
+      title: "Model Governance and Compliance",
       description:
-        "We go beyond AI development to seamlessly integrate solutions into your existing systems, ensuring a smooth transition and effective adoption across your operations.",
+        "We strengthen ML application security and integrity through robust governance that ensures data confidentiality, ethical AI practices, regulatory compliance, bias detection, and model fairness.",
     },
-  ];
-
-  const approach = [
-    { title: "Assessment Phase" },
-    { title: "Strategy Development" },
-    { title: "Data Collection and Preparation" },
-    { title: "Custom Model Development" },
-    { title: "Model Integration/Solution Development" },
-    { title: "Monitoring and Maintenance" },
   ];
 
   const reasons = [
     {
       number: "01.",
-      title: "Deep Experience and Expertise",
+      title: "Fastrack Your Workflow",
       description:
-        "Trusted AI expertise delivering strategic insight, seamless execution, and measurable business impact across industries.",
+        "We optimize and automate infrastructure, workflows, and data preparation to ensure efficiency and productivity across the entire ML lifecycle.",
     },
     {
       number: "02.",
-      title: "Extensive Technical Skills",
+      title: "End-to-end Development",
       description:
-        "Our team brings deep technical expertise across the entire AI development lifecycle, from strategy to deployment and maintenance.",
+        "Our end-to-end MLOps services leverage advanced tools, algorithms, and automation to eliminate the need for extensive in-house expertise.",
     },
     {
       number: "03.",
-      title: "Responsible AI Development",
+      title: "Flexible MLOps Toolkit",
       description:
-        "We prioritize ethical AI practices, ensuring transparency, fairness, and compliance with industry standards and regulations.",
+        "We leverage a unified platform that blends open-source flexibility with commercial reliability, along with curated notebooks and libraries, to deliver a seamless and integrated user experience.",
     },
+  ];
+
+  const additionalReasons = [
+    {
+      title: "Lower TCO for ML Projects",
+      description:
+        "We offer a vendor-agnostic approach that enables flexible ML deployments across cloud, on-premises, or hybrid environments without vendor lock-in.",
+    },
+    {
+      title: "Efficient Collaboration",
+      description:
+        "We automate routine tasks, streamline experiments, and organize datasets to build high-performing models that deliver desired outcomes.",
+    },
+    {
+      title: "Security and Compliance",
+      description:
+        "Our robust encryption safeguards your data in use, in transit, and at rest in the cloud, ensuring end-to-end security.",
+    },
+  ];
+
+  const process = [
+    { title: "Aligning Machine Learning Objectives With Business Goals" },
+    { title: "Data Preparation and Management" },
+    { title: "Model Training" },
+    { title: "Model Evaluation" },
+    { title: "Model Serving" },
+    { title: "Model Monitoring" },
   ];
 
   const faqs = [
     {
-      question: "What is AI consulting, and why do you need it?",
+      question: "What is MLOps?",
       answer: (
         <>
-          AI consulting involves working with an experienced team of AI experts who can help your business identify and implement artificial intelligence solutions to improve your operations and help you achieve your goals. If you want to automate repetitive tasks, analyze large amounts of data, or improve customer experiences through chatbots or other AI-powered tools, contact LeewayHertz's AI consultants today.
+          MLOps is a set of practices and tools that aim to streamline machine learning model development, deployment and monitoring. It is important because it can help businesses to reduce the time and costs associated with building and deploying ML models, improve model performance and increase the reliability and scalability of ML systems.
         </>
       ),
     },
     {
-      question: "What industries do you serve?",
+      question: "Why should I opt for MLOps consulting?",
       answer: "",
     },
     {
-      question: "How do you approach AI consulting?",
+      question: "What services do you offer related to MLOps?",
       answer: "",
     },
     {
-      question: "What kind of AI solutions do you provide?",
+      question: "How can you help my business implement MLOps?",
       answer: "",
     },
     {
-      question: "How can AI consulting companies assist in data-driven decision-making for my business?",
+      question: "Do you offer customized solutions or pre-packaged MLOps packages?",
       answer: "",
     },
     {
-      question: "What measures does your AI consulting company take to ensure data security and compliance with privacy regulations?",
-      answer: "",
-    },
-    {
-      question: "How do AI consulting companies tailor their solutions to meet the unique needs of clients?",
-      answer: "",
-    },
-    {
-      question: "How does AI consulting contribute to business growth?",
-      answer: "",
-    },
-    {
-      question: "What key areas of expertise do AI consultants possess?",
-      answer: "",
-    },
-    {
-      question: "What impact does AI consulting have on businesses?",
+      question: "How can I get started with your MLOps consulting services?",
       answer: "",
     },
   ];
@@ -130,11 +132,11 @@ export default function AIConsulting() {
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              AI Consulting <span className="text-blue-600">Company</span>
+              MLOps Consulting <span className="text-blue-600">Services</span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              Our comprehensive AI consulting services help you harness the transformative power of AI, enhancing your operational capabilities and product offerings. Our experts partner with you to understand your unique challenges and objectives, creating customized AI strategies and solutions that yield tangible results. We are also proficient in generative AI, with expertise in leveraging advanced models like GPT, Gemini, Llama, PaLM, and Mistral to build innovative solutions for diverse use cases. From enhancing operations through intelligent automation to exploring the creative potential of generative AI, we guide you through every step of your AI journey.
+              We optimize your business's machine learning operations for improved productivity and efficiency by automating ML pipelines and implementing AutoML platforms. Our MLOps expertise ensures improved planning and development, reproducibility in model training and deployment, scalability with hotkey access to necessary tools and resources, and continuity in the entire production flow leading to smooth machine learning operations.
             </p>
 
             <div className="flex justify-center">
@@ -159,15 +161,15 @@ export default function AIConsulting() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
               <div className="aspect-[16/10] rounded-lg overflow-hidden">
                 <img
-                  src="/Website/Service/Consulting/consulting1.jpg"
-                  alt="AI Consulting"
+                  src="/Website/Service/AI/ai1.jpg"
+                  alt="MLOps Consulting"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-[16/10] rounded-lg overflow-hidden">
                 <img
-                  src="/Website/Service/Consulting/consulting2.png"
-                  alt="AI Consulting"
+                  src="/Website/Service/AI/ai2.jpg"
+                  alt="MLOps Consulting"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -182,11 +184,8 @@ export default function AIConsulting() {
           {/* Section Heading */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our AI Consulting Services
+              Our MLOps Consulting Services
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Strategic AI guidance to identify opportunities, define roadmaps, and maximize business value through intelligent technologies.
-            </p>
           </div>
 
           {/* Services Grid - 2x3 */}
@@ -216,17 +215,14 @@ export default function AIConsulting() {
         </div>
       </section>
 
-      {/* Why Choose LeewayHertz Section */}
+      {/* Why Hire ADRIG Section */}
       <section className="py-20 md:py-32 bg-gray-100">
         <div className="container-custom">
           {/* Section Heading */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Why Choose <span className="text-primary">LeewayHertz</span> for AI Consulting Services?
+              Why Hire <span className="text-primary">ADRIG</span> for MLOps Consulting?
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-              Trusted AI expertise delivering strategic insight, seamless execution, and measurable business impact across industries.
-            </p>
           </div>
 
           {/* Reasons Grid */}
@@ -261,20 +257,31 @@ export default function AIConsulting() {
               </div>
             ))}
           </div>
+
+          {/* Additional Reasons Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            {additionalReasons.map((reason, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-lg p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {reason.title}
+                </h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {reason.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Our Approach Section */}
+      {/* Implementation Process Section */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container-custom">
           {/* Section Heading - Centered */}
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Approach to AI Consulting
+              Our MLOps Implementation Process
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              A structured, insight-driven methodology that aligns AI strategy, technology, and execution with your business objectives.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-12">
@@ -282,8 +289,8 @@ export default function AIConsulting() {
             <div>
               <div className="relative aspect-square rounded-lg overflow-hidden">
                 <img
-                  src="/Website/Service/Consulting/consulting1.jpg"
-                  alt="AI Consulting Approach"
+                  src="/Website/Service/AI/ai3.jpg"
+                  alt="MLOps Implementation Process"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -291,9 +298,9 @@ export default function AIConsulting() {
 
             {/* Right Side - Content */}
             <div>
-              {/* Approach List */}
+              {/* Process List */}
               <div className="grid grid-cols-2 gap-4">
-                {approach.map((item, index) => (
+                {process.map((step, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center flex-shrink-0">
                       <img
@@ -303,7 +310,7 @@ export default function AIConsulting() {
                       />
                     </div>
                     <span className="text-base text-gray-900 font-medium">
-                      {item.title}
+                      {step.title}
                     </span>
                   </div>
                 ))}
@@ -385,7 +392,7 @@ export default function AIConsulting() {
               Ready to Get Started?
             </h2>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              Let&apos;s discuss how our AI consulting services can help
+              Let&apos;s discuss how our MLOps consulting services can help
               your business scale, innovate, and drive growth.
             </p>
             <div className="flex justify-center">
@@ -407,3 +414,4 @@ export default function AIConsulting() {
     </>
   );
 }
+

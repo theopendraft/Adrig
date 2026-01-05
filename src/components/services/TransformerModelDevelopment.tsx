@@ -4,121 +4,95 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function AIConsulting() {
+export default function TransformerModelDevelopment() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const aiSubsets = [
+    { title: "Machine Learning" },
+    { title: "Natural Language Processing" },
+    { title: "Intent Recognition" },
+    { title: "Data Engineering" },
+    { title: "Deep Learning" },
+    { title: "Cloud Computing" },
+  ];
 
   const services = [
     {
       number: "01",
-      title: "AI Strategy Development",
+      title: "Custom Transformer Model Development",
       description:
-        "We start with a stakeholder-driven consultation to understand your goals and challenges, then deliver a clear AI implementation roadmap with defined steps and timelines.",
+        "Custom transformer models designed, trained, and deployed to solve complex business challenges with precision and scalability.",
     },
     {
       number: "02",
-      title: "AI Opportunity Mapping",
+      title: "Model Optimization",
       description:
-        "We assess your operations and data to identify high-impact AI use cases, delivering a strategic roadmap that prioritizes initiatives with maximum ROI and long-term alignment.",
+        "We optimize transformer models for improved performance, efficiency, and accuracy to ensure they meet your specific business requirements.",
     },
     {
       number: "03",
-      title: "Domain-specific Model Development",
+      title: "Model Integration",
       description:
-        "We analyze your domain in depth to fine-tune and integrate the most suitable foundation model with your proprietary data, ensuring validated alignment with your business needs.",
+        "We seamlessly integrate transformer models into your existing systems and workflows, ensuring smooth deployment and optimal performance.",
     },
     {
       number: "04",
-      title: "Generative AI Solutions Development",
+      title: "Ongoing Maintenance and Support",
       description:
-        "We deliver end-to-end generative AI solutions—from UX/UI design to model integration—building chatbots, content tools, and AI agents tailored to your business needs.",
+        "We provide continuous monitoring, updates, and support to ensure your transformer models remain effective and aligned with evolving business needs.",
     },
-    {
-      number: "05",
-      title: "Data Engineering",
-      description:
-        "Our data engineering services span the full data lifecycle, delivering clean, structured, and enriched data optimized for accurate and reliable AI model training.",
-    },
-    {
-      number: "06",
-      title: "AI Integration",
-      description:
-        "We go beyond AI development to seamlessly integrate solutions into your existing systems, ensuring a smooth transition and effective adoption across your operations.",
-    },
-  ];
-
-  const approach = [
-    { title: "Assessment Phase" },
-    { title: "Strategy Development" },
-    { title: "Data Collection and Preparation" },
-    { title: "Custom Model Development" },
-    { title: "Model Integration/Solution Development" },
-    { title: "Monitoring and Maintenance" },
   ];
 
   const reasons = [
     {
       number: "01.",
-      title: "Deep Experience and Expertise",
+      title: "Domain Expertise",
       description:
-        "Trusted AI expertise delivering strategic insight, seamless execution, and measurable business impact across industries.",
+        "Our developers are experts in building industry-specific AI solutions for finance, healthcare, logistics, and more using the most advanced and suitable tech stacks.",
     },
     {
       number: "02.",
-      title: "Extensive Technical Skills",
+      title: "Use of Advanced Technologies",
       description:
-        "Our team brings deep technical expertise across the entire AI development lifecycle, from strategy to deployment and maintenance.",
+        "Our developers are proficient in AI frameworks like TensorFlow, deployment tools such as Docker, multiple programming languages, and neural networks including CNNs.",
     },
     {
       number: "03.",
-      title: "Responsible AI Development",
+      title: "End-to-end Solution Development",
       description:
-        "We prioritize ethical AI practices, ensuring transparency, fairness, and compliance with industry standards and regulations.",
+        "ADRIG's end-to-end transformer model development service covers ideation, development, and deployment to ensure optimal performance and desired outcomes.",
     },
   ];
 
+  const additionalReason = {
+    title: "Proven Track Record",
+    description:
+      "With a proven cross-industry track record, we are a trusted choice for delivering high-quality transformer model development solutions.",
+  };
+
   const faqs = [
     {
-      question: "What is AI consulting, and why do you need it?",
+      question: "What is a Transformer model and how does it work?",
       answer: (
         <>
-          AI consulting involves working with an experienced team of AI experts who can help your business identify and implement artificial intelligence solutions to improve your operations and help you achieve your goals. If you want to automate repetitive tasks, analyze large amounts of data, or improve customer experiences through chatbots or other AI-powered tools, contact LeewayHertz's AI consultants today.
+          A Transformer model is an advanced machine-learning model that utilizes self-attention mechanisms to generate highly accurate predictions and can be used in various applications, including natural language processing and image recognition. It works by processing input data in parallel and creating a weighted representation of the input sequence, which is then used to generate predictions.
         </>
       ),
     },
     {
-      question: "What industries do you serve?",
+      question: "How can a Transformer model benefit my business?",
       answer: "",
     },
     {
-      question: "How do you approach AI consulting?",
+      question: "How can I get started with Transformer model development?",
       answer: "",
     },
     {
-      question: "What kind of AI solutions do you provide?",
+      question: "How long does it take to develop a Transformer model?",
       answer: "",
     },
     {
-      question: "How can AI consulting companies assist in data-driven decision-making for my business?",
-      answer: "",
-    },
-    {
-      question: "What measures does your AI consulting company take to ensure data security and compliance with privacy regulations?",
-      answer: "",
-    },
-    {
-      question: "How do AI consulting companies tailor their solutions to meet the unique needs of clients?",
-      answer: "",
-    },
-    {
-      question: "How does AI consulting contribute to business growth?",
-      answer: "",
-    },
-    {
-      question: "What key areas of expertise do AI consultants possess?",
-      answer: "",
-    },
-    {
-      question: "What impact does AI consulting have on businesses?",
+      question: "How much does it cost to develop a Transformer model?",
       answer: "",
     },
   ];
@@ -130,11 +104,11 @@ export default function AIConsulting() {
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              AI Consulting <span className="text-blue-600">Company</span>
+              Transformer Model Development <span className="text-blue-600">Services</span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              Our comprehensive AI consulting services help you harness the transformative power of AI, enhancing your operational capabilities and product offerings. Our experts partner with you to understand your unique challenges and objectives, creating customized AI strategies and solutions that yield tangible results. We are also proficient in generative AI, with expertise in leveraging advanced models like GPT, Gemini, Llama, PaLM, and Mistral to build innovative solutions for diverse use cases. From enhancing operations through intelligent automation to exploring the creative potential of generative AI, we guide you through every step of your AI journey.
+              Transform the way you process and analyze data with our custom Transformer models. Our extensive expertise in deep-learning frameworks, including TensorFlow, Keras, PyTorch, and MXNet, enables us to build models capable of tackling complex tasks like natural language processing, as well as image and video processing, offering deep insights into your data.
             </p>
 
             <div className="flex justify-center">
@@ -159,15 +133,15 @@ export default function AIConsulting() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
               <div className="aspect-[16/10] rounded-lg overflow-hidden">
                 <img
-                  src="/Website/Service/Consulting/consulting1.jpg"
-                  alt="AI Consulting"
+                  src="/Website/Service/AI/ai1.jpg"
+                  alt="Transformer Model Development"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-[16/10] rounded-lg overflow-hidden">
                 <img
-                  src="/Website/Service/Consulting/consulting2.png"
-                  alt="AI Consulting"
+                  src="/Website/Service/AI/ai2.jpg"
+                  alt="Transformer Model Development"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -176,21 +150,67 @@ export default function AIConsulting() {
         </div>
       </section>
 
+      {/* AI Subsets Section */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container-custom">
+          {/* Section Heading - Centered */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              AI Subsets We are Proficient in
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-12">
+            {/* Left Side - Image */}
+            <div>
+              <div className="relative aspect-square rounded-lg overflow-hidden">
+                <img
+                  src="/Website/Service/AI/ai3.jpg"
+                  alt="AI Subsets"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Right Side - Content */}
+            <div>
+              {/* AI Subsets List */}
+              <div className="grid grid-cols-2 gap-4">
+                {aiSubsets.map((subset, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center flex-shrink-0">
+                      <img
+                        src="/right-up-white.png"
+                        alt="Arrow"
+                        className="w-4 h-4"
+                      />
+                    </div>
+                    <span className="text-base text-gray-900 font-medium">
+                      {subset.title}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
-      <section id="services" className="py-20 md:py-32 bg-white">
+      <section id="services" className="py-20 md:py-32 bg-gray-100">
         <div className="container-custom">
           {/* Section Heading */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our AI Consulting Services
+              Our Transformer Model Development Services
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Strategic AI guidance to identify opportunities, define roadmaps, and maximize business value through intelligent technologies.
+              Custom transformer models designed, trained, and deployed to solve complex business challenges with precision and scalability.
             </p>
           </div>
 
-          {/* Services Grid - 2x3 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Services Grid - 2x2 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             {services.map((service) => (
               <div
                 key={service.number}
@@ -216,17 +236,14 @@ export default function AIConsulting() {
         </div>
       </section>
 
-      {/* Why Choose LeewayHertz Section */}
-      <section className="py-20 md:py-32 bg-gray-100">
+      {/* Why Hire ADRIG Section */}
+      <section className="py-20 md:py-32 bg-white">
         <div className="container-custom">
           {/* Section Heading */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Why Choose <span className="text-primary">LeewayHertz</span> for AI Consulting Services?
+              Why Hire <span className="text-primary">ADRIG</span> for Transformer Model Development?
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-              Trusted AI expertise delivering strategic insight, seamless execution, and measurable business impact across industries.
-            </p>
           </div>
 
           {/* Reasons Grid */}
@@ -261,53 +278,16 @@ export default function AIConsulting() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Our Approach Section */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="container-custom">
-          {/* Section Heading - Centered */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Approach to AI Consulting
-            </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              A structured, insight-driven methodology that aligns AI strategy, technology, and execution with your business objectives.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-12">
-            {/* Left Side - Image */}
-            <div>
-              <div className="relative aspect-square rounded-lg overflow-hidden">
-                <img
-                  src="/Website/Service/Consulting/consulting1.jpg"
-                  alt="AI Consulting Approach"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Right Side - Content */}
-            <div>
-              {/* Approach List */}
-              <div className="grid grid-cols-2 gap-4">
-                {approach.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center flex-shrink-0">
-                      <img
-                        src="/right-up-white.png"
-                        alt="Arrow"
-                        className="w-4 h-4"
-                      />
-                    </div>
-                    <span className="text-base text-gray-900 font-medium">
-                      {item.title}
-                    </span>
-                  </div>
-                ))}
-              </div>
+          {/* Additional Reason Card */}
+          <div className="mt-8 max-w-4xl mx-auto">
+            <div className="bg-white border border-gray-200 rounded-lg p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {additionalReason.title}
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                {additionalReason.description}
+              </p>
             </div>
           </div>
         </div>
@@ -385,7 +365,7 @@ export default function AIConsulting() {
               Ready to Get Started?
             </h2>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              Let&apos;s discuss how our AI consulting services can help
+              Let&apos;s discuss how our transformer model development services can help
               your business scale, innovate, and drive growth.
             </p>
             <div className="flex justify-center">
@@ -407,3 +387,4 @@ export default function AIConsulting() {
     </>
   );
 }
+

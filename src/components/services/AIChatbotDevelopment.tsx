@@ -4,121 +4,124 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function AIConsulting() {
+export default function AIChatbotDevelopment() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const services = [
     {
       number: "01",
-      title: "AI Strategy Development",
+      title: "Technology Consulting and Strategy Building",
       description:
-        "We start with a stakeholder-driven consultation to understand your goals and challenges, then deliver a clear AI implementation roadmap with defined steps and timelines.",
+        "Our technology consultants guide AI adoption by assessing your needs, recommending the right chatbot, and delivering a seamless conversational AI implementation strategy.",
     },
     {
       number: "02",
-      title: "AI Opportunity Mapping",
+      title: "Chatbot Design and Development",
       description:
-        "We assess your operations and data to identify high-impact AI use cases, delivering a strategic roadmap that prioritizes initiatives with maximum ROI and long-term alignment.",
+        "We design and develop custom chatbots aligned with your brand and business goals, delivering context-aware, engaging, and efficient user experiences.",
     },
     {
       number: "03",
-      title: "Domain-specific Model Development",
+      title: "Chatbot Integration",
       description:
-        "We analyze your domain in depth to fine-tune and integrate the most suitable foundation model with your proprietary data, ensuring validated alignment with your business needs.",
+        "We ensure seamless chatbot integration with your existing systems to enhance efficiency, maintain data consistency, and deliver a unified customer experience without operational disruption.",
     },
     {
       number: "04",
-      title: "Generative AI Solutions Development",
+      title: "Maintenance and Support",
       description:
-        "We deliver end-to-end generative AI solutions—from UX/UI design to model integration—building chatbots, content tools, and AI agents tailored to your business needs.",
-    },
-    {
-      number: "05",
-      title: "Data Engineering",
-      description:
-        "Our data engineering services span the full data lifecycle, delivering clean, structured, and enriched data optimized for accurate and reliable AI model training.",
-    },
-    {
-      number: "06",
-      title: "AI Integration",
-      description:
-        "We go beyond AI development to seamlessly integrate solutions into your existing systems, ensuring a smooth transition and effective adoption across your operations.",
+        "We provide continuous post-deployment maintenance and 24/7 support to monitor performance, resolve issues, and keep your chatbot up to date while you focus on your core business.",
     },
   ];
 
-  const approach = [
-    { title: "Assessment Phase" },
-    { title: "Strategy Development" },
-    { title: "Data Collection and Preparation" },
-    { title: "Custom Model Development" },
-    { title: "Model Integration/Solution Development" },
-    { title: "Monitoring and Maintenance" },
+  const chatbots = [
+    { title: "GPT-based Chatbots" },
+    { title: "Customized AI Voice Assistants" },
+    { title: "Custom CRM/ERP/CM Bots" },
+    { title: "Social Media-focused Chatbots" },
+    { title: "Transactional Chatbots" },
   ];
 
-  const reasons = [
-    {
-      number: "01.",
-      title: "Deep Experience and Expertise",
-      description:
-        "Trusted AI expertise delivering strategic insight, seamless execution, and measurable business impact across industries.",
-    },
-    {
-      number: "02.",
-      title: "Extensive Technical Skills",
-      description:
-        "Our team brings deep technical expertise across the entire AI development lifecycle, from strategy to deployment and maintenance.",
-    },
-    {
-      number: "03.",
-      title: "Responsible AI Development",
-      description:
-        "We prioritize ethical AI practices, ensuring transparency, fairness, and compliance with industry standards and regulations.",
-    },
+  const platforms = [
+    { title: "Websites" },
+    { title: "Social Media Channels" },
+    { title: "E-commerce Portals" },
+    { title: "Android Applications" },
+    { title: "iOS Applications" },
+    { title: "HR, ERP, CRM and CM Systems" },
   ];
 
   const faqs = [
     {
-      question: "What is AI consulting, and why do you need it?",
+      question: "What are AI chatbots?",
       answer: (
         <>
-          AI consulting involves working with an experienced team of AI experts who can help your business identify and implement artificial intelligence solutions to improve your operations and help you achieve your goals. If you want to automate repetitive tasks, analyze large amounts of data, or improve customer experiences through chatbots or other AI-powered tools, contact LeewayHertz's AI consultants today.
+          AI chatbots are computer programs powered by artificial intelligence (AI) algorithms that are designed to simulate human-like conversations with users. These chatbots utilize Natural Language Processing (NLP) techniques to understand and interpret user inputs and generate appropriate responses. They are programmed to handle a wide range of queries, provide information, assist with tasks, and engage in interactive conversations. AI chatbots can be deployed in various industries and platforms, including websites, messaging apps, customer support systems, and virtual assistants, to enhance user experiences, streamline operations, and deliver efficient and personalized interactions. If you are looking to incorporate AI chatbots into your business or project, it's important that you hire expert AI chatbot developers who can craft customized solutions for your business needs.
         </>
       ),
     },
     {
-      question: "What industries do you serve?",
+      question: "What is conversational AI?",
       answer: "",
     },
     {
-      question: "How do you approach AI consulting?",
+      question: "How can your AI chatbot solutions help my business?",
       answer: "",
     },
     {
-      question: "What kind of AI solutions do you provide?",
+      question: "What industries can benefit from LeewayHertz's AI chatbot solutions?",
       answer: "",
     },
     {
-      question: "How can AI consulting companies assist in data-driven decision-making for my business?",
+      question: "How do your AI chatbots work?",
       answer: "",
     },
     {
-      question: "What measures does your AI consulting company take to ensure data security and compliance with privacy regulations?",
+      question: "What features do your AI chatbots offer?",
       answer: "",
     },
     {
-      question: "How do AI consulting companies tailor their solutions to meet the unique needs of clients?",
+      question: "Can LeewayHertz's AI chatbots be customized to suit my business needs?",
       answer: "",
     },
     {
-      question: "How does AI consulting contribute to business growth?",
+      question: "How do your AI chatbots enhance customer engagement and support?",
       answer: "",
     },
     {
-      question: "What key areas of expertise do AI consultants possess?",
+      question: "Are your AI chatbots capable of handling complex queries?",
       answer: "",
     },
     {
-      question: "What impact does AI consulting have on businesses?",
+      question: "What data privacy and security measures are in place for your AI chatbots?",
+      answer: "",
+    },
+    {
+      question: "How can I integrate your AI chatbot into my existing systems or platforms?",
+      answer: "",
+    },
+    {
+      question: "Do your Chatbots support multiple languages?",
+      answer: "",
+    },
+    {
+      question: "What expertise does LeewayHertz offer as an AI chatbot development company?",
+      answer: "",
+    },
+    {
+      question: "What support and maintenance services does LeewayHertz offer for AI chatbots?",
+      answer: "",
+    },
+    {
+      question: "Why hire AI chatbot developers from LeewayHertz?",
+      answer: "",
+    },
+    {
+      question: "What are the foundational models powering your chatbots?",
+      answer: "",
+    },
+    {
+      question: "How do you ensure that the chatbot aligns with my brand's personality and objectives?",
       answer: "",
     },
   ];
@@ -130,11 +133,11 @@ export default function AIConsulting() {
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              AI Consulting <span className="text-blue-600">Company</span>
+              AI Chatbot Development <span className="text-blue-600">Company</span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              Our comprehensive AI consulting services help you harness the transformative power of AI, enhancing your operational capabilities and product offerings. Our experts partner with you to understand your unique challenges and objectives, creating customized AI strategies and solutions that yield tangible results. We are also proficient in generative AI, with expertise in leveraging advanced models like GPT, Gemini, Llama, PaLM, and Mistral to build innovative solutions for diverse use cases. From enhancing operations through intelligent automation to exploring the creative potential of generative AI, we guide you through every step of your AI journey.
+              We develop custom AI chatbots that act as intelligent assistants, ensuring 24/7 support and rapid query resolution. Our chatbots maximize engagement and productivity, guiding your employees and customers to the information they need and enabling your team to focus on core business imperatives. Partner with us to unlock the power of AI-powered conversations.
             </p>
 
             <div className="flex justify-center">
@@ -159,15 +162,15 @@ export default function AIConsulting() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
               <div className="aspect-[16/10] rounded-lg overflow-hidden">
                 <img
-                  src="/Website/Service/Consulting/consulting1.jpg"
-                  alt="AI Consulting"
+                  src="/Website/Service/ChatDev/Chat1.jpg"
+                  alt="AI Chatbot Development"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-[16/10] rounded-lg overflow-hidden">
                 <img
-                  src="/Website/Service/Consulting/consulting2.png"
-                  alt="AI Consulting"
+                  src="/Website/Service/ChatDev/Chat2.jpg"
+                  alt="AI Chatbot Development"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -182,15 +185,12 @@ export default function AIConsulting() {
           {/* Section Heading */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our AI Consulting Services
+              AI Chatbot Development Services We Offer
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Strategic AI guidance to identify opportunities, define roadmaps, and maximize business value through intelligent technologies.
-            </p>
           </div>
 
-          {/* Services Grid - 2x3 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Services Grid - 2x2 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             {services.map((service) => (
               <div
                 key={service.number}
@@ -216,65 +216,14 @@ export default function AIConsulting() {
         </div>
       </section>
 
-      {/* Why Choose LeewayHertz Section */}
-      <section className="py-20 md:py-32 bg-gray-100">
-        <div className="container-custom">
-          {/* Section Heading */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Why Choose <span className="text-primary">LeewayHertz</span> for AI Consulting Services?
-            </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-              Trusted AI expertise delivering strategic insight, seamless execution, and measurable business impact across industries.
-            </p>
-          </div>
-
-          {/* Reasons Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {reasons.map((reason, index) => (
-              <div key={index} className="flex flex-col">
-                <div className="bg-white border border-gray-200 rounded-lg p-8 flex flex-col flex-1">
-                  {/* Number and Title */}
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                    {reason.number} {reason.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-lg text-gray-900 leading-relaxed">
-                    {reason.description}
-                  </p>
-                </div>
-
-                {/* Button - only show on middle card (index 1) */}
-                {index === 1 && (
-                  <Link href="/contact" className="mt-6">
-                    <button className="w-full bg-blue-600 text-white font-semibold py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
-                      GET STARTED
-                      <img
-                        src="/right-up-white.png"
-                        alt="Arrow"
-                        className="w-5 h-5"
-                      />
-                    </button>
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Approach Section */}
+      {/* AI Chatbots Section */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container-custom">
           {/* Section Heading - Centered */}
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Approach to AI Consulting
+              AI Chatbots We Develop
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              A structured, insight-driven methodology that aligns AI strategy, technology, and execution with your business objectives.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-12">
@@ -282,8 +231,8 @@ export default function AIConsulting() {
             <div>
               <div className="relative aspect-square rounded-lg overflow-hidden">
                 <img
-                  src="/Website/Service/Consulting/consulting1.jpg"
-                  alt="AI Consulting Approach"
+                  src="/Website/Service/ChatDev/Chat1.jpg"
+                  alt="AI Chatbots"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -291,9 +240,9 @@ export default function AIConsulting() {
 
             {/* Right Side - Content */}
             <div>
-              {/* Approach List */}
+              {/* Chatbots List */}
               <div className="grid grid-cols-2 gap-4">
-                {approach.map((item, index) => (
+                {chatbots.map((chatbot, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center flex-shrink-0">
                       <img
@@ -303,12 +252,50 @@ export default function AIConsulting() {
                       />
                     </div>
                     <span className="text-base text-gray-900 font-medium">
-                      {item.title}
+                      {chatbot.title}
                     </span>
                   </div>
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Integration Platforms Section */}
+      <section className="py-20 md:py-32 bg-gray-100">
+        <div className="container-custom">
+          {/* Section Heading */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
+              Integrate Our Chatbots into Different Platforms
+            </h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Our versatile chatbots are designed to seamlessly integrate into a wide array of platforms, providing you with a powerful tool to enhance user experiences and streamline interactions
+            </p>
+          </div>
+
+          {/* Platforms Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {platforms.map((platform, index) => (
+              <div
+                key={index}
+                className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center flex-shrink-0">
+                    <img
+                      src="/right-up-white.png"
+                      alt="Arrow"
+                      className="w-4 h-4"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">
+                    {platform.title}
+                  </h3>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -385,7 +372,7 @@ export default function AIConsulting() {
               Ready to Get Started?
             </h2>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              Let&apos;s discuss how our AI consulting services can help
+              Let&apos;s discuss how our AI chatbot development services can help
               your business scale, innovate, and drive growth.
             </p>
             <div className="flex justify-center">
@@ -407,3 +394,4 @@ export default function AIConsulting() {
     </>
   );
 }
+
